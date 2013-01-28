@@ -101,7 +101,7 @@ msgstr ""
 "で用いられている、小さく単純で、容易に理解可能なツールをまとめて提供すること」です。"
 "つまり、あなた＝パッケージを作成する人の負担を減らします。さらに、Debian "
 "ポリシーが変わった場合にはこのツール群を多少変更さえすれば、debhelper を使う"
-"パッケージが新しいポリシーに適合するのに必要なのは、単に再ビルドだけになります。"
+"パッケージが新しいポリシーに適合するのに必要になるのは、再ビルドだけになります。"
 
 #. type: textblock
 #: debhelper.pod:19
@@ -256,7 +256,7 @@ msgstr ""
 "多くの場合、これらの設定ファイルは、いろいろな種類のファイルを列挙して指定す"
 "るのに使われます。例えばインストールすべきドキュメントやサンプルファイルで"
 "あったり、移動すべきファイルだったり等となります。シェルのワイルドカード文字"
-"列 (B<?>、B<*> 及び B<[>I<..>B<]> 文字クラス）をファイルに含める事ができ、状況次"
+"列 (B<?>, B<*> 及び B<[>I<..>B<]> 文字クラス）をファイルに含める事ができ、状況次"
 "第ではこちらが望ましい事もあります。また、行頭がB <#> で始まる行は無視される事"
 "を利用して、コメントを記載できます。"
 
@@ -277,7 +277,7 @@ msgstr ""
 #. type: =head1
 #: debhelper.pod:96
 msgid "SHARED DEBHELPER OPTIONS"
-msgstr "DEBHELPER 間での共通オプション"
+msgstr "DEBHELPER 間で共有されるオプション"
 
 #. type: textblock
 #: debhelper.pod:98
@@ -395,7 +395,7 @@ msgid ""
 "call of the command to process the rest of packages with default settings."
 msgstr ""
 "すでに debhelper コマンドにより処理が行われているものについては処理しないように"
-"します(つまり、debhelper のログにコマンドの記録があるものは処理しない）例え"
+"します (つまり、debhelper のログにコマンドの記録があるものは処理しない)。例え"
 "ば、2 つのバイナリパッケージだけに対して特別なオプション付きでコマンドを呼び"
 "出し、残りのパッケージに対しては、本オプションをつけてコマンドを呼び出し、特"
 "に指定無き場合の設定による処理を行うという事ができます。"
@@ -416,8 +416,7 @@ msgstr ""
 "特定のファイルを無視します。F<debian/> 以下に実際には debhelper コマンドが実行し"
 "ては困るような debhelper 設定ファイルがあるような時に利用できます。ただ、"
 "F<debian/compat>, F<debian/control>, F<debian/changelog> は無視する事ができませ"
-"ん。これは、動作の都合上、これらのファイルを無視するわけにはいかないからで"
-"す。"
+"ん。これは動作の都合上、これらのファイルを無視するわけにはいかないからです。"
 
 #. type: textblock
 #: debhelper.pod:150
@@ -425,8 +424,8 @@ msgid ""
 "For example, if upstream ships a F<debian/init> that you don't want "
 "B<dh_installinit> to install, use B<--ignore=debian/init>"
 msgstr ""
-"実際に使う例として、アップストリームが F<debian/init> を提供しているのに"
-"B<dh_installinit> でインストールしたくないような時、B<--ignore=debian/init> を"
+"例えば、アップストリームが F<debian/init> を提供しているが"
+"B<dh_installinit> でインストールしたくはないような時、B<--ignore=debian/init> を"
 "使うことになります。"
 
 #. type: =item
