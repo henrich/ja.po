@@ -311,8 +311,8 @@ msgid ""
 "Do not really do anything. If used with -v, the result is that the command "
 "will output what it would have done."
 msgstr ""
-"実際の処理を行いません。-v オプションと併用すると、実際にコマンドが"
-"今からどんな処理を行うかを見ることができます。"
+"実際の処理を行いません。-v オプションと併用すると、コマンドがどのような処理"
+"を行うかを出力します。"
 
 #. type: =item
 #: debhelper.pod:111
@@ -364,7 +364,7 @@ msgid ""
 "now equally smart."
 msgstr ""
 "これはより賢い B<-a> フラグとして使われていました。しかしながら現在では B<-a> は"
-"同じぐらい賢くなりました。"
+"フラグは同じぐらい賢くなっています。"
 
 #. type: =item
 #: debhelper.pod:130
@@ -394,9 +394,9 @@ msgid ""
 "options only for a couple of binary packages, pass this option to the last "
 "call of the command to process the rest of packages with default settings."
 msgstr ""
-"すでにdebhelperコマンドにより処理が行われているものについては処理しないように"
-"します(つまり、debhelperのログにコマンドの記録があるものは処理しない）例え"
-"ば、２つのバイナリパッケージだけに対して特別なオプション付きでコマンドを呼び"
+"すでに debhelper コマンドにより処理が行われているものについては処理しないように"
+"します(つまり、debhelper のログにコマンドの記録があるものは処理しない）例え"
+"ば、2 つのバイナリパッケージだけに対して特別なオプション付きでコマンドを呼び"
 "出し、残りのパッケージに対しては、本オプションをつけてコマンドを呼び出し、特"
 "に指定無き場合の設定による処理を行うという事ができます。"
 
@@ -413,9 +413,9 @@ msgid ""
 "F<debian/compat>, F<debian/control>, and F<debian/changelog> can't be "
 "ignored, but then, there should never be a reason to ignore those files."
 msgstr ""
-"特定のファイルを無視します。F<debian/>以下に実際にはdebhelperコマンドが実行し"
-"ては困るようなdebhelper設定ファイルがあるような時に利用できます。ただ、"
-"F<debian/compat>,F<debian/control>,F<debian/changelog>は無視する事ができませ"
+"特定のファイルを無視します。F<debian/> 以下に実際には debhelper コマンドが実行し"
+"ては困るような debhelper 設定ファイルがあるような時に利用できます。ただ、"
+"F<debian/compat>, F<debian/control>, F<debian/changelog> は無視する事ができませ"
 "ん。これは、動作の都合上、これらのファイルを無視するわけにはいかないからで"
 "す。"
 
@@ -425,8 +425,8 @@ msgid ""
 "For example, if upstream ships a F<debian/init> that you don't want "
 "B<dh_installinit> to install, use B<--ignore=debian/init>"
 msgstr ""
-"実際に使う例として、アップストリームが F<debian/init>を提供しているのに"
-"B<dh_installinit> でインストールしたくないような時、B<--ignore=debian/init>を"
+"実際に使う例として、アップストリームが F<debian/init> を提供しているのに"
+"B<dh_installinit> でインストールしたくないような時、B<--ignore=debian/init> を"
 "使うことになります。"
 
 #. type: =item
@@ -439,8 +439,8 @@ msgstr "B<-P>I<tmpdir>, B<--tmpdir=>I<tmpdir>"
 msgid ""
 "Use I<tmpdir> for package build directory. The default is debian/I<package>"
 msgstr ""
-"I<tmpdir>をパッケージビルドディレクトリとして利用します。特に指定無き場合では"
-"debian/I<package>ディレクトリが使われます。"
+"I<tmpdir> をパッケージビルドディレクトリとして利用します。特に指定が無い場合には"
+"debian/I<package> ディレクトリが使われます。"
 
 #. type: =item
 #: debhelper.pod:157
@@ -455,10 +455,10 @@ msgid ""
 "the one for which F<debian/foo> files can be used instead of the usual "
 "F<debian/package.foo> files."
 msgstr ""
-"このあまり使われないオプションは、debhelperコマンドが\"main package\"としてみ"
-"なすパッケージ、つまり、F<debian/control>の最初に記載されたパッケージを、変更"
-"するものです。こちらにより、F<debian/package.foo>ファイルの代わりにF<debian/"
-"foo>ファイルが使われるようになります。"
+"このあまり使われないオプションは、debhelper コマンドが \"main package\" としてみ"
+"なすパッケージ、つまり、F<debian/control> の最初に記載されたパッケージを、変更"
+"するものです。こちらにより、F<debian/package.foo> ファイルの代わりに F<debian/"
+"foo> ファイルが使われるようになります。"
 
 #. type: =item
 #: debhelper.pod:164
@@ -473,7 +473,7 @@ msgid ""
 "bundle, it will take effect. If the command does not support the option (or "
 "any part of an option bundle), it will be ignored."
 msgstr ""
-"指定したオプションを、L<dh(1)>により後に実行されるすべてのコマンドへ、引き渡"
+"指定したオプションを、L<dh(1)> により後に実行されるすべてのコマンドへ、引き渡"
 "すようになります。もし実行されるコマンドにて、指定されたオプションがサポート"
 "されていたり、内蔵されていたりすれば、その効力が発揮されます。もしコマンド"
 "が、本オプションに指定されたオプションをサポートしていなかったり（あるいは、"
@@ -491,9 +491,9 @@ msgid ""
 "programs.  See the man page of each program for a complete explanation of "
 "what each option does."
 msgstr ""
-"debhelperのプログラムには、以下に示すコマンドラインオプションをサポートするも"
+"debhelper のプログラムには、以下に示すコマンドラインオプションをサポートするも"
 "のがあります。「オプションがそれぞれ何をするか」についての完全な説明は、各々"
-"のコマンドのmanページを参照ください。"
+"のコマンドの man ページを参照ください。"
 
 #. type: =item
 #: debhelper.pod:181
@@ -503,7 +503,7 @@ msgstr "B<-n>"
 #. type: textblock
 #: debhelper.pod:183
 msgid "Do not modify F<postinst>, F<postrm>, etc. scripts."
-msgstr "F<postinst>,F<postrm>等のスクリプトを変更しません"
+msgstr "F<postinst>, F<postrm> 等のスクリプトに変更を加えません。"
 
 #. type: =item
 #: debhelper.pod:185 dh_compress:52 dh_install:81 dh_installchangelogs:68
