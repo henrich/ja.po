@@ -87,7 +87,6 @@ msgstr "説明"
 
 #. type: textblock
 #: debhelper.pod:11
-#, fuzzy
 msgid ""
 "Debhelper is used to help you build a Debian package. The philosophy behind "
 "debhelper is to provide a collection of small, simple, and easily understood "
@@ -100,8 +99,9 @@ msgstr ""
 "debhelper は、Debian パッケージの構築を容易にするために使われます。debhelper の"
 "根底にある考えは「パッケージ構築時の各種の共通的な作業を自動化するために F<debian/rules> "
 "で用いられている、小さく単純で、容易に理解可能なツールをまとめて提供すること」です。"
-"つまり、あなた＝パッケージを作成する人の負担を減らします。さらに、Debian ポリシーが変わった"
-"場合にはこのツール群を多少変更することができ、このツールを利用しているパッケージが新しいポリシーに適合するために必要なのは、単に再度ビルドをするだけになります。"
+"つまり、あなた＝パッケージを作成する人の負担を減らします。さらに、Debian "
+"ポリシーが変わった場合にはこのツール群を多少変更さえすれば、debhelper を使う"
+"パッケージが新しいポリシーに適合するのに必要なのは、単に再ビルドだけになります。"
 
 #. type: textblock
 #: debhelper.pod:19
@@ -195,7 +195,7 @@ msgid ""
 "files are typically named debian/I<package>.foo (where I<package> of course, "
 "is replaced with the package that is being acted on)."
 msgstr ""
-"debhelper のコマンドは、どのように動作するかについて、F<debian/>ディレクトリ以下にある"
+"debhelper のコマンドは、どのように動作するかについて、F<debian/> ディレクトリ以下にある"
 "ファイルを用います。すべてのパッケージに存在する、共通の F<debian/changelog> や "
 "F<debian/control> に加えて、特定の debhelper コマンドの動作を制御できる追加ファイルが"
 "あります。これらのファイルは、大抵 debian/I<package>.foo というファイル名です "
@@ -228,7 +228,6 @@ msgstr ""
 
 #. type: textblock
 #: debhelper.pod:76
-#, fuzzy
 msgid ""
 "In some rare cases, you may want to have different versions of these files "
 "for different architectures or OSes. If files named debian/I<package>.foo."
@@ -237,11 +236,11 @@ msgid ""
 "\"B<dpkg-architecture -qDEB_HOST_ARCH_OS>\", then they will be used in "
 "preference to other, more general files."
 msgstr ""
-"稀な事に、これらのファイルを、異なるアーキテクチャ／異なる OS 用に"
-"それぞれ用意したい場合があります。もしファイル名がdebian/I<package>.foo."
-"I<ARCH>だったり、debian/I<package>.foo.I<OS>のものが存在すると、\"B<dpkg-"
-"architecture -qDEB_HOST_ARCH>\"/\"B<dpkg-architecture -qDEB_HOST_ARCH_OS>\"で"
-"それぞれ指定したI<ARCH> とI<OS> を含むものが、通常のファイルよりも優先的に使"
+"稀ではありますが、これらのファイルを、異なるアーキテクチャ／異なる OS 用に"
+"それぞれ用意したい場合があります。ファイル名が debian/I<package>.foo."
+"I<ARCH> や、debian/I<package>.foo.I<OS> のものが存在すると、\"B<dpkg-"
+"architecture -qDEB_HOST_ARCH>\" / \"B<dpkg-architecture -qDEB_HOST_ARCH_OS>\" で"
+"それぞれ指定した I<ARCH> と I<OS> を含むものが、通常のファイルよりも優先的に使"
 "われます。"
 
 #. type: textblock
@@ -255,10 +254,10 @@ msgid ""
 "are ignored."
 msgstr ""
 "多くの場合、これらの設定ファイルは、いろいろな種類のファイルを列挙して指定す"
-"るのに使われます。例えばインストールすべきドキュメントやexampleのファイルで"
+"るのに使われます。例えばインストールすべきドキュメントやサンプルファイルで"
 "あったり、移動すべきファイルだったり等となります。シェルのワイルドカード文字"
-"列(B<?>、B<*>及びB<[>I<..>B<]>文字クラス）をファイルに含める事ができ、状況次"
-"第ではこちらが望ましい事もあります。また、行頭がB<#>で始まる行は無視される事"
+"列 (B<?>、B<*> 及び B<[>I<..>B<]> 文字クラス）をファイルに含める事ができ、状況次"
+"第ではこちらが望ましい事もあります。また、行頭がB <#> で始まる行は無視される事"
 "を利用して、コメントを記載できます。"
 
 #. type: textblock
@@ -270,16 +269,15 @@ msgid ""
 "content is appropriate for a given situation. When you do so, the output is "
 "not further processed to expand wildcards or strip comments."
 msgstr ""
-"これらファイルの文法は意図的にシンプルにしており、読みやすく、理解しやすく、"
-"修正しやすいようにしてあります。もし、より強力でより複雑な事をしたければ、こ"
-"れらファイルに実行許可を付与し、状況にあった出力結果をするプログラムを記入し"
-"てください。ただ、この場合の出力結果は、後の処理でワイルドカードは展開され"
-"ず、コメントも取り除かれない事に気をつけてください。"
+"これらファイルの文法は、読解・修正しやすいよう、意図的にシンプルにしてあります。"
+"もし、さらに強力で複雑な事をしたければ、これらのファイルに実行権限を付与し、"
+"状況にあった出力をするプログラムを作成してください。ただし、この場合の出力結果では、"
+"後の処理でワイルドカードは展開されず、コメントも取り除かれない事に気をつけてください。"
 
 #. type: =head1
 #: debhelper.pod:96
 msgid "SHARED DEBHELPER OPTIONS"
-msgstr "DEBHELPER 間で共有されるオプション"
+msgstr "DEBHELPER 間での共通オプション"
 
 #. type: textblock
 #: debhelper.pod:98
@@ -299,7 +297,7 @@ msgstr "B<-v>, B<--verbose>"
 msgid ""
 "Verbose mode: show all commands that modify the package build directory."
 msgstr ""
-"饒舌モード。パッケージビルドディレクトリを変更するようなコマンドを全部表示し"
+"冗長出力モード。パッケージビルドディレクトリを変更するようなコマンドを全部表示し"
 "ます。"
 
 #. type: =item
@@ -313,7 +311,7 @@ msgid ""
 "Do not really do anything. If used with -v, the result is that the command "
 "will output what it would have done."
 msgstr ""
-"実際の処理をしない状態になります。-vオプションと併用すると、実際にコマンドが"
+"実際の処理を行いません。-v オプションと併用すると、実際にコマンドが"
 "今からどんな処理を行うかを見ることができます。"
 
 #. type: =item
@@ -338,7 +336,7 @@ msgstr "B<-i>, B<--indep>"
 #. type: textblock
 #: debhelper.pod:118
 msgid "Act on all architecture independent packages."
-msgstr "全アーキテクチャ非依存パッケージに関して動作します。"
+msgstr "全ての非アーキテクチャ依存パッケージに関して動作します。"
 
 #. type: =item
 #: debhelper.pod:120
@@ -351,8 +349,8 @@ msgid ""
 "Act on the package named I<package>. This option may be specified multiple "
 "times to make debhelper operate on a given set of packages."
 msgstr ""
-"I<package>で指定されたパッケージに対して処理を行います。複数のパッケージを"
-"debhelperに処理させるときには、繰り返し列挙して指定してください。"
+"I<package> で指定されたパッケージに対して処理を行います。複数のパッケージを "
+"debhelper に処理させる際には、繰り返し列挙して指定してください。"
 
 #. type: =item
 #: debhelper.pod:125
@@ -365,7 +363,7 @@ msgid ""
 "This used to be a smarter version of the B<-a> flag, but the B<-a> flag is "
 "now equally smart."
 msgstr ""
-"これはより賢いB<-a>フラグとして使われていました。しかしながら現在ではB<-a>は"
+"これはより賢い B<-a> フラグとして使われていました。しかしながら現在では B<-a> は"
 "同じぐらい賢くなりました。"
 
 #. type: =item
