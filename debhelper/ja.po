@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: 2012-11-03 11:07-0400\n"
 "PO-Revision-Date: 2012-08-22 02:24+0900\n"
 "Last-Translator: Takahide Nojima <nozzy123nozzy@gmail.com>\n"
-"Language-Team: Debian JP Project Documentation Team <debian-doc@debian.or."
-"jp>\n"
+"Language-Team: Debian JP Project <debian-doc@debian.or.jp>\n"
 "Language: Japanease\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -118,6 +117,7 @@ msgstr ""
 "化しています。debhelper を使った rules ファイルの例は F</usr/share/doc/"
 "debhelper/examples/> にあります。"
 
+# maint-guide -> maint-guide-ja
 #. type: textblock
 #: debhelper.pod:23
 msgid ""
@@ -132,7 +132,7 @@ msgstr ""
 "のどれかをコピーして手で修正するだけです。あるいは B<dh-make> パッケージを利"
 "用してみてください。このパッケージには部分的に作業を自動化してくれる "
 "L<dh_make|dh_make(1)> コマンドが含まれています。もう少し親切な指示について"
-"は、B<maint-guide>パッケージに debhelper を使って初めてパッケージを作る人向け"
+"は、B<maint-guide-ja> パッケージに debhelper を使って初めてパッケージを作る人向け"
 "のチュートリアルが含まれています。"
 
 #. type: =head1
@@ -192,6 +192,7 @@ msgstr "DEBHELPER 設定ファイル"
 
 #. type: textblock
 #: debhelper.pod:58
+#, fuzzy
 msgid ""
 "Many debhelper commands make use of files in F<debian/> to control what they "
 "do. Besides the common F<debian/changelog> and F<debian/control>, which are "
@@ -201,10 +202,10 @@ msgid ""
 "is replaced with the package that is being acted on)."
 msgstr ""
 "debhelper のコマンドは、どのように動作するかについて、F<debian/> ディレクトリ"
-"以下にあるファイルを用います。すべてのパッケージに存在する、共通の F<debian/"
+"以下にあるファイルを用います。すべてのパッケージに存在する通常の F<debian/"
 "changelog> や F<debian/control> に加えて、特定の debhelper コマンドの動作を制"
 "御できる追加ファイルがあります。これらのファイルは、大抵 debian/I<package>."
-"foo というファイル名です (もちろん、I<package>は、処理しようとしているパッ"
+"foo というファイル名です (もちろん、I<package> は、処理しようとしているパッ"
 "ケージ名に変えてください)。"
 
 #. type: textblock
@@ -306,7 +307,7 @@ msgstr "B<-v>, B<--verbose>"
 msgid ""
 "Verbose mode: show all commands that modify the package build directory."
 msgstr ""
-"冗長出力モード。パッケージビルドディレクトリを変更するようなコマンドを全部表"
+"冗長出力モード。パッケージビルドディレクトリを変更するようなコマンドを全て表"
 "示します。"
 
 #. type: =item
@@ -321,7 +322,7 @@ msgid ""
 "will output what it would have done."
 msgstr ""
 "実際の処理を行いません。-v オプションと併用すると、コマンドがどのような処理を"
-"行うかを出力します。"
+"行うかが出力されます。"
 
 #. type: =item
 #: debhelper.pod:111
@@ -345,7 +346,7 @@ msgstr "B<-i>, B<--indep>"
 #. type: textblock
 #: debhelper.pod:118
 msgid "Act on all architecture independent packages."
-msgstr "全ての非アーキテクチャ依存パッケージに関して動作します。"
+msgstr "全ての非アーキテクチャ依存パッケージに対して処理を行います。"
 
 #. type: =item
 #: debhelper.pod:120
@@ -386,8 +387,8 @@ msgid ""
 "Do not act on the specified package even if an B<-a>, B<-i>, or B<-p> option "
 "lists the package as one that should be acted on."
 msgstr ""
-"B<-a>, B<-i>, B<-p> が指定されていても、指定されているパッケージには処理を行"
-"わないようにします。"
+"B<-a>, B<-i>, B<-p> オプションが、処理すべきパッケージとして対象としていても、"
+"指定されているパッケージには処理を行わないようにします。"
 
 #. type: =item
 #: debhelper.pod:135
@@ -403,11 +404,11 @@ msgid ""
 "options only for a couple of binary packages, pass this option to the last "
 "call of the command to process the rest of packages with default settings."
 msgstr ""
-"すでに debhelper コマンドにより処理が行われているものについては処理しないよう"
+"この debhelper コマンドにより、すでに処理が行われているものについて、処理をしないよう"
 "にします (つまり、debhelper のログにコマンドの記録があるものは処理しない)。例"
-"えば、2 つのバイナリパッケージだけに対して特別なオプション付きでコマンドを呼"
-"び出し、残りのパッケージに対しては、本オプションをつけてコマンドを呼び出し、"
-"特に指定無き場合の設定による処理を行うという事ができます。"
+"えば、いくつかのバイナリパッケージだけに対して特別なオプション付きでコマンドを呼"
+"び出し、残りのパッケージに対しては、本オプションをつけてコマンドを呼び出して、"
+"デフォルト設定による処理を行うという事ができます。"
 
 #. type: =item
 #: debhelper.pod:143
@@ -434,8 +435,8 @@ msgid ""
 "For example, if upstream ships a F<debian/init> that you don't want "
 "B<dh_installinit> to install, use B<--ignore=debian/init>"
 msgstr ""
-"例えば、アップストリームが F<debian/init> を提供しているがB<dh_installinit> "
-"でインストールしたくはないような時、B<--ignore=debian/init> を使うことになり"
+"例えば、アップストリームが F<debian/init> を提供しているが B<dh_installinit> "
+"でインストールして欲しくは無い時、B<--ignore=debian/init> を使うことになり"
 "ます。"
 
 #. type: =item
@@ -449,7 +450,7 @@ msgid ""
 "Use I<tmpdir> for package build directory. The default is debian/I<package>"
 msgstr ""
 "I<tmpdir> をパッケージビルドディレクトリとして利用します。特に指定が無い場合"
-"にはdebian/I<package> ディレクトリが使われます。"
+"には debian/I<package> ディレクトリが使われます。"
 
 #. type: =item
 #: debhelper.pod:157
@@ -464,9 +465,9 @@ msgid ""
 "the one for which F<debian/foo> files can be used instead of the usual "
 "F<debian/package.foo> files."
 msgstr ""
-"このあまり使われないオプションは、debhelper コマンドが \"main package\" とし"
-"てみなすパッケージ、つまり、F<debian/control> の最初に記載されたパッケージ"
-"を、変更するものです。こちらにより、F<debian/package.foo> ファイルの代わりに "
+"このあまり使われないオプションは、debhelper コマンドが \"main package\" と"
+"みなすパッケージ、つまり、F<debian/control> の最初に記載されたパッケージ"
+"を変更するものです。これにより、通常の F<debian/package.foo> ファイルではなく "
 "F<debian/foo> ファイルが使われるようになります。"
 
 #. type: =item
@@ -476,13 +477,14 @@ msgstr "B<-O=>I<option>|I<bundle>"
 
 #. type: textblock
 #: debhelper.pod:166
+#, fuzzy
 msgid ""
 "This is used by L<dh(1)> when passing user-specified options to all the "
 "commands it runs. If the command supports the specified option or option "
 "bundle, it will take effect. If the command does not support the option (or "
 "any part of an option bundle), it will be ignored."
 msgstr ""
-"指定したオプションを、L<dh(1)> により後に実行されるすべてのコマンドへ引き渡す"
+"指定したオプションを、L<dh(1)> により後に実行されるすべてのコマンドへ渡す"
 "ようになります。もし実行されるコマンドにて、指定されたオプションがサポートさ"
 "れていたり、内蔵されていたりすれば、その効力が発揮されます。もしコマンドが、"
 "本オプションに指定されたオプションをサポートしていなかったり（あるいは、どれ"
@@ -500,9 +502,9 @@ msgid ""
 "programs.  See the man page of each program for a complete explanation of "
 "what each option does."
 msgstr ""
-"debhelper のプログラムには、以下に示すコマンドラインオプションをサポートする"
-"ものがあります。「オプションがそれぞれ何をするか」についての完全な説明は、"
-"各々のコマンドの man ページを参照ください。"
+"以下のコマンドラインオプションが、debhelper プログラムのうち複数で"
+"サポートされています。「オプションが何を意味するか」という完全な説明は、"
+"各コマンドの man ページを参照してください。"
 
 #. type: =item
 #: debhelper.pod:181
@@ -548,7 +550,7 @@ msgid ""
 "Makes files or other items that are specified on the command line take "
 "effect in ALL packages acted on, not just the first."
 msgstr ""
-"コマンドラインで指定したファイルや他のitemを、最初に処理するパッケージだけで"
+"コマンドラインで指定したファイルや他の item を、最初に処理するパッケージだけで"
 "なく、処理予定の全ッケージに対しても指定されるようにします。"
 
 #. type: =head1
@@ -566,12 +568,12 @@ msgid ""
 "behavior.  Typically these are passed to L<dh(1)>, which then passes them to "
 "all the B<dh_auto_>I<*> programs."
 msgstr ""
-"全B<dh_auto_>I<*>のdebhelperプログラムがサポートするコマンドラインオプション"
-"を以下に記載します。B<dh_auto_>I<*>は様々なビルドシステムをサポートし、通常は"
+"全 B<dh_auto_>I<*> の debhelper プログラムがサポートするコマンドラインオプション"
+"を以下に記載します。B<dh_auto_>I<*> は様々なビルドシステムをサポートし、通常は"
 "試行錯誤によりどのビルドシステムが使われるかを決定し、またどのように使われる"
 "べきかも決定します。以下のコマンドラインオプションを指定することにより、"
-"B<dh_auto_>I<*>の動作を変更する事ができます。通常は、L<dh(1)>に指定する事によ"
-"り、F<dh(1)>により実行されるすべてのB<dh_auto_>I<*>プログラムへこれらオプショ"
+"B<dh_auto_>I<*> の動作を変更する事ができます。通常は、L<dh(1)> に指定する事によ"
+"り、F<dh(1)> により実行されるすべての B<dh_auto_>I<*> プログラムへこれらオプショ"
 "ンをまとめて渡します。"
 
 #. type: =item
@@ -585,8 +587,8 @@ msgid ""
 "Force use of the specified I<buildsystem>, instead of trying to auto-select "
 "one which might be applicable for the package."
 msgstr ""
-"指定したビルドシステム(I<buildsystem>)を必ず使うように指示します。こちらによ"
-"り、パッケージにあわせて機械的に選択されるI<ビルドシステム>は使われなくなりま"
+"指定したビルドシステム (I<buildsystem>) を必ず使うように指示します。こちらによ"
+"り、パッケージにあわせて機械的に選択される I<ビルドシステム> は使われなくなりま"
 "す。"
 
 #. type: =item
@@ -601,8 +603,8 @@ msgid ""
 "I<directory> rather than the top level directory of the Debian source "
 "package tree."
 msgstr ""
-"オリジナルのソースツリーを、Debianソースパッケージツリーではなく、"
-"I<directory>に指定します。"
+"オリジナルのソースツリーを、Debian ソースパッケージツリーではなく、"
+"I<directory> に指定します。"
 
 #. type: =item
 #: debhelper.pod:220
@@ -617,8 +619,8 @@ msgid ""
 "directory will chosen."
 msgstr ""
 "ビルドディレクトリをソースディレクトリ以外の場所で行えるようにし、"
-"I<directory>をビルドディレクトリとして利用するように指定します。もし"
-"I<directory>パラメタが省略された場合は、特に指定無き場合のビルドディレクトリ"
+"I<directory> をビルドディレクトリとして利用するように指定します。もし"
+"I<directory> パラメタが省略された場合は、特に指定無き場合のビルドディレクトリ"
 "が利用されます。"
 
 #. type: textblock
@@ -632,7 +634,7 @@ msgstr ""
 "このオプションが指定されない場合、ビルドシステムがソースツリー以外での構築を"
 "必要としていたり、あるいは、そちらが望ましいと判断されたりしない限りにおい"
 "て、ソースディレクトリ内部で構築が行われます。そのような場合は、B<--"
-"builddirectory>が指定されていないときと同じように、特に指定無き場合のビルド"
+"builddirectory> が指定されていないときと同じように、特に指定無き場合のビルド"
 "ディレクトリが利用されます"
 
 #. type: textblock
@@ -661,8 +663,8 @@ msgid ""
 "subject to a build system specific limit."
 msgstr ""
 "もしシステムがサポート可能であれば、並列ビルドを行うように指示するものです。"
-"どれだけの数を並列でビルドするかについては、構築時にB<DEB_BUILD_OPTIONS>環境"
-"変数で指定します（L<Debian ポリシーマニュアル、4.9.1章>。）なお、並列ビルドに"
+"どれだけの数を並列でビルドするかについては、構築時に B<DEB_BUILD_OPTIONS> 環境"
+"変数で指定します（L<Debian ポリシーマニュアル、4.9.1章>)。なお、並列ビルドに"
 "ついてはシステム上の制約の影響を受けます。"
 
 #. type: textblock
@@ -671,7 +673,7 @@ msgid ""
 "If this option is not specified, debhelper currently defaults to not "
 "allowing parallel package builds."
 msgstr ""
-"もしこのオプションが指定されていないと、debhelperは並列ビルドを行いません。"
+"もしこのオプションが指定されていないと、debhelper は並列ビルドを行いません。"
 
 #. type: =item
 #: debhelper.pod:245
@@ -686,7 +688,7 @@ msgid ""
 "only work with certain levels of concurrency, you can set this to the "
 "maximum level that is known to work, or that you wish to support."
 msgstr ""
-"このオプションはB<--parallel>とともに利用し、並列ビルドにおける並列数の上限を"
+"このオプションは B<--parallel> とともに利用し、並列ビルドにおける並列数の上限を"
 "引き上げます。もしパッケージがとある並列数の元でしか並列ビルドできないことが"
 "わかっている場合は、このオプションを使って最大限の並列数を指定したり、あるい"
 "は必要な並列数を指定することができます。"
@@ -704,7 +706,7 @@ msgid ""
 "shows which build system would be automatically selected, or which one is "
 "manually specified with the B<--buildsystem> option."
 msgstr ""
-"このシステムでdebhelperによりサポートされているビルドシステムの全リストが表示"
+"このシステムで debhelper によりサポートされているビルドシステムの全リストが表示"
 "されます。このリストは特に指定なき場合のビルドシステム、あるいはサードパー"
 "ティーのビルドシステム（そのようにマークされていればですが）の両方を含んでい"
 "ます。また、どちらのビルドシステムが機械的に利用されるか、あるいは、B<--"
@@ -927,8 +929,7 @@ msgstr ""
 #: debhelper.pod:354
 msgid "B<dh_link> will correct existing links to conform with policy."
 msgstr ""
-"B<dh_link>は、すでに存在するリンクであってもdebianポリシーマニュアルに従うよ"
-"うに、リンクを修正するようになりました。"
+"B<dh_link>は、すでに存在するリンクであってもポリシーに合わせ、リンクを修正するようになりました。"
 
 #. type: =item
 #: debhelper.pod:360
@@ -943,7 +944,7 @@ msgstr "v4からの変更点："
 #. type: textblock
 #: debhelper.pod:368
 msgid "Comments are ignored in debhelper config files."
-msgstr "debhelper設定ファイルにてコメントは無視されるようになりました。"
+msgstr "debhelper 設定ファイルにてコメントは無視されるようになりました。"
 
 #. type: textblock
 #: debhelper.pod:372
@@ -951,7 +952,7 @@ msgid ""
 "B<dh_strip --dbg-package> now specifies the name of a package to put "
 "debugging symbols in, not the packages to take the symbols from."
 msgstr ""
-"B<dh_strip --dbg-package>により、デバッグ用シンボルテーブルへパッケージの名前"
+"B<dh_strip --dbg-package> により、デバッグ用シンボルテーブルへパッケージの名前"
 "を指定できるようになりました。以前はデバッグ用シンボルテーブルからパッケージ"
 "の名前を取り出していました。"
 
@@ -964,7 +965,7 @@ msgstr "B<dh_installdocs> は、空のファイルをインストールしなく
 #: debhelper.pod:381
 msgid "B<dh_install> errors out if wildcards expand to nothing."
 msgstr ""
-"ワイルドカードに該当するファイルが無い時は、B<dh_install>はエラーを出力するよ"
+"ワイルドカードに該当するファイルが無い時は、B<dh_install> はエラーを出力するよ"
 "うになりました。"
 
 #. type: =item
@@ -983,7 +984,7 @@ msgid ""
 "Commands that generate maintainer script fragments will order the fragments "
 "in reverse order for the F<prerm> and F<postrm> scripts."
 msgstr ""
-"メンテナンス用スクリプトの断片を生成するコマンドは、F<prerm>とF<postrm>スクリ"
+"メンテナンス用スクリプトの断片を生成するコマンドは、F<prerm> と F<postrm> スクリ"
 "プト用に断片を逆順に並び替えるようになりました。"
 
 #. type: textblock
@@ -993,9 +994,9 @@ msgid ""
 "gz>, if it sees the man page in F<usr/share/man/man1> in the package build "
 "directory."
 msgstr ""
-"B<dh_installwm>はF<x-window-manager.1.gz>という副次的なmanページへ、リンクを"
-"作るようになりました。これはパッケージビルドディレクトリ内のF<usr/share/man/"
-"man1>ディレクトリにmanページがある場合に行われます。"
+"B<dh_installwm> は F<x-window-manager.1.gz> という副次的な man ページへ、リンクを"
+"作るようになりました。これはパッケージビルドディレクトリ内の F<usr/share/man/"
+"man1> ディレクトリに man ページがある場合に行われます。"
 
 #. type: textblock
 #: debhelper.pod:404
@@ -1004,8 +1005,8 @@ msgid ""
 "B<DH_ALWAYS_EXCLUDE>, if it was set to a list of things to exclude, such as "
 "B<CVS:.svn:.git>. Now it does."
 msgstr ""
-"B<dh_builddeb>は、B<CVS:.svn:.git>のように、除外する対象を列挙して"
-"B<DH_ALWAYS_EXCLUDE>に指定しても、該当する対象を前もって削除しませんでした。"
+"B<dh_builddeb> は、B<CVS:.svn:.git> のように、除外する対象を列挙して "
+"B<DH_ALWAYS_EXCLUDE> に指定しても、該当する対象を前もって削除しませんでした。"
 "しかしながら、本互換性レベルの元では、この場合でもきちんと削除するようになり"
 "ました。"
 
@@ -1015,7 +1016,7 @@ msgid ""
 "B<dh_installman> allows overwriting existing man pages in the package build "
 "directory. In previous compatibility levels it silently refuses to do this."
 msgstr ""
-"B<dh_installman>は、パッケージビルドディレクトリにすでに存在するmanページを上"
+"B<dh_installman> は、パッケージビルドディレクトリにすでに存在する man ページを上"
 "書きしても良くなりました。これより以前の互換性レベルの元では、このような動作"
 "は何の警告もなく拒絶されていました。"
 
@@ -1038,24 +1039,24 @@ msgid ""
 "B<dh_auto_install>, which installs to F<debian/tmp>, without needing any "
 "special parameters."
 msgstr ""
-"もし、F<debian/tmp>以下にあるようなファイルが、カレントディレクトリにない場合"
-"（もしくは、B<--sourcedir>で指定したディレクトリにない場合）、B<dh_install>は"
-"F<debian/tmp>を探しにいくようになりました。この振る舞いの変更により、"
-"B<dh_install>に特に何か引数を指定しなくても、F<debian/tmp>にインストールしよ"
-"うとするB<dh_auto_install>と協調して動作することができるようになりました。"
+"もし、F<debian/tmp> 以下にあるようなファイルが、カレントディレクトリにない場合"
+"（もしくは、B<--sourcedir> で指定したディレクトリにない場合）、B<dh_install> は "
+"F<debian/tmp> を探しにいくようになりました。この振る舞いの変更により、"
+"B<dh_install> に特に何か引数を指定しなくても、F<debian/tmp> にインストールしよ"
+"うとする B<dh_auto_install> と協調して動作することができるようになりました。"
 
 #. type: textblock
 #: debhelper.pod:430
 msgid "B<dh_clean> will read F<debian/clean> and delete files listed there."
 msgstr ""
-"B<dh_clean>はF<debian/clean>を解釈し、そこにリストされているファイルを消すよ"
+"B<dh_clean> は F<debian/clean> を解釈し、そこにリストされているファイルを消すよ"
 "うになりました。"
 
 #. type: textblock
 #: debhelper.pod:434
 msgid "B<dh_clean> will delete toplevel F<*-stamp> files."
 msgstr ""
-"B<dh_clean>はビルドディレクトリの最上位の階層にあるF<*-stamp>ファイルを消すよ"
+"B<dh_clean> はビルドディレクトリの最上位の階層にある F<*-stamp> ファイルを消すよ"
 "うになりました。"
 
 #. type: textblock
@@ -1064,8 +1065,8 @@ msgid ""
 "B<dh_installchangelogs> will guess at what file is the upstream changelog if "
 "none is specified."
 msgstr ""
-"B<dh_installchangelogs>は何も指定しなくても、どのファイルがアップストリームの"
-"changelogであるかを推定するようになりました。"
+"B<dh_installchangelogs> は何も指定しなくても、どのファイルがアップストリームの "
+"changelog であるかを推定するようになりました。"
 
 #. type: =item
 #: debhelper.pod:443
@@ -1075,7 +1076,7 @@ msgstr "v8"
 #. type: textblock
 #: debhelper.pod:445
 msgid "Changes from v7 are:"
-msgstr "v7からの変更点："
+msgstr "v7 からの変更点："
 
 #. type: textblock
 #: debhelper.pod:451
@@ -1094,10 +1095,10 @@ msgid ""
 "processed before will be passed to it, a behavior change that can cause some "
 "packages to fail to build."
 msgstr ""
-"B<dh_makeshlibs>は、shlibsファイルを作成する為に、B<dpkg-gensymbols>をすべて"
-"の共有ライブラリに対して実行するようになりました。B<-X>を指定すると実行を除外"
-"するライブラリを指定できます。また、通常ではない場所にライブラリがある為"
-"B<dh_makeshlibs>へ引き渡す前にB<dpkg-gensymbols>が処理できないような場合、"
+"B<dh_makeshlibs> は、shlibs ファイルを作成する為に、B<dpkg-gensymbols> をすべて"
+"の共有ライブラリに対して実行するようになりました。B<-X> を指定すると実行を除外"
+"するライブラリを指定できます。また、通常ではない場所にライブラリがある為 "
+"B<dh_makeshlibs> へ引き渡す前に B<dpkg-gensymbols> が処理できないような場合、"
 "パッケージの構築が失敗に終わるようになりました。"
 
 #. type: textblock
@@ -1107,9 +1108,9 @@ msgid ""
 "any switches come after it. Ie, use \"B<dh $@ --foo>\", not \"B<dh --foo $@>"
 "\"."
 msgstr ""
-"B<dh>は最初のパラメタとして、一連の処理の名前を指定し、その次にオプションを記"
-"載しなければならなくなりました。つまり、\"B<dh $@ --foo>\"が正しく、\"B<dh --"
-"foo $@>\"は間違いとなります。"
+"B<dh> は最初のパラメタとして、一連の処理の名前を指定し、その次にオプションを記"
+"載しなければならなくなりました。つまり、\"B<dh $@ --foo>\" が正しく、\"B<dh --"
+"foo $@>\" は間違いとなります。"
 
 #. type: textblock
 #: debhelper.pod:468
@@ -1117,7 +1118,7 @@ msgid ""
 "B<dh_auto_>I<*> prefer to use Perl's B<Module::Build> in preference to "
 "F<Makefile.PL>."
 msgstr ""
-"B<dh_auto_>I<*>はF<Makefile.PL>ファイルよりも、PerlのB<Module::Build>モジュー"
+"B<dh_auto_>I<*> は F<Makefile.PL> ファイルよりも、Perl の B<Module::Build> モジュー"
 "ルを優先して利用するようになりました。"
 
 #. type: =item
@@ -1141,8 +1142,8 @@ msgid ""
 "Multiarch support. In particular, B<dh_auto_configure> passes multiarch "
 "directories to autoconf in --libdir and --libexecdir."
 msgstr ""
-"multiarchをサポートします。特にB<dh_auto_configure>はautoconfコマンドへ--"
-"libdirや--libexecdirにmultiarch用途のディレクトリを引き渡すようになります。"
+"multiarch をサポートします。特に B<dh_auto_configure> は autoconfコマンドへ --"
+"libdir や --libexecdir に multiarch 用途のディレクトリを引き渡すようになります。"
 
 #. type: textblock
 #: debhelper.pod:487
@@ -1152,10 +1153,10 @@ msgid ""
 "targets that exist in the rules file. There's no need to define an explicit "
 "binary target with explicit dependencies on the other targets."
 msgstr ""
-"dhコマンドはdebian/rulesに記載されているターゲット間に普通に存在する依存性に"
-"気を使います。そのため、\"dh binary\"はrulesファイルに存在するbuild,build-"
-"arch,build-indep,install等のターゲットを実行していきます。つまり、他のター"
-"ゲットに関する依存関係をいちいち細かく明示したbinaryターゲットを用意する必要"
+"dh コマンドは debian/rules に記載されているターゲット間に普通に存在する依存性に"
+"気を使います。そのため、\"dh binary\" は rules ファイルに存在する build, build-"
+"arch, build-indep, install 等のターゲットを実行していきます。つまり、他のター"
+"ゲットに関する依存関係をいちいち細かく明示した binary ターゲットを用意する必要"
 "はありません。"
 
 #. type: textblock
@@ -1164,7 +1165,7 @@ msgid ""
 "B<dh_strip> compresses debugging symbol files to reduce the installed size "
 "of -dbg packages."
 msgstr ""
-"B<dh_strip>はデバッグシンボルファイルを圧縮し、-dbgパッケージのインストール時"
+"B<dh_strip> はデバッグシンボルファイルを圧縮し、-dbg パッケージのインストール時"
 "に必要とする容量を削減します。"
 
 #. type: textblock
@@ -1173,14 +1174,14 @@ msgid ""
 "B<dh_auto_configure> does not include the source package name in --"
 "libexecdir when using autoconf."
 msgstr ""
-"B<dh_auto_configure>は、autoconfを使ったときに、--libexecdirにソースパッケー"
+"B<dh_auto_configure> は、autoconf を使ったときに、--libexecdir にソースパッケー"
 "ジ名を追加しなくなりました。"
 
 #. type: textblock
 #: debhelper.pod:504
 msgid "B<dh> does not default to enabling --with=python-support"
 msgstr ""
-"B<dh>は--with=python-supportオプションを、特に指定無き場合は、無効にするよう"
+"B<dh> は --with=python-support オプションを、特に指定無き場合は、無効にするよう"
 "になりました。"
 
 #. type: textblock
@@ -1189,7 +1190,7 @@ msgid ""
 "All of the B<dh_auto_>I<*> debhelper programs and B<dh> set environment "
 "variables listed by B<dpkg-buildflags>, unless they are already set."
 msgstr ""
-"B<dh_auto_>I<*>全部とB<dh>コマンドはB<dpkg-buildflags>にて指定される環境変数"
+"B<dh_auto_>I<*> 全部 と B<dh> コマンドは B<dpkg-buildflags> にて指定される環境変数"
 "を設定します。なお、この場合、すでに該当する環境変数が設定されている場合は設"
 "定されません。"
 
@@ -1199,8 +1200,8 @@ msgid ""
 "B<dh_auto_configure> passes B<dpkg-buildflags> CFLAGS, CPPFLAGS, and LDFLAGS "
 "to perl F<Makefile.PL> and F<Build.PL>"
 msgstr ""
-"B<dh_auto_configure>は、B<dpkg-buildflags>によって設定されるCFLAGS、"
-"CPPFLAGS、LDFLAGSパラメタをF<Makefile.PL>や、F<Build.PL>へ引き渡します。"
+"B<dh_auto_configure> は、B<dpkg-buildflags> によって設定されるCFLAGS、"
+"CPPFLAGS、LDFLAGS パラメタを F<Makefile.PL> や F<Build.PL> へ引き渡します。"
 
 #. type: textblock
 #: debhelper.pod:519
@@ -1208,7 +1209,7 @@ msgid ""
 "B<dh_strip> puts separated debug symbols in a location based on their build-"
 "id."
 msgstr ""
-"B<dh_strip>はビルドidに基づく場所に、デバッグシンボルを分離して設置します。"
+"B<dh_strip> は build-id に基づく場所に、デバッグシンボルを分離して設置します。"
 
 #. type: textblock
 #: debhelper.pod:524
@@ -1216,7 +1217,7 @@ msgid ""
 "Executable debhelper config files are run and their output used as the "
 "configuration."
 msgstr ""
-"なお実行可能権限を付与したdebhelper用の設定ファイルは実行されるようになりま"
+"なお実行可能権限を付与した debhelper 用の設定ファイルは実行されるようになりま"
 "す。そして、その出力結果を設定内容として扱うようになります。"
 
 #. type: =item
@@ -1247,7 +1248,7 @@ msgstr "検討中..."
 #: dh_installman:82 dh_installmodules:60 dh_installudev:55 dh_installwm:54
 #: dh_installxfonts:37 dh_movefiles:64 dh_strip:68 dh_usrlocal:49
 msgid "NOTES"
-msgstr "特記事項"
+msgstr "付記"
 
 #. type: =head2
 #: debhelper.pod:547
