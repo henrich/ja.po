@@ -534,8 +534,8 @@ msgid ""
 "exclude more than one thing. The \\fIitem\\fR is typically part of a "
 "filename, and any file containing the specified text will be excluded."
 msgstr ""
-"処理の対象からitemを除外します。このオプションを複数個指定することにより、複"
-"数のitemを除外することができます。"
+"item を処理対象から除外します。このオプションを複数指定して、複"
+"数の item を除外することができます。\\fIitem\\fR はファイル名の一部で、"
 
 #. type: =item
 #: debhelper.pod:191 dh_bugfiles:54 dh_compress:59 dh_installdirs:35
@@ -550,8 +550,8 @@ msgid ""
 "Makes files or other items that are specified on the command line take "
 "effect in ALL packages acted on, not just the first."
 msgstr ""
-"コマンドラインで指定したファイルや他の item を、最初に処理するパッケージだけで"
-"なく、処理予定の全ッケージに対しても指定されるようにします。"
+"コマンドラインで指定したファイルや他の item について、最初のパッケージだけでなく全パッケージに"
+"対して処理を行うようにします。"
 
 #. type: =head1
 #: debhelper.pod:198
@@ -587,9 +587,8 @@ msgid ""
 "Force use of the specified I<buildsystem>, instead of trying to auto-select "
 "one which might be applicable for the package."
 msgstr ""
-"指定したビルドシステム (I<buildsystem>) を必ず使うように指示します。こちらによ"
-"り、パッケージにあわせて機械的に選択される I<ビルドシステム> は使われなくなりま"
-"す。"
+"パッケージに合わせて自動的に選択されたビルドシステムではなく、(I<buildsystem>) で"
+"指定したビルドシステムを強制的に使用します。"
 
 #. type: =item
 #: debhelper.pod:214
