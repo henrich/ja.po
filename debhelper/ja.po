@@ -1200,7 +1200,7 @@ msgid ""
 "to perl F<Makefile.PL> and F<Build.PL>"
 msgstr ""
 "B<dh_auto_configure> は、B<dpkg-buildflags> によって設定されるCFLAGS、"
-"CPPFLAGS、LDFLAGS パラメタを F<Makefile.PL> や F<Build.PL> へ引き渡します。"
+"CPPFLAGS, LDFLAGS パラメタを F<Makefile.PL> や F<Build.PL> へ引き渡します。"
 
 #. type: textblock
 #: debhelper.pod:519
@@ -1265,13 +1265,13 @@ msgid ""
 "binary-arch F<debian/rules> target, and the architecture independent "
 "packages in the binary-indep F<debian/rules> target."
 msgstr ""
-"ソースパッケージが１つ以上のバイナリパッケージを生成する場合、debhelperは特に"
+"ソースパッケージが１つ以上のバイナリパッケージを生成する場合、debhelper は特に"
 "指定の無い場合、実行時にすべてのバイナリパッケージを生成します。この場合ソー"
 "スパッケージが、アーキテクチャ依存パッケージとアーキテクチャ非依存パッケージ"
 "を同時に生成するとしたら、この振る舞いは間違いとなります。というのも、"
-"F<debian/rules>には、アーキテクチャ依存パッケージを生成するならbinary-arch"
+"F<debian/rules> には、アーキテクチャ依存パッケージを生成するなら binary-arch "
 "ターゲットを使って生成する必要があり、アーキテクチャ非依存のパッケージなら、"
-"binary-indepターゲットで生成する必要がある為です。"
+"binary-indep ターゲットで生成する必要がある為です。"
 
 #. type: textblock
 #: debhelper.pod:557
@@ -1291,7 +1291,7 @@ msgstr ""
 #. type: =head2
 #: debhelper.pod:563
 msgid "Automatic generation of Debian install scripts"
-msgstr "Debianインストール用スクリプトの機械的な生成"
+msgstr "Debian インストール用スクリプトの自動生成"
 
 #. type: textblock
 #: debhelper.pod:565
@@ -1303,10 +1303,10 @@ msgid ""
 "B<#DEBHELPER#> will be replaced by any auto-generated code when you run "
 "B<dh_installdeb>."
 msgstr ""
-"debhelperコマンドには、Debianメンテナスクリプトの一部を機械的に生成するものが"
-"あります。もし、すでにあるDebianメンテナスクリプトに機械的に何かが含まれるよ"
-"うにしたければ、スクリプト中の含まれて欲しい部分にB<#DEBHELPER#>を記載してく"
-"ださい。B<#DEBHELPER#>はB<dh_installdeb>が実行されるときに機械的に生成された"
+"debhelper コマンドには、Debian メンテナスクリプトの一部を機械的に生成するものが"
+"あります。もし、すでにある Debian メンテナスクリプトに機械的に何かが含まれるよ"
+"うにしたければ、スクリプト中の含まれて欲しい部分に B<#DEBHELPER#> を記載してく"
+"ださい。B<#DEBHELPER#> は B<dh_installdeb> が実行されるときに機械的に生成された"
 "コードと置き換えられます。"
 
 #. type: textblock
@@ -1315,8 +1315,8 @@ msgid ""
 "If a script does not exist at all and debhelper needs to add something to "
 "it, then debhelper will create the complete script."
 msgstr ""
-"スクリプトがまったく存在しないにもかかわらず、debhelperがスクリプトに追加する"
-"ものがあると判断した場合は、debhelperは該当のスクリプト全部を生成します。"
+"スクリプトがまったく存在しないにもかかわらず、debhelper がスクリプトに追加する"
+"ものがあると判断した場合は、debhelper は該当のスクリプトをすべて生成します。"
 
 #. type: textblock
 #: debhelper.pod:575
@@ -1324,7 +1324,7 @@ msgid ""
 "All debhelper commands that automatically generate code in this way let it "
 "be disabled by the -n parameter (see above)."
 msgstr ""
-"先述の-nパラメタを指定すると、今まで述べたdebhelperプログラムのスクリプトの機"
+"前述の -n パラメーターを指定すると、今まで述べた debhelper プログラムのスクリプトの機"
 "械的な生成を止めさせる事ができます。"
 
 #. type: textblock
@@ -1335,9 +1335,9 @@ msgid ""
 "is one way to do that (note that I made sure that $1, $2, etc are set with "
 "the set command):"
 msgstr ""
-"シェルスクリプトによりコードを挿入する手法は、perlスクリプト相手には直接行う"
-"事はできないという事に注意する必要があります。もし何かをperlスクリプトに埋め"
-"込みたい場合、以下に１つの方法を述べます（$1,$2等はsetコマンドにより設定され"
+"シェルスクリプトによりコードを挿入する手法は、Perl スクリプト相手には直接行う"
+"事はできないという事に注意する必要があります。もし何かを Perl スクリプトに埋め"
+"込みたい場合、以下に１つの方法を述べます（$1, $2 等は set コマンドにより設定され"
 "る事に注意してください）"
 
 #. type: verbatim
@@ -1374,12 +1374,12 @@ msgid ""
 "dependencies can be annoying since they are dependent on how debhelper does "
 "things, so debhelper offers a way to automate it."
 msgstr ""
-"debhelperは他のパッケージに依存するようなパッケージを作成することがあります。"
-"例えば、L<dh_installdebconf(1)>を使うと、構築したパッケージはdebconfパッケー"
-"ジにも依存するようになります。あるいはL<dh_installxfonts(1)>を使うと、特定の"
-"バージョンのxutilsに依存することになります。これらの依存関係を追跡するのは、"
-"debhelperがどのように処理を行うかにもよるため、面倒なことになりがちです。こう"
-"いった事を解決するため、debhelperは機械的に依存関係を解決する機能があります。"
+"debhelper は他のパッケージに依存するようなパッケージを作成することがあります。"
+"例えば、L<dh_installdebconf(1)> を使うと、構築したパッケージは debconf パッケー"
+"ジにも依存するようになります。あるいは L<dh_installxfonts(1)> を使うと、特定の"
+"バージョンの xutils に依存することになります。これらの依存関係を追跡するのは、"
+"debhelper がどのように処理を行うかにもよるため、面倒なことになりがちです。こう"
+"いった事を解決するため、debhelperは 機械的に依存関係を解決する機能があります。"
 
 #. type: textblock
 #: debhelper.pod:599
@@ -1402,9 +1402,9 @@ msgid ""
 ">.  You can choose not to use any of these, if debhelper's guesses don't "
 "match reality."
 msgstr ""
-"この変数は、L<dh_makeshlibs(1)>により生成されたB<${shlibs:Depends}>変数とは"
-"まったく関連を持ちません。また、L<dh_perl(1)>により生成されたB<${perl:"
-"Depends}>変数とも同様となります。debhelperコマンドの推定結果が現実に合わない"
+"この変数は、L<dh_makeshlibs(1)> により生成された B<${shlibs:Depends}> 変数とは"
+"まったく関連を持ちません。また、L<dh_perl(1)>により生成された B<${perl:"
+"Depends}> 変数とも同様となります。debhelper コマンドの推定結果が現実に合わない"
 "場合は、これらを使わないようにしても良いです。"
 
 #. type: =head2
@@ -1444,7 +1444,7 @@ msgstr ""
 #. type: =head2
 #: debhelper.pod:622
 msgid "udebs"
-msgstr "udebパッケージについて"
+msgstr "udeb パッケージについて"
 
 #. type: textblock
 #: debhelper.pod:624
@@ -1456,11 +1456,11 @@ msgid ""
 "documentation into a udeb, skipping over F<preinst>, F<postrm>, F<prerm>, "
 "and F<config> scripts, etc."
 msgstr ""
-"debhelperはudebもサポートします。debhelperによりudebパッケージを作成するに"
-"は、\"B<Package-Type: udeb>\"をF<debian/control>のパッケージ定義に加えてくだ"
-"さい。debhelperはudebファイルをdebian-installerポリシーにあわせて構築します。"
-"つまり、パッケージの拡張子がF<.udeb>となるファイルを作成し、いかなるドキュメ"
-"ントも省き、F<preinst>、F<postrm>、 F<prerm>、F<config> スクリプトも省略しま"
+"debhelper は udeb もサポートします。debhelper により udeb パッケージを作成するに"
+"は、\"B<Package-Type: udeb>\" を F<debian/control> のパッケージ定義に加えてくだ"
+"さい。debhelper は udeb ファイルを debian-installer ポリシーにあわせて構築します。"
+"つまり、パッケージの拡張子が F<.udeb> となるファイルを作成し、いかなるドキュメ"
+"ントも省き、F<preinst>, F<postrm>, F<prerm>, F<config> スクリプトも省略しま"
 "す。"
 
 #. type: =head1
@@ -1479,7 +1479,7 @@ msgid ""
 "Set to B<1> to enable verbose mode. Debhelper will output every command it "
 "runs that modifies files on the build system."
 msgstr ""
-"この環境変数にB<1>を指定すると冗長表示モードの動作となります。debhelperは、現"
+"この環境変数に B<1> を指定すると冗長表示モードの動作となります。debhelper は、現"
 "行のビルドシステムにて、ファイルを変更するようなコマンドの全てについて表示を"
 "行うようになります。"
 
@@ -1494,8 +1494,8 @@ msgid ""
 "Temporarily specifies what compatibility level debhelper should run at, "
 "overriding any value in F<debian/compat>."
 msgstr ""
-"この環境変数は、どんな互換性レベルでdebhelperを実行するかを一時的に指定するも"
-"のです。こちらを指定するとF<debian/compat>の値は無視されます。"
+"この環境変数は、どんな互換性レベルで debhelper を実行するかを一時的に指定するも"
+"のです。こちらを指定すると F<debian/compat> の値は無視されます。"
 
 #. type: =item
 #: debhelper.pod:645
@@ -1505,7 +1505,7 @@ msgstr "B<DH_NO_ACT>"
 #. type: textblock
 #: debhelper.pod:647
 msgid "Set to B<1> to enable no-act mode."
-msgstr "B<1>に設定すると、何もしない(no-act)モードになります。"
+msgstr "B<1> に設定すると、何もしない (no-act) モードになります。"
 
 #. type: =item
 #: debhelper.pod:649
@@ -1518,7 +1518,7 @@ msgid ""
 "Anything in this variable will be prepended to the command line arguments of "
 "all debhelper commands."
 msgstr ""
-"この環境変数に指定したものは、debhelperコマンドの末尾に全て指定されるようにな"
+"この環境変数に指定したものは、debhelper コマンドの末尾に全て指定されるようにな"
 "ります。"
 
 #. type: textblock
@@ -1527,8 +1527,8 @@ msgid ""
 "When using L<dh(1)>, it can be passed options that will be passed on to each "
 "debhelper command, which is generally better than using DH_OPTIONS."
 msgstr ""
-"L<dh(1)>を使えば、指定したオプションを続いて呼び出されるdebhelperコマンドに引"
-"き渡すことができます。こちらの方が通常はDH_OPTIONSを使うよりも良い方法となり"
+"L<dh(1)> を使えば、指定したオプションを続いて呼び出される debhelper コマンドに引"
+"き渡すことができます。こちらの方が通常は DH_OPTIONS を使うよりも良い方法となり"
 "ます。"
 
 #. type: =item
