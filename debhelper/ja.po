@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 9.20120608\n"
 "POT-Creation-Date: 2012-11-03 11:07-0400\n"
-"PO-Revision-Date: 2012-08-22 02:24+0900\n"
+"PO-Revision-Date: 2013-02-10 11:55+0900\n"
 "Last-Translator: Takahide Nojima <nozzy123nozzy@gmail.com>\n"
 "Language-Team: Debian JP Project <debian-doc@debian.or.jp>\n"
 "Language: Japanease\n"
@@ -101,7 +101,7 @@ msgstr ""
 "F<debian/rules> で用いられている、小さく単純で、容易に理解可能なツールをまと"
 "めて提供すること」です。つまり、あなた＝パッケージを作成する人の負担を減らし"
 "ます。さらに、Debian ポリシーが変わった場合にはこのツール群を多少変更さえすれ"
-"ば、debhelper を使うパッケージが新しいポリシーに適合するのに必要になるのは、"
+"ば、debhelper を使っているパッケージが新しいポリシーに適合するのに必要になるのは、"
 "再ビルドだけになります。"
 
 #. type: textblock
@@ -131,7 +131,7 @@ msgstr ""
 "debhelper を使って Debian パッケージを作成するには、サンプルの rules ファイル"
 "のどれかをコピーして手で修正するだけです。あるいは B<dh-make> パッケージを利"
 "用してみてください。このパッケージには部分的に作業を自動化してくれる "
-"L<dh_make|dh_make(1)> コマンドが含まれています。もう少し親切な指示について"
+"L<dh_make|dh_make(1)> コマンドが含まれています。よりやさしい案内について"
 "は、B<maint-guide-ja> パッケージに debhelper を使って初めてパッケージを作る人向け"
 "のチュートリアルが含まれています。"
 
@@ -192,7 +192,6 @@ msgstr "DEBHELPER 設定ファイル"
 
 #. type: textblock
 #: debhelper.pod:58
-#, fuzzy
 msgid ""
 "Many debhelper commands make use of files in F<debian/> to control what they "
 "do. Besides the common F<debian/changelog> and F<debian/control>, which are "
@@ -201,9 +200,9 @@ msgid ""
 "files are typically named debian/I<package>.foo (where I<package> of course, "
 "is replaced with the package that is being acted on)."
 msgstr ""
-"debhelper のコマンドは、どのように動作するかについて、F<debian/> ディレクトリ"
-"以下にあるファイルを用います。すべてのパッケージに存在する通常の F<debian/"
-"changelog> や F<debian/control> に加えて、特定の debhelper コマンドの動作を制"
+"debhelper のコマンドの多くは、どのように動作するかについて F<debian/> ディレクトリ"
+"以下にあるファイルを用います。共通の F<debian/changelog> や F<debian/control> "
+"はすべてのパッケージに存在していますが、これに加えて特定の debhelper コマンドの動作を制"
 "御できる追加ファイルがあります。これらのファイルは、大抵 debian/I<package>."
 "foo というファイル名です (もちろん、I<package> は、処理しようとしているパッ"
 "ケージ名に変えてください)。"
@@ -477,18 +476,16 @@ msgstr "B<-O=>I<option>|I<bundle>"
 
 #. type: textblock
 #: debhelper.pod:166
-#, fuzzy
 msgid ""
 "This is used by L<dh(1)> when passing user-specified options to all the "
 "commands it runs. If the command supports the specified option or option "
 "bundle, it will take effect. If the command does not support the option (or "
 "any part of an option bundle), it will be ignored."
 msgstr ""
-"指定したオプションを、L<dh(1)> により後に実行されるすべてのコマンドへ渡す"
-"ようになります。もし実行されるコマンドにて、指定されたオプションがサポートさ"
-"れていたり、内蔵されていたりすれば、その効力が発揮されます。もしコマンドが、"
-"本オプションに指定されたオプションをサポートしていなかったり（あるいは、どれ"
-"も内蔵していなかったり）する場合は、無視されます。"
+"実行するすべてのコマンドへユーザー指定のオプションを渡す際に L<dh(1)> が利用します。"
+"もしコマンドが指定オプションをサポートしている、あるいは内蔵している場合は、オプションは"
+"効果を発揮します。コマンドが指定されたオプションをサポートしていない場合（あるいは、"
+"内蔵しているオプションにない場合）、オプションは無視されます。"
 
 #. type: =head1
 #: debhelper.pod:173
@@ -525,17 +522,14 @@ msgstr "B<-X>I<item>, B<--exclude=>I<item>"
 
 #. type: textblock
 #: debhelper.pod:187
-#, fuzzy
-#| msgid ""
-#| "Exclude an item from processing. This option may be used multiple times, "
-#| "to exclude more than one thing."
 msgid ""
 "Exclude an item from processing. This option may be used multiple times, to "
 "exclude more than one thing. The \\fIitem\\fR is typically part of a "
 "filename, and any file containing the specified text will be excluded."
 msgstr ""
-"item を処理対象から除外します。このオプションを複数指定して、複"
-"数の item を除外することができます。\\fIitem\\fR はファイル名の一部で、"
+"item を処理対象から除外します。複数の item を除外するためにこのオプションを複数指定して使う。"
+"ことができます。通常、\\fIitem\\fR はファイル名の一部で、指定されたテキストに含まれる"
+"ファイルがすべて除外されます。"
 
 #. type: =item
 #: debhelper.pod:191 dh_bugfiles:54 dh_compress:59 dh_installdirs:35
@@ -550,8 +544,8 @@ msgid ""
 "Makes files or other items that are specified on the command line take "
 "effect in ALL packages acted on, not just the first."
 msgstr ""
-"コマンドラインで指定したファイルや他の item について、最初のパッケージだけでなく全パッケージに"
-"対して処理を行うようにします。"
+"コマンドラインで指定したファイルあるいは他の item について、最初のパッケージだけでなく"
+"全パッケージで処理を行うようにします。"
 
 #. type: =head1
 #: debhelper.pod:198
@@ -568,13 +562,12 @@ msgid ""
 "behavior.  Typically these are passed to L<dh(1)>, which then passes them to "
 "all the B<dh_auto_>I<*> programs."
 msgstr ""
-"全 B<dh_auto_>I<*> の debhelper プログラムがサポートするコマンドラインオプション"
-"を以下に記載します。B<dh_auto_>I<*> は様々なビルドシステムをサポートし、通常は"
-"試行錯誤によりどのビルドシステムが使われるかを決定し、またどのように使われる"
-"べきかも決定します。以下のコマンドラインオプションを指定することにより、"
-"B<dh_auto_>I<*> の動作を変更する事ができます。通常は、L<dh(1)> に指定する事によ"
-"り、F<dh(1)> により実行されるすべての B<dh_auto_>I<*> プログラムへこれらオプショ"
-"ンをまとめて渡します。"
+"以下のコマンドラインオプションが、すべての B<dh_auto_>I<*> の debhelper プログラム"
+"によってサポートされています。これらのプログラム群は様々なビルドシステムをサポートしており、"
+"通常の場合は推定によって、どのビルドシステムがどのように使われるかを決定します。"
+"これらのコマンドラインオプションを使って、デフォルトの動作を上書きすることが可能です。"
+"大抵の場合は、これらのオプションはまず L<dh(1)> に渡され、それからすべての B<dh_auto_>I<*> "
+"プログラムへと渡されます。"
 
 #. type: =item
 #: debhelper.pod:209
@@ -587,7 +580,7 @@ msgid ""
 "Force use of the specified I<buildsystem>, instead of trying to auto-select "
 "one which might be applicable for the package."
 msgstr ""
-"パッケージに合わせて自動的に選択されたビルドシステムではなく、(I<buildsystem>) で"
+"パッケージに合わせて自動的に選択されたビルドシステムではなく、I<buildsystem> で"
 "指定したビルドシステムを強制的に使用します。"
 
 #. type: =item
@@ -602,8 +595,8 @@ msgid ""
 "I<directory> rather than the top level directory of the Debian source "
 "package tree."
 msgstr ""
-"オリジナルのソースツリーを、Debian ソースパッケージツリーではなく、"
-"I<directory> に指定します。"
+"オリジナルのソースツリーが、Debian ソースパッケージツリーの最上位のディレクトリでは"
+"なく、I<directory> で指定した場所にあると仮定します。"
 
 #. type: =item
 #: debhelper.pod:220
@@ -612,6 +605,7 @@ msgstr "B<-B>[I<directory>], B<--builddirectory=>[I<directory>]"
 
 #. type: textblock
 #: debhelper.pod:222
+#, fuzzy
 msgid ""
 "Enable out of source building and use the specified I<directory> as the "
 "build directory. If I<directory> parameter is omitted, a default build "
@@ -624,6 +618,7 @@ msgstr ""
 
 #. type: textblock
 #: debhelper.pod:226
+#, fuzzy
 msgid ""
 "If this option is not specified, building will be done in source by default "
 "unless the build system requires or prefers out of source tree building.  In "
@@ -632,12 +627,13 @@ msgid ""
 msgstr ""
 "このオプションが指定されない場合、ビルドシステムがソースツリー以外での構築を"
 "必要としていたり、あるいは、そちらが望ましいと判断されたりしない限りにおい"
-"て、ソースディレクトリ内部で構築が行われます。そのような場合は、B<--"
+"て、デフォルトでソースディレクトリ内部で構築が行われます。そのような場合は、B<--"
 "builddirectory> が指定されていないときと同じように、特に指定無き場合のビルド"
 "ディレクトリが利用されます"
 
 #. type: textblock
 #: debhelper.pod:231
+#, fuzzy
 msgid ""
 "If the build system prefers out of source tree building but still allows in "
 "source building, the latter can be re-enabled by passing a build directory "
@@ -661,10 +657,10 @@ msgid ""
 "variable (L<Debian Policy, section 4.9.1>) at build time. It might also be "
 "subject to a build system specific limit."
 msgstr ""
-"もしシステムがサポート可能であれば、並列ビルドを行うように指示するものです。"
-"どれだけの数を並列でビルドするかについては、構築時に B<DEB_BUILD_OPTIONS> 環境"
-"変数で指定します（L<Debian ポリシーマニュアル、4.9.1章>)。なお、並列ビルドに"
-"ついてはシステム上の制約の影響を受けます。"
+"システムがサポートしていれば、並列ビルドを有効にします。どれだけの数で並列ビルドするか"
+"は、ビルドが行われる際に B<DEB_BUILD_OPTIONS> 環境変数によって決まります "
+"(L<Debian ポリシーマニュアル、4.9.1章>)。ビルドシステム固有の制限に影響を受ける場合"
+"もあります。"
 
 #. type: textblock
 #: debhelper.pod:242
@@ -672,7 +668,7 @@ msgid ""
 "If this option is not specified, debhelper currently defaults to not "
 "allowing parallel package builds."
 msgstr ""
-"もしこのオプションが指定されていないと、debhelper は並列ビルドを行いません。"
+"このオプションが指定されていないと、現状 debhelper はデフォルトでは並列ビルドを行いません。"
 
 #. type: =item
 #: debhelper.pod:245
@@ -681,6 +677,7 @@ msgstr "B<--max-parallel=>I<maximum>"
 
 #. type: textblock
 #: debhelper.pod:247
+#, fuzzy
 msgid ""
 "This option implies B<--parallel> and allows further limiting the number of "
 "jobs that can be used in a parallel build. If the package build is known to "
@@ -705,12 +702,10 @@ msgid ""
 "shows which build system would be automatically selected, or which one is "
 "manually specified with the B<--buildsystem> option."
 msgstr ""
-"このシステムで debhelper によりサポートされているビルドシステムの全リストが表示"
-"されます。このリストは特に指定なき場合のビルドシステム、あるいはサードパー"
-"ティーのビルドシステム（そのようにマークされていればですが）の両方を含んでい"
-"ます。また、どちらのビルドシステムが機械的に利用されるか、あるいは、B<--"
-"buildsystem> で手動で指定されたどのビルドシステムが利用されるかについても表示"
-"します。"
+"このシステム上で、debhelper がサポートしているビルドシステム一覧を表示します。"
+"この一覧にはデフォルトのビルドシステム、そしてサードパーティー (であると明記されている) "
+"ビルドシステムの双方を含みます。また、どれが自動的に選択されたか、あるいは手動で "
+"B<--buildsystem> オプションにて何が指定されたのかも表示します。"
 
 #. type: =head1
 #: debhelper.pod:261
