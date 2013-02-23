@@ -1703,6 +1703,8 @@ msgstr ""
 
 #. type: textblock
 #: dh:36
+#, fuzzy
+# Build-Depend"s"
 msgid ""
 "Override targets can also be defined to run only when building architecture "
 "dependent or architecture independent packages.  Use targets with names like "
@@ -1712,9 +1714,9 @@ msgid ""
 msgstr ""
 "アーキテクチャ依存パッケージを作るときのみに作用、あるいは、アーキテクチャ非"
 "依存パッケージを作るときのみ作用するように上書きターゲットを定義することもで"
-"きます。その場合、B<override_>I<dh_command>B<-arch>や、"
-"B<override_>I<dh_command>B<-indep>を使ってください (なお、この機能を使うに"
-"は、Build-Depend行にdebhelperのバージョンを8.9.7以上に指定する必要がありま"
+"きます。その場合、B<override_>I<dh_command>B<-arch> や、"
+"B<override_>I<dh_command>B<-indep> を使ってください (なお、この機能を使うに"
+"は、Build-Depends 行で debhelper バージョン 8.9.7 以上を指定する必要がありま"
 "す。)  "
 
 #. type: =head1
@@ -1748,11 +1750,11 @@ msgid ""
 "commands. See the F<PROGRAMMING> file for documentation about the sequence "
 "addon interface."
 msgstr ""
-"debhelperコマンドに適切な場所で一連のコマンドを実行するようなアドオンを指定し"
+"debhelper コマンドへ、一連のコマンド中の適切な場所で実行するアドオンを指定し"
 "ます。このオプションはオプションを繰り返し指定することもできますし、複数のア"
-"ドオンをカンマで区切って列挙して指定できます。このオプションはdebhelperコマン"
-"ドを提供する外部パッケージと共に利用する時に使います。F<PROGRAMMING>ファイル"
-"に、一連のアドオン用インターフェースについての文章があります。"
+"ドオンをカンマで区切って列挙して指定できます。このオプションは debhelper コマン"
+"ドを提供するサードパーティ製パッケージと共に利用する時に使います。F<PROGRAMMING> "
+"ファイルに、一連のアドオン用インターフェースについての文章があります。"
 
 #. type: =item
 #: dh:56
@@ -1766,7 +1768,7 @@ msgid ""
 "repeated more than once, or multiple addons to disable can be listed, "
 "separated by commas."
 msgstr ""
-"B<--with>とは逆に指定されたアドオンを使わないようにします。このオプションは、"
+"B<--with> とは逆に、指定されたアドオンを無効にします。このオプションは、"
 "繰り返し指定する、あるいは、アドオン名をカンマで区切って指定することにより、"
 "指定された複数のアドオンを使わないように指定できます。"
 
@@ -1790,8 +1792,9 @@ msgid ""
 "can be used to set an option like B<-v> or B<-X> or B<-N>, as well as for "
 "more specialised options."
 msgstr ""
-"B<dh>に他のオプションを渡すとそれはのちに実行する全コマンドへ引き渡されます。"
-"B<-v>、B<-X>、B<-N>や、他の特別なオプションを指定するのに使われます。"
+"B<dh> に渡された他のオプションは、実行される各コマンドへ渡されます。"
+"これは、B<-v>, B<-X>, B<-N> のようなオプションをセットするのに使え、他の特別な"
+"オプションでも同様となります。"
 
 #. type: =head1
 #: dh:76 dh_installdocs:110 dh_link:75 dh_makeshlibs:97 dh_shlibdeps:69
