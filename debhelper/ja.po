@@ -1550,11 +1550,11 @@ msgid ""
 "B<DH_ALWAYS_EXCLUDE=CVS> in F<debian/rules>, to make it take effect wherever "
 "your package is built."
 msgstr ""
-"これはCVSソースツリーからパッケージ構築をする場合に便利な場合があります。例え"
-"ば、B<DH_ALWAYS_EXCLUDE=CVS>を指定すれば、全CVSディレクトリが構築の際に検索さ"
-"れるのを防ぐことができます。あるいは、ソースのtarballにすでにCVSディレクトリ"
-"が含まれている（賢いことではないのですが）場合、F<debian/rules>に"
-"B<DH_ALWAYS_EXCLUDE=CVS>環境変数をexportしておくコードを入れる事により、パッ"
+"これは CVS ソースツリーからパッケージ構築をする場合に便利な場合があります。例え"
+"ば、B<DH_ALWAYS_EXCLUDE=CVS> を指定すれば、全 CVS ディレクトリが構築の際に検索さ"
+"れるのを防ぐことができます。あるいは、ソースの tarball にすでに CVS ディレクトリ"
+"が含まれている（賢いことではないのですが）場合、F<debian/rules> に "
+"B<DH_ALWAYS_EXCLUDE=CVS> 環境変数を export しておくコードを入れる事により、パッ"
 "ケージを構築しようとする場所全部で、効力を発揮するようになります。"
 
 #. type: textblock
@@ -1564,7 +1564,7 @@ msgid ""
 "B<DH_ALWAYS_EXCLUDE=CVS:.svn>"
 msgstr ""
 "除外したいものを複数指定したい場合は、コロンで区切ってください。例を挙げるな"
-"ら、B<DH_ALWAYS_EXCLUDE=CVS:.svn>のようになります。"
+"ら、B<DH_ALWAYS_EXCLUDE=CVS:.svn> のようになります。"
 
 #. type: =head1
 #: debhelper.pod:675 dh:903 dh_auto_build:47 dh_auto_clean:50
@@ -1594,7 +1594,7 @@ msgstr "F</usr/share/doc/debhelper/examples/>"
 #. type: textblock
 #: debhelper.pod:681
 msgid "A set of example F<debian/rules> files that use debhelper."
-msgstr "debhelperを使うときのF<debian/rules>ファイルの例が格納されています。"
+msgstr "debhelper を使うときの F<debian/rules> ファイルの例が格納されています。"
 
 #. type: =item
 #: debhelper.pod:683
@@ -1604,7 +1604,7 @@ msgstr "L<http://kitenet.net/~joey/code/debhelper/>"
 #. type: textblock
 #: debhelper.pod:685
 msgid "Debhelper web site."
-msgstr "DebhelperのWebサイトとなります。"
+msgstr "Debhelper の Web サイトです。"
 
 #. type: =head1
 #: debhelper.pod:689 dh:909 dh_auto_build:53 dh_auto_clean:56
@@ -1654,7 +1654,7 @@ msgid ""
 "[S<I<debhelper options>>]"
 msgstr ""
 "B<dh> I<sequence> [B<--with> I<addon>[B<,>I<addon> ...]] [B<--list>] "
-"[S<I<debhelper options>>]"
+"[S<I<debhelper オプション>>]"
 
 #. type: textblock
 #: dh:18
@@ -1664,7 +1664,7 @@ msgid ""
 "indep>, B<build>, B<clean>, B<install-indep>, B<install-arch>, B<install>, "
 "B<binary-arch>, B<binary-indep>, and B<binary>."
 msgstr ""
-"B<dh>は一連のdebhelperコマンドを起動します。F<debian/rules> ファイルに記載さ"
+"B<dh> は一連の debhelper コマンドを起動します。F<debian/rules> ファイルに記載さ"
 "れたターゲットに関わるI<sequence>をサポートします。サポートしているターゲット"
 "は、 B<build-arch>、B<build-indep>、 B<build>、 B<clean>、B<install-indep>、 "
 "B<install-arch>、B<install>、 B<binary-arch>、B<binary-indep>、B<binary>とな"
@@ -7602,10 +7602,10 @@ msgid ""
 "recommends for directories in F</usr/local>."
 msgstr ""
 "パッケージビルドツリー以下に通常ではない所有者、グループ、パーミッションを持"
-"つサブディレクトリが存在すると、これらの情報は保存され、F<postinst>スクリプト"
-"によって後で反映されます。しかしながら、特別な例外として、ディレクトリがroot."
-"rootのユーザ・グループとなっている場合、ユーザ・グループはroot.staffで、パー"
-"ミッションは2775であるものとして扱われます。これはF</usr/local>以下のディレク"
+"つサブディレクトリが存在すると、これらの情報は保存され、F<postinst> スクリプト"
+"によって後で反映されます。しかしながら、特別な例外として、ディレクトリが root."
+"root のユーザ・グループとなっている場合、ユーザ・グループは root.staff で、パー"
+"ミッションは 2775 であるものとして扱われます。これは F</usr/local> 以下のディレク"
 "トリを扱うのに都合が良い為です。"
 
 #. type: textblock
@@ -7617,33 +7617,3 @@ msgstr "Debian policy, version 2.2"
 #: dh_usrlocal:122
 msgid "Andrew Stribblehill <ads@debian.org>"
 msgstr "Andrew Stribblehill <ads@debian.org>"
-
-#~ msgid ""
-#~ "If your package needs to register more than one document, you need "
-#~ "multiple doc-base files, and can name them like this."
-#~ msgstr ""
-#~ "もし、パッケージが２つ以上のドキュメントを登録する必要があるのであれば、複"
-#~ "数のdoc-baseファイルが必要となります。また、これらファイルは各々debian/"
-#~ "I<package>.doc-base.*で指定し、doc-base.*という名前でインストールされま"
-#~ "す。"
-
-#~ msgid ""
-#~ "dh_installinit - install init scripts and/or upstart jobs into package "
-#~ "build directories"
-#~ msgstr ""
-#~ "dh_installinit - ビルドディレクトリへ、initスクリプトあるいは、upstart用の"
-#~ "jobファイルをインストールします"
-
-#~ msgid "B<dh_installmime> [S<I<debhelper options>>] [B<-n>]"
-#~ msgstr "B<dh_installmime> [S<I<debhelper options>>] [B<-n>]"
-
-#~ msgid ""
-#~ "It also automatically generates the F<postinst> and F<postrm> commands "
-#~ "needed to interface with the debian B<mime-support> and B<shared-mime-"
-#~ "info> packages. These commands are inserted into the maintainer scripts "
-#~ "by L<dh_installdeb(1)>."
-#~ msgstr ""
-#~ "本コマンドは、debianシステムのB<mime-support>とB<shared-mime-info>パッケー"
-#~ "ジと連携する為のF<postinst>とF<postrm>コマンドを自動的に生成します。これら"
-#~ "F<postinst>とF<postrm>はL<dh_installdeb(1)>によりメンテナスクリプトへ挿入"
-#~ "されます。"
