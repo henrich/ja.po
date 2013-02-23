@@ -750,6 +750,7 @@ msgstr ""
 
 #. type: textblock
 #: debhelper.pod:275
+#, fuzzy
 msgid ""
 "Your package will also need a versioned build dependency on a version of "
 "debhelper equal to (or greater than) the compatibility level your package "
@@ -778,11 +779,10 @@ msgid ""
 "if you are not using the most recent compatibility level, you're advised to "
 "read below for notes about what is different in earlier compatibility levels."
 msgstr ""
-"特に指定無き場合、debhelper 付属の文章は、一番新しい互換性レベルを利用してい"
-"る事を前提としています。多くの場合、以前の互換性レベルではどう動作が異なるか"
-"について言及していません。最新の互換性レベルを使わない場合、以前の互換性レベ"
-"ルとどのように振る舞いが違うのかについて、以下の説明を参照する事をおすすめし"
-"ます。"
+"特に指定が無い場合、debhelper のドキュメントは最新の互換性レベルを利用してい"
+"る事を前提とおり、多くの場合では以前の互換性レベルではどう動作が異なるか"
+"については言及していません。最新の互換性レベルを使わない場合には、以前の互換性レベ"
+"ルとはどう動作が違うのか、以下の説明を参照しておく事をおすすめします。"
 
 #. type: textblock
 #: debhelper.pod:288
@@ -802,16 +802,16 @@ msgid ""
 "directory for the first binary package listed in the control file, while "
 "using debian/I<package> for all other packages listed in the F<control> file."
 msgstr ""
-"これは debhelper が元来持つ互換性レベルとなります。特に指定無き場合の互換性レ"
-"ベルはこのレベルとなります。このモードでは、debhelper はF <debian/tmp> を、"
-"control ファイルの最初に記載したバイナリパッケージのビルドディレクトリとして"
+"これは debhelper が元来持つ互換性レベルとなります。特に指定が無い場合の互換性レ"
+"ベルはこのレベルとなります。このモードでは、debhelper はF<debian/tmp> を、"
+"control ファイルの最初に記載されているバイナリパッケージのビルドディレクトリとして"
 "利用しようとします。また、debian/I<package> を F<control> 内に指定されている"
 "全パッケージ対して適用します。"
 
 #. type: textblock
 #: debhelper.pod:299 debhelper.pod:306 debhelper.pod:329 debhelper.pod:358
 msgid "This mode is deprecated."
-msgstr "本モードは廃止されました。"
+msgstr "本モードは非推奨です (deprecated)。"
 
 #. type: =item
 #: debhelper.pod:301
@@ -824,8 +824,8 @@ msgid ""
 "In this mode, debhelper will consistently use debian/I<package> as the "
 "package tree directory for every package that is built."
 msgstr ""
-"このモードを指定すると、debian/I<package> を全てのパッケージのビルドディレク"
-"トリとして常に利用するようになります。"
+"このモードを指定すると、常に debian/I<package> を全てのパッケージのビルドディレク"
+"トリとして利用するようになります。"
 
 #. type: =item
 #: debhelper.pod:308
@@ -836,8 +836,7 @@ msgstr "v3"
 #: debhelper.pod:310
 msgid "This mode works like v2, with the following additions:"
 msgstr ""
-"このモードは v2 のモードと同じ動作をしますが、以下に述べる追加機能がありま"
-"す。"
+"このモードは v2 のモードと同じ動作をしますが、以下に述べる追加機能があります:"
 
 #. type: =item
 #: debhelper.pod:314 debhelper.pod:319 debhelper.pod:323 debhelper.pod:337
@@ -859,8 +858,8 @@ msgid ""
 "To turn this off and use those characters raw, just prefix with a backslash."
 msgstr ""
 "debhelper の設定ファイルは、B<*> や B<?> のワイルドカードによるファイル名指定"
-"が利用できます。この機能を停止し、これらワイルドカード文字をそのままの文字と"
-"して扱うには、バックスラッシュをこれら文字の前に置いてください。"
+"が利用できます。この機能を無効にし、これらワイルドカード文字をそのままの文字と"
+"して扱うには、バックスラッシュを文字の前に置いてください。"
 
 #. type: textblock
 #: debhelper.pod:321
@@ -877,7 +876,7 @@ msgid ""
 "Every file in F<etc/> is automatically flagged as a conffile by "
 "B<dh_installdeb>."
 msgstr ""
-"B<dh_installdeb> は、機械的に、F<etc/> 以下のすべてのファイルを conffile とし"
+"B<dh_installdeb> は、F<etc/> 以下のすべてのファイルを自動的に conffile とし"
 "て扱います。"
 
 #. type: =item
@@ -897,7 +896,7 @@ msgid ""
 "in the generated dependency line in the shlibs file."
 msgstr ""
 "B<dh_makeshlibs -V> は、shlibs ファイル内の生成された依存関係を示す行のバー"
-"ジョン番号に、debian 用の番号を含めないようになりました。"
+"ジョン番号に対し、debian バージョンを含めないようになりました。"
 
 #. type: textblock
 #: debhelper.pod:344
@@ -914,14 +913,14 @@ msgid ""
 "B<dh_fixperms> will make all files in F<bin/> directories and in F<etc/init."
 "d> executable."
 msgstr ""
-"B<dh_fixperms> により、F<bin/> ディレクトリ、及び、F <etc/init.d> 以下にある"
+"B<dh_fixperms> により、F<bin/> ディレクトリ及び F <etc/init.d> 以下にある"
 "すべてのファイルに実行権限が付与されるようになりました。"
 
 #. type: textblock
 #: debhelper.pod:354
 msgid "B<dh_link> will correct existing links to conform with policy."
 msgstr ""
-"B<dh_link>は、すでに存在するリンクであってもポリシーに合わせ、リンクを修正するようになりました。"
+"B<dh_link>は、既存のリンクであってもポリシーに合わせ、リンクを修正するようになりました。"
 
 #. type: =item
 #: debhelper.pod:360
@@ -936,10 +935,11 @@ msgstr "v4からの変更点："
 #. type: textblock
 #: debhelper.pod:368
 msgid "Comments are ignored in debhelper config files."
-msgstr "debhelper 設定ファイルにてコメントは無視されるようになりました。"
+msgstr "debhelper 設定ファイルでのコメントは無視されるようになりました。"
 
 #. type: textblock
 #: debhelper.pod:372
+#, fuzzy
 msgid ""
 "B<dh_strip --dbg-package> now specifies the name of a package to put "
 "debugging symbols in, not the packages to take the symbols from."
@@ -972,6 +972,7 @@ msgstr "v5からの変更点:"
 
 #. type: textblock
 #: debhelper.pod:393
+#, fuzzy
 msgid ""
 "Commands that generate maintainer script fragments will order the fragments "
 "in reverse order for the F<prerm> and F<postrm> scripts."
@@ -997,10 +998,9 @@ msgid ""
 "B<DH_ALWAYS_EXCLUDE>, if it was set to a list of things to exclude, such as "
 "B<CVS:.svn:.git>. Now it does."
 msgstr ""
-"B<dh_builddeb> は、B<CVS:.svn:.git> のように、除外する対象を列挙して "
-"B<DH_ALWAYS_EXCLUDE> に指定しても、該当する対象を前もって削除しませんでした。"
-"しかしながら、本互換性レベルの元では、この場合でもきちんと削除するようになり"
-"ました。"
+"B<dh_builddeb> は、B<CVS:.svn:.git> のように除外する対象を "
+"B<DH_ALWAYS_EXCLUDE> に指定しても該当するファイルを削除していませんでした。"
+"本互換性レベルでは削除するようになりました。"
 
 #. type: textblock
 #: debhelper.pod:410
