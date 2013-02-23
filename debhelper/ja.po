@@ -1000,7 +1000,7 @@ msgid ""
 msgstr ""
 "B<dh_builddeb> は、B<CVS:.svn:.git> のように除外する対象を "
 "B<DH_ALWAYS_EXCLUDE> に指定しても該当するファイルを削除していませんでした。"
-"本互換性レベルでは削除するようになりました。"
+"本互換性レベルでは削除するようになっています。"
 
 #. type: textblock
 #: debhelper.pod:410
@@ -1145,8 +1145,8 @@ msgid ""
 "targets that exist in the rules file. There's no need to define an explicit "
 "binary target with explicit dependencies on the other targets."
 msgstr ""
-"dh コマンドは debian/rules に記載されているターゲット間に普通に存在する依存性に"
-"気を使います。そのため、\"dh binary\" は rules ファイルに存在する build, build-"
+"dh コマンドは debian/rules に記載されているターゲット間の一般的な依存性を考慮します。"
+"そのため、\"dh binary\" は rules ファイルに存在する build, build-"
 "arch, build-indep, install 等のターゲットを実行していきます。つまり、他のター"
 "ゲットに関する依存関係をいちいち細かく明示した binary ターゲットを用意する必要"
 "はありません。"
@@ -1173,7 +1173,7 @@ msgstr ""
 #: debhelper.pod:504
 msgid "B<dh> does not default to enabling --with=python-support"
 msgstr ""
-"B<dh> は --with=python-support オプションを、特に指定無き場合は、無効にするよう"
+"B<dh> は --with=python-support オプションを、特に指定が無い場合は無効にするよう"
 "になりました。"
 
 #. type: textblock
@@ -1182,9 +1182,9 @@ msgid ""
 "All of the B<dh_auto_>I<*> debhelper programs and B<dh> set environment "
 "variables listed by B<dpkg-buildflags>, unless they are already set."
 msgstr ""
-"B<dh_auto_>I<*> 全部 と B<dh> コマンドは B<dpkg-buildflags> にて指定される環境変数"
-"を設定します。なお、この場合、すでに該当する環境変数が設定されている場合は設"
-"定されません。"
+"すべての B<dh_auto_>I<*> debhelper プログラムと B<dh> コマンドは、"
+"B<dpkg-buildflags> で指定される環境変数を設定します。すでに該当する"
+"環境変数が設定されている場合は設定を行いません。"
 
 #. type: textblock
 #: debhelper.pod:514
@@ -1209,8 +1209,7 @@ msgid ""
 "Executable debhelper config files are run and their output used as the "
 "configuration."
 msgstr ""
-"なお実行可能権限を付与した debhelper 用の設定ファイルは実行されるようになりま"
-"す。そして、その出力結果を設定内容として扱うようになります。"
+"実行可能権限を付与した debhelper 用の設定ファイルは実行され、出力結果が設定内容として扱われます。"
 
 #. type: =item
 #: debhelper.pod:529
