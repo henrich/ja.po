@@ -1371,22 +1371,23 @@ msgstr ""
 "debhelper は他のパッケージに依存するようなパッケージを作成することがあります。"
 "例えば、L<dh_installdebconf(1)> を使うと、構築したパッケージは debconf パッケー"
 "ジにも依存するようになります。あるいは L<dh_installxfonts(1)> を使うと、特定の"
-"バージョンの xutils に依存することになります。これらの依存関係を追跡するのは、"
-"debhelper がどのように処理を行うかにもよるため、面倒なことになりがちです。こう"
-"いった事を解決するため、debhelperは 機械的に依存関係を解決する機能があります。"
+"バージョンの xutils に依存することになります。これらの様々な依存関係を追いかけるのは、"
+"debhelper がどのような処理を行うかによるために面倒なことになりがちです。そのため、"
+"debhelper は 自動的に依存関係を解決する機能を提供します。"
 
 #. type: textblock
 #: debhelper.pod:599
+#, fuzzy
 msgid ""
 "All commands of this type, besides documenting what dependencies may be "
 "needed on their man pages, will automatically generate a substvar called B<"
 "${misc:Depends}>. If you put that token into your F<debian/control> file, it "
 "will be expanded to the dependencies debhelper figures you need."
 msgstr ""
-"他のパッケージに依存するようなパッケージを生成するdebhelperコマンドは、何に依"
-"存するかについてmanページに記載してある他に、B<${misc:Depends}>と呼ばれる変数"
-"を、機械的に生成した依存情報と置き換えます。もしF<debian/control>にこの変数を"
-"指定すれば、debhelperは必要とする依存関係を機械的に展開するようになります。"
+"他のパッケージに依存するようなパッケージを生成する debhelper コマンドは、何に依"
+"存するかについて man ページに記載してある他に、B<${misc:Depends}> と呼ばれる変数"
+"を、自動的に生成した依存情報と置き換えます。もし F<debian/control> にこの変数を"
+"指定すれば、debhelper は必要とする依存関係を自動的に展開するようになります。"
 
 #. type: textblock
 #: debhelper.pod:604
@@ -1396,10 +1397,10 @@ msgid ""
 ">.  You can choose not to use any of these, if debhelper's guesses don't "
 "match reality."
 msgstr ""
-"この変数は、L<dh_makeshlibs(1)> により生成された B<${shlibs:Depends}> 変数とは"
-"まったく関連を持ちません。また、L<dh_perl(1)>により生成された B<${perl:"
-"Depends}> 変数とも同様となります。debhelper コマンドの推定結果が現実に合わない"
-"場合は、これらを使わないようにしても良いです。"
+"この変数は、L<dh_makeshlibs(1)> により生成された標準の B<${shlibs:Depends}> 変数とは"
+"まったく関連を持ちません。また、L<dh_perl(1)> により生成された B<${perl:"
+"Depends}> 変数も同様です。debhelper コマンドの推測が実状に合わない場合は、"
+"これらを使わないようにすることも可能です。"
 
 #. type: =head2
 #: debhelper.pod:609
@@ -1412,9 +1413,8 @@ msgid ""
 "By default, all debhelper programs assume that the temporary directory used "
 "for assembling the tree of files in a package is debian/I<package>."
 msgstr ""
-"特に指定無き場合、debhelperプログラム群は、一時利用のディレクトリとして、"
-"debian/I<package>ディレクトリを利用し、ここにパッケージに含める予定のファイル"
-"を集めます。"
+"特に指定が無い場合、debhelper プログラム群はパッケージに含めるファイルを"
+"まとめて、一時ディレクトリとして debian/I<package> ディレクトリを利用します。"
 
 #. type: textblock
 #: debhelper.pod:614
@@ -1427,13 +1427,12 @@ msgid ""
 "need to also use the B<-p> flag to specify which binary package the "
 "debhelper program will act on."
 msgstr ""
-"別の一時利用のディレクトリを利用したくなる時があります。この場合、B<-P>を利用"
-"してください。例えば、\"B<dh_installdocs　-Pdebian/tmp>\"を指定すると、"
-"B<debian/tmp>を一時利用のディレクトリとして利用できます。ただ、B<-P>を使う"
-"と、debhelperプログラムは、一度に１つのパッケージの処理しかできなくなります。"
-"その為、複数のバイナリパッケージを生成するような場合は、B<-p>オプションを併用"
-"して、どノバイナリパッケージに対してdebhelperが作用するかを指定する必要があり"
-"ます。"
+"時折、別の一時ディレクトリを利用したくなる場合があるでしょう。この場合は、B<-P> "
+"フラグを利用してください。例えば、\"B<dh_installdocs　-Pdebian/tmp>\" では "
+"B<debian/tmp> を一時ディレクトリとして利用できます。ただし、B<-P>　を使う"
+"と、debhelper プログラムは、一度に 1 つのパッケージの処理しかできません。"
+"その為、複数のバイナリパッケージを生成するような場合、どのバイナリパッケージに対して "
+"debhelper が作用するかを指定するために B<-p> フラグを併用する必要があります。"
 
 #. type: =head2
 #: debhelper.pod:622
@@ -1450,12 +1449,11 @@ msgid ""
 "documentation into a udeb, skipping over F<preinst>, F<postrm>, F<prerm>, "
 "and F<config> scripts, etc."
 msgstr ""
-"debhelper は udeb もサポートします。debhelper により udeb パッケージを作成するに"
+"debhelper は udeb もサポートしています。debhelper で udeb パッケージを作成するに"
 "は、\"B<Package-Type: udeb>\" を F<debian/control> のパッケージ定義に加えてくだ"
 "さい。debhelper は udeb ファイルを debian-installer ポリシーにあわせて構築します。"
-"つまり、パッケージの拡張子が F<.udeb> となるファイルを作成し、いかなるドキュメ"
-"ントも省き、F<preinst>, F<postrm>, F<prerm>, F<config> スクリプトも省略しま"
-"す。"
+"これは、パッケージの拡張子が F<.udeb> となるファイルで、いかなるドキュメントや、"
+"F<preinst>, F<postrm>, F<prerm>, F<config> スクリプトも省いたものを作成します。"
 
 #. type: =head1
 #: debhelper.pod:631
@@ -1474,7 +1472,7 @@ msgid ""
 "runs that modifies files on the build system."
 msgstr ""
 "この環境変数に B<1> を指定すると冗長表示モードの動作となります。debhelper は、現"
-"行のビルドシステムにて、ファイルを変更するようなコマンドの全てについて表示を"
+"行のビルドシステムでファイルを変更するようなコマンドの全てについて、出力を"
 "行うようになります。"
 
 #. type: =item
@@ -1489,7 +1487,7 @@ msgid ""
 "overriding any value in F<debian/compat>."
 msgstr ""
 "この環境変数は、どんな互換性レベルで debhelper を実行するかを一時的に指定するも"
-"のです。こちらを指定すると F<debian/compat> の値は無視されます。"
+"のです。こちらを指定すると F<debian/compat> の値を上書きします。"
 
 #. type: =item
 #: debhelper.pod:645
@@ -2384,7 +2382,7 @@ msgstr "このプログラムはdebhelperの一部です。"
 #. type: textblock
 #: dh_auto_build:5
 msgid "dh_auto_build - automatically builds a package"
-msgstr "dh_auto_build - パッケージの機械的な構築を行います"
+msgstr "dh_auto_build - パッケージの自動的な構築を行います"
 
 #. type: textblock
 #: dh_auto_build:14
@@ -2404,7 +2402,7 @@ msgid ""
 "done by running B<make> (or B<MAKE>, if the environment variable is set). If "
 "there's a F<setup.py>, or F<Build.PL>, it is run to build the package."
 msgstr ""
-"B<dh_auto_build>は、パッケージを機械的に構築しようとするdebhelperプログラムと"
+"B<dh_auto_build>は、パッケージを自動的に構築しようとするdebhelperプログラムと"
 "なります。パッケージが利用していると判断したビルドシステムの適切なコマンドを"
 "実行することにより構築を行います。例えばもしF<Makefile>が見つかるような事があ"
 "れば、B<make>を実行することにより処理を行います（あるいは、B<MAKE>環境変数が"
@@ -2451,7 +2449,7 @@ msgstr ""
 #. type: textblock
 #: dh_auto_clean:5
 msgid "dh_auto_clean - automatically cleans up after a build"
-msgstr "dh_auto_clean - 構築後、機械的にビルドディレクトリを消去します"
+msgstr "dh_auto_clean - 構築後、自動的にビルドディレクトリを消去します"
 
 #. type: textblock
 #: dh_auto_clean:15
@@ -2473,7 +2471,7 @@ msgid ""
 "variable is set). If there is a F<setup.py> or F<Build.PL>, it is run to "
 "clean the package."
 msgstr ""
-"B<dh_auto_clean>はパッケージが構築完了後に機械的にディレクトリを消去しようと"
+"B<dh_auto_clean>はパッケージが構築完了後に自動的にディレクトリを消去しようと"
 "するdebhelprプログラムです。このプログラムはパッケージの構築に必要なビルドシ"
 "ステムを割り出し、こちらに適したコマンドを実行する事により消去を行います。例"
 "えば、F<Makefile>が存在し、かつ、そのファイルの中にB<distclean>、"
@@ -2506,7 +2504,7 @@ msgstr ""
 #. type: textblock
 #: dh_auto_configure:5
 msgid "dh_auto_configure - automatically configure a package prior to building"
-msgstr "dh_auto_configure - パッケージ構築前に機械的にconfigure行います"
+msgstr "dh_auto_configure - パッケージ構築前に自動的にconfigure行います"
 
 #. type: textblock
 #: dh_auto_configure:14
@@ -2529,7 +2527,7 @@ msgid ""
 "configure step; for these B<dh_auto_configure> will exit without doing "
 "anything."
 msgstr ""
-"B<dh_auto_configure>はパッケージを構築する前に機械的にconfigureを実行する"
+"B<dh_auto_configure>はパッケージを構築する前に自動的にconfigureを実行する"
 "debhelperプログラムとなります。このプログラムはパッケージの構築に必要なビルド"
 "システムを割り出し、こちらに適したコマンドを実行して設定を行います。例えば、"
 "F<./configure>スクリプト、F<Makefile.PL>、F<Build.PL>、F<cmake>を探し、これら"
@@ -2573,7 +2571,7 @@ msgstr ""
 #. type: textblock
 #: dh_auto_install:5
 msgid "dh_auto_install - automatically runs make install or similar"
-msgstr "dh_auto_install - make installや同様のコマンドを機械的に実行します"
+msgstr "dh_auto_install - make installや同様のコマンドを自動的に実行します"
 
 #. type: textblock
 #: dh_auto_install:17
@@ -2596,7 +2594,7 @@ msgid ""
 "does not support installation, so B<dh_auto_install> will not install files "
 "built using Ant."
 msgstr ""
-"B<dh_auto_install>プログラムは、構築済みのファイルを機械的にインストールしよ"
+"B<dh_auto_install>プログラムは、構築済みのファイルを自動的にインストールしよ"
 "うとするdebhelperプログラムとなります。パッケージが利用するビルドシステムを判"
 "定し、適切なコマンドを発行する事によりインストールを実行します。例えば、"
 "F<Makefile>が存在し、中にB<install>ターゲットが存在するようであれば、B<make>"
@@ -2631,7 +2629,7 @@ msgid ""
 msgstr ""
 "B<DESTDIR>は生成したファイルをどこに置くべきかを指定する時に利用します。もし"
 "MakefileがF<Makefile.PL>を使ってMakeMakerから生成される場合、生成された"
-"Makefileの為に、さらに機械的にB<PREFIX=/usr>がインストールディレクトリとして"
+"Makefileの為に、さらに自動的にB<PREFIX=/usr>がインストールディレクトリとして"
 "指定されます。"
 
 #. type: textblock
@@ -2661,7 +2659,7 @@ msgid ""
 msgstr ""
 "指定したI<directory>のディレクトリ以下にファイルをインストールします。このオ"
 "プションを指定しないと、インストール先ディレクトリはL</B<説明>>章で説明するよ"
-"うな場所になるように機械的に指定されます。"
+"うな場所になるように自動的に指定されます。"
 
 #. type: textblock
 #: dh_auto_install:58
@@ -2675,7 +2673,7 @@ msgstr ""
 #. type: textblock
 #: dh_auto_test:5
 msgid "dh_auto_test - automatically runs a package's test suites"
-msgstr "dh_auto_test - パッケージに一揃いのテストを機械的に実行します"
+msgstr "dh_auto_test - パッケージに一揃いのテストを自動的に実行します"
 
 #. type: textblock
 #: dh_auto_test:15
@@ -2697,7 +2695,7 @@ msgid ""
 "fails, the command will exit nonzero. If there's no test suite, it will exit "
 "zero without doing anything."
 msgstr ""
-"B<dh_auto_test>はパッケージ付属のテストの一揃いを機械的に実行しようとするプロ"
+"B<dh_auto_test>はパッケージ付属のテストの一揃いを自動的に実行しようとするプロ"
 "グラムです。パッケージがどのようなビルドシステムを必要とするかを判定し、適切"
 "なコマンドを実行する事によりこちらを行います。例えば、もしMakefileが存在し、"
 "B<test>やB<check>ターゲットが存在する場合は、B<make>を実行します（環境変数"
@@ -3434,7 +3432,7 @@ msgid ""
 "maintainer scripts by L<dh_installdeb(1)>."
 msgstr ""
 "このプログラムは、Debian B<menu>と連携するのに必要な内容を含むF<postinst>と"
-"F<postrm>コマンドを機械的に生成します。生成されたF<postinst>とF<postrm>コマン"
+"F<postrm>コマンドを自動的に生成します。生成されたF<postinst>とF<postrm>コマン"
 "ドはL<dh_installdeb(1)>によりメンテナスクリプトへ組み込まれます。"
 
 #. type: =item
@@ -3752,7 +3750,7 @@ msgid ""
 "snippets."
 msgstr ""
 "このコマンドは、カタログや上位カタログ（B<-n>を指定しない時のみですが）を登"
-"録・解除の為に用意されているメンテナ用シェルスクリプトの塊を機械的に付け加え"
+"録・解除の為に用意されているメンテナ用シェルスクリプトの塊を自動的に付け加え"
 "るものです。これらスクリプトの塊はB<dh_installdeb>によりメンテナスクリプトへ"
 "挿入されます。Debhelperメンテナスクリプトについては、L<dh_installdeb(1)>を参"
 "照ください。"
@@ -3895,7 +3893,7 @@ msgid ""
 "directory."
 msgstr ""
 "これらファイルはパッケージビルドディレクトリ以下のusr/share/doc/I<package>/配"
-"下に機械的にインストールされます。"
+"下に自動的にインストールされます。"
 
 #. type: textblock
 #: dh_installchangelogs:47
@@ -4111,7 +4109,7 @@ msgid ""
 "is no need to list them manually here."
 msgstr ""
 "互換性レベルがv3以上の場合、パッケージ内のF<etc/>以下の全ファイルは、このプロ"
-"グラムによりconffileと機械的に印がつけらます。その為、自分でいちいちこれら"
+"グラムによりconffileと自動的に印がつけらます。その為、自分でいちいちこれら"
 "ファイルを、このファイルに列挙する必要はありません。"
 
 #. type: =item
@@ -4181,7 +4179,7 @@ msgid ""
 "B<dh_installdeb>. See L<dh_installdeb(1)> for an explanation of how that "
 "works."
 msgstr ""
-"本コマンドはdebconfに整合するのに必要なF<postrm>ファイルを機械的に生成しま"
+"本コマンドはdebconfに整合するのに必要なF<postrm>ファイルを自動的に生成しま"
 "す。このコマンドはB<dh_installdeb>によりメンテナスクリプトへ追加されます。こ"
 "の追加に関する動作についての説明は、L<dh_installdeb(1)>にあります。"
 
@@ -4205,8 +4203,8 @@ msgid ""
 msgstr ""
 "また、B<dpkg>により設定用スクリプトが呼び出されることになりますが、"
 "F<postinst>ファイルはdebconfのconfmoduleに関する設定が必要となります。"
-"B<dh_installdebconf>はこちらの作業を機械的にF<postinst>へ挿入することはしませ"
-"ん。というのも、これを機械的に正しく行うのは非常に難しいからです。"
+"B<dh_installdebconf>はこちらの作業を自動的にF<postinst>へ挿入することはしませ"
+"ん。というのも、これを自動的に正しく行うのは非常に難しいからです。"
 
 #. type: =item
 #: dh_installdebconf:38
@@ -4257,7 +4255,7 @@ msgid ""
 "L<po2debconf(1)> to generate merged templates files that include the "
 "translations from there."
 msgstr ""
-"もしこのディレクトリが存在すれば、このプログラムは機械的にL<po2debconf(1)> を"
+"もしこのディレクトリが存在すれば、このプログラムは自動的にL<po2debconf(1)> を"
 "呼び出し、このディレクトリ以下にある翻訳されたファイルを含む結合されたdebconf"
 "テンプレートファイルを生成します。"
 
@@ -4402,7 +4400,7 @@ msgstr "debian/I<package>.TODO"
 msgid ""
 "Each of these files is automatically installed if present for a I<package>."
 msgstr ""
-"もし存在すれば、I<package>へこれらのファイルは機械的にインストールされます。"
+"もし存在すれば、I<package>へこれらのファイルは自動的にインストールされます。"
 
 #. type: =item
 #: dh_installdocs:43
@@ -4616,7 +4614,7 @@ msgid ""
 "the maintainer scripts by B<dh_installdeb>. See L<dh_installdeb(1)> for an "
 "explanation of how this works."
 msgstr ""
-"Emacsアドオンパッケージを登録するのに必要なF<postinst>やF<prerm>を機械的に生"
+"Emacsアドオンパッケージを登録するのに必要なF<postinst>やF<prerm>を自動的に生"
 "成します。B<dh_installdeb>により、これらコマンドはメンテナスクリプトに追加さ"
 "れます。どのような動作を行うかについての説明は、L<dh_installdeb(1)>を参照くだ"
 "さい。"
@@ -4907,7 +4905,7 @@ msgid ""
 msgstr ""
 "本コマンドは、F</etc/rc*.d/>以下にシンボリックリンクを張り、startとstop手続き"
 "を持つようなinitスクリプトをセットアップするのに必要なF<postinst>、"
-"F<postrm>、F<prerm>コマンドを機械的に生成します。"
+"F<postrm>、F<prerm>コマンドを自動的に生成します。"
 
 #. type: =item
 #: dh_installinit:31
@@ -5476,7 +5474,7 @@ msgid ""
 "directories."
 msgstr ""
 "B<dh_installmanpages>はパッケージビルドディレクトリ以下にあるF<usr/share/man/"
-">ディレクトリへmanページを機械的にインストールする役目のdebhelperプログラムで"
+">ディレクトリへmanページを自動的にインストールする役目のdebhelperプログラムで"
 "す。"
 
 #. type: textblock
@@ -5601,7 +5599,7 @@ msgid ""
 "inserted into the maintainer scripts by L<dh_installdeb(1)>."
 msgstr ""
 "このプログラムは、Debian B<menu>と連携するのに必要な内容を含むF<postinst>と"
-"F<postrm>コマンドを機械的に生成します。生成されたF<postinst>とF<postrm>コマン"
+"F<postrm>コマンドを自動的に生成します。生成されたF<postinst>とF<postrm>コマン"
 "ドはL<dh_installdeb(1)>によりメンテナスクリプトへ組み込まれます。"
 
 #. type: =item
@@ -5725,7 +5723,7 @@ msgid ""
 ">."
 msgstr ""
 "パッケージビルドディレクトリ以下にて、カーネルモジュールを探し、見つけると、"
-"F<preinst>、F<postinst>、F<postrm>コマンドが機械的に生成されます。これらコマ"
+"F<preinst>、F<postinst>、F<postrm>コマンドが自動的に生成されます。これらコマ"
 "ンドは、パッケージをインストールする際に、B<depmod>を起動し、カーネルモジュー"
 "ルを登録するような内容となっております。これらのコマンドはL<dh_installdeb(1)>"
 "によりメンテナスクリプトへ挿入されます。 "
@@ -6351,7 +6349,7 @@ msgstr ""
 msgid ""
 "dh_makeshlibs - automatically create shlibs file and call dpkg-gensymbols"
 msgstr ""
-"dh_makeshlibs - 機械的にshlibsファイルを作成し、dpkg-gensymbolsを呼び出します"
+"dh_makeshlibs - 自動的にshlibsファイルを作成し、dpkg-gensymbolsを呼び出します"
 
 #. type: textblock
 #: dh_makeshlibs:14
@@ -6368,7 +6366,7 @@ msgid ""
 "B<dh_makeshlibs> is a debhelper program that automatically scans for shared "
 "libraries, and generates a shlibs file for the libraries it finds."
 msgstr ""
-"B<dh_makeshlibs>は機械的に共有ライブラリを走査し、shlibsファイルを生成する"
+"B<dh_makeshlibs>は自動的に共有ライブラリを走査し、shlibsファイルを生成する"
 "debhelperプログラムとなります。"
 
 #. type: textblock
@@ -7245,7 +7243,7 @@ msgid ""
 "usr/lib> directory to calculate shared library dependency information."
 msgstr ""
 "こちらの記述を行うと、共有ライブラリの依存関係を検討する為に、libfoo1に関する"
-"shlibsファイルを機械的に生成し、生成されたshlibsファイル及びF<debian/libfoo1/"
+"shlibsファイルを自動的に生成し、生成されたshlibsファイル及びF<debian/libfoo1/"
 "usr/lib>以下のlibfoo1ライブラリを使うようになります。"
 
 #. type: textblock
@@ -7328,7 +7326,7 @@ msgid ""
 "to determine how to strip a module, B<dh_strip> does not currently deal with "
 "stripping binary modules such as F<.o> files."
 msgstr ""
-"機械的にファイルがモジュールであるかどうかを見分けるのは難しく、また、どう"
+"自動的にファイルがモジュールであるかどうかを見分けるのは難しく、また、どう"
 "やってモジュールからデバグ情報を除外すれば良いかを決定するのも難しい為、"
 "B<dh_strip>は、F<.o>を拡張子に持つファイルのようなバイナリモジュールからデ"
 "バッグ情報の除去を行う事について、未だサポートしていません。"
@@ -7646,6 +7644,6 @@ msgstr "Andrew Stribblehill <ads@debian.org>"
 #~ "by L<dh_installdeb(1)>."
 #~ msgstr ""
 #~ "本コマンドは、debianシステムのB<mime-support>とB<shared-mime-info>パッケー"
-#~ "ジと連携する為のF<postinst>とF<postrm>コマンドを機械的に生成します。これら"
+#~ "ジと連携する為のF<postinst>とF<postrm>コマンドを自動的に生成します。これら"
 #~ "F<postinst>とF<postrm>はL<dh_installdeb(1)>によりメンテナスクリプトへ挿入"
 #~ "されます。"
