@@ -1267,6 +1267,7 @@ msgstr ""
 
 #. type: textblock
 #: debhelper.pod:557
+#, fuzzy
 msgid ""
 "To facilitate this, as well as give you more control over which packages are "
 "acted on by debhelper programs, all debhelper programs accept the B<-a>, B<-"
@@ -1274,7 +1275,7 @@ msgid ""
 "are given, debhelper programs default to acting on all packages listed in "
 "the control file."
 msgstr ""
-"これを容易にするため、また、debhelperプログラムによりどのパッケージに作用させ"
+"これを容易にするため、そして debhelper プログラムによりどのパッケージに作用させ"
 "るかを細かくコントロール出きるようにする為、debhelperプログラムはB<-a>、B<-"
 "i>、 B<-p>、B<-s> パラメタを解釈できるようになっています。これらパラメタは一"
 "度に指定してもかまいません。ただ、何も指定しないと、debhelperプログラムは、"
@@ -1282,8 +1283,10 @@ msgstr ""
 
 #. type: =head2
 #: debhelper.pod:563
+#, fuzzy
+#note: it should be "Debian maintainer scripts"?
 msgid "Automatic generation of Debian install scripts"
-msgstr "Debian インストール用スクリプトの自動生成"
+msgstr "メンテナスクリプトの自動生成"
 
 #. type: textblock
 #: debhelper.pod:565
@@ -1295,11 +1298,11 @@ msgid ""
 "B<#DEBHELPER#> will be replaced by any auto-generated code when you run "
 "B<dh_installdeb>."
 msgstr ""
-"debhelper コマンドには、Debian メンテナスクリプトの一部を機械的に生成するものが"
-"あります。もし、すでにある Debian メンテナスクリプトに機械的に何かが含まれるよ"
-"うにしたければ、スクリプト中の含まれて欲しい部分に B<#DEBHELPER#> を記載してく"
-"ださい。B<#DEBHELPER#> は B<dh_installdeb> が実行されるときに機械的に生成された"
-"コードと置き換えられます。"
+"debhelper コマンドには、Debian メンテナスクリプトの一部を自動的に生成するものが"
+"あります。もし、既存の Debian メンテナスクリプトに自動生成された部分を含むよ"
+"うにしたければ、コードを追加したい場所に B<#DEBHELPER#> と追記してく"
+"ださい。B<#DEBHELPER#> は B<dh_installdeb> が実行されるときに、自動生成された"
+"コードへと置換されます。"
 
 #. type: textblock
 #: debhelper.pod:572
@@ -1308,7 +1311,7 @@ msgid ""
 "it, then debhelper will create the complete script."
 msgstr ""
 "スクリプトがまったく存在しないにもかかわらず、debhelper がスクリプトに追加する"
-"ものがあると判断した場合は、debhelper は該当のスクリプトをすべて生成します。"
+"ものがあると判断した場合は、debhelper は完全なスクリプトを生成します。"
 
 #. type: textblock
 #: debhelper.pod:575
@@ -1316,8 +1319,8 @@ msgid ""
 "All debhelper commands that automatically generate code in this way let it "
 "be disabled by the -n parameter (see above)."
 msgstr ""
-"前述の -n パラメーターを指定すると、今まで述べた debhelper プログラムのスクリプトの機"
-"械的な生成を止めさせる事ができます。"
+"-n パラメーターを指定すると、今まで述べた debhelper プログラムのスクリプトの機"
+"械的な生成を止めさせる事ができます (上記参照)。"
 
 #. type: textblock
 #: debhelper.pod:578
@@ -1327,10 +1330,9 @@ msgid ""
 "is one way to do that (note that I made sure that $1, $2, etc are set with "
 "the set command):"
 msgstr ""
-"シェルスクリプトによりコードを挿入する手法は、Perl スクリプト相手には直接行う"
-"事はできないという事に注意する必要があります。もし何かを Perl スクリプトに埋め"
-"込みたい場合、以下に１つの方法を述べます（$1, $2 等は set コマンドにより設定され"
-"る事に注意してください）"
+"挿入されるコードはシェルスクリプトなので、Perl スクリプト相手には直接行う事はできないのに注意"
+"してください。もし何かを Perl スクリプトに埋め込みたい場合、以下に一例を述べます "
+"($1, $2 等は set コマンドにより設定される事に注意):"
 
 #. type: verbatim
 #: debhelper.pod:583
@@ -1353,7 +1355,7 @@ msgstr ""
 #. type: =head2
 #: debhelper.pod:589
 msgid "Automatic generation of miscellaneous dependencies."
-msgstr "その他依存関係の機械的な生成"
+msgstr "その他依存関係の自動生成"
 
 #. type: textblock
 #: debhelper.pod:591
