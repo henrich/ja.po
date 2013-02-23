@@ -345,7 +345,7 @@ msgstr "B<-i>, B<--indep>"
 #. type: textblock
 #: debhelper.pod:118
 msgid "Act on all architecture independent packages."
-msgstr "全ての非アーキテクチャ依存パッケージに対して処理を行います。"
+msgstr "全てのアーキテクチャ非依存パッケージに対して処理を行います。"
 
 #. type: =item
 #: debhelper.pod:120
@@ -386,8 +386,8 @@ msgid ""
 "Do not act on the specified package even if an B<-a>, B<-i>, or B<-p> option "
 "lists the package as one that should be acted on."
 msgstr ""
-"B<-a>, B<-i>, B<-p> オプションが、処理すべきパッケージとして対象としていても、"
-"指定されているパッケージには処理を行わないようにします。"
+"B<-a>, B<-i>, B<-p> オプションで処理すべきパッケージとして対象としていても、"
+"指定されているパッケージについては処理を行わないようにします。"
 
 #. type: =item
 #: debhelper.pod:135
@@ -403,7 +403,7 @@ msgid ""
 "options only for a couple of binary packages, pass this option to the last "
 "call of the command to process the rest of packages with default settings."
 msgstr ""
-"この debhelper コマンドにより、すでに処理が行われているものについて、処理をしないよう"
+"この debhelper コマンドにより、すでに処理済のパッケージについては処理をしないよう"
 "にします (つまり、debhelper のログにコマンドの記録があるものは処理しない)。例"
 "えば、いくつかのバイナリパッケージだけに対して特別なオプション付きでコマンドを呼"
 "び出し、残りのパッケージに対しては、本オプションをつけてコマンドを呼び出して、"
@@ -528,8 +528,8 @@ msgid ""
 "filename, and any file containing the specified text will be excluded."
 msgstr ""
 "item を処理対象から除外します。複数の item を除外するためにこのオプションを複数指定して使う。"
-"ことができます。通常、\\fIitem\\fR はファイル名の一部で、指定されたテキストに含まれる"
-"ファイルがすべて除外されます。"
+"ことができます。通常、\\fIitem\\fR はファイル名の一部で、指定されたテキストが含まれる"
+"ファイルはすべて除外されます。"
 
 #. type: =item
 #: debhelper.pod:191 dh_bugfiles:54 dh_compress:59 dh_installdirs:35
@@ -544,8 +544,8 @@ msgid ""
 "Makes files or other items that are specified on the command line take "
 "effect in ALL packages acted on, not just the first."
 msgstr ""
-"コマンドラインで指定したファイルあるいは他の item について、最初のパッケージだけでなく"
-"全パッケージで処理を行うようにします。"
+"コマンドラインで指定したファイル、あるいは他の item について、最初のパッケージだけでなく"
+"全パッケージに対して処理を行います。"
 
 #. type: =head1
 #: debhelper.pod:198
@@ -611,9 +611,9 @@ msgid ""
 "build directory. If I<directory> parameter is omitted, a default build "
 "directory will chosen."
 msgstr ""
-"ビルドディレクトリをソースディレクトリ以外の場所で行えるようにし、"
+"ソースのビルドをソースディレクトリ以外の場所で行えるようにし、"
 "I<directory> をビルドディレクトリとして利用するように指定します。もし"
-"I<directory> パラメタが省略された場合は、特に指定無き場合のビルドディレクトリ"
+"I<directory> パラメタが省略された場合は、特にデフォルトのビルドディレクトリ"
 "が利用されます。"
 
 #. type: textblock
@@ -625,8 +625,8 @@ msgid ""
 "such a case, the default build directory will be used even if B<--"
 "builddirectory> is not specified."
 msgstr ""
-"このオプションが指定されない場合、ビルドシステムがソースツリー以外での構築を"
-"必要としていたり、あるいは、そちらが望ましいと判断されたりしない限りにおい"
+"このオプションが指定されない場合は、ビルドシステムがソースツリー以外での構築を"
+"必要とする、あるいはそちらが望ましいと判断されたりしない限りにおい"
 "て、デフォルトでソースディレクトリ内部で構築が行われます。そのような場合は、B<--"
 "builddirectory> が指定されていないときと同じように、特に指定無き場合のビルド"
 "ディレクトリが利用されます"
@@ -657,8 +657,8 @@ msgid ""
 "variable (L<Debian Policy, section 4.9.1>) at build time. It might also be "
 "subject to a build system specific limit."
 msgstr ""
-"システムがサポートしていれば、並列ビルドを有効にします。どれだけの数で並列ビルドするか"
-"は、ビルドが行われる際に B<DEB_BUILD_OPTIONS> 環境変数によって決まります "
+"ビルドシステムがサポートいる場合、並列ビルドを有効にします。どれだけの数で並列ビルドするか"
+"は、ビルドが行われる際に B<DEB_BUILD_OPTIONS> 環境変数によって決定されます "
 "(L<Debian ポリシーマニュアル、4.9.1章>)。ビルドシステム固有の制限に影響を受ける場合"
 "もあります。"
 
@@ -668,7 +668,7 @@ msgid ""
 "If this option is not specified, debhelper currently defaults to not "
 "allowing parallel package builds."
 msgstr ""
-"このオプションが指定されていないと、現状 debhelper はデフォルトでは並列ビルドを行いません。"
+"このオプションが指定されていないと、debhelper は現状デフォルトでは並列ビルドを行いません。"
 
 #. type: =item
 #: debhelper.pod:245
@@ -685,8 +685,8 @@ msgid ""
 "maximum level that is known to work, or that you wish to support."
 msgstr ""
 "このオプションは B<--parallel> とともに利用し、並列ビルドにおける並列数の上限を"
-"引き上げます。もしパッケージがとある並列数の元でしか並列ビルドできないことが"
-"わかっている場合は、このオプションを使って最大限の並列数を指定したり、あるい"
+"引き上げます。もしパッケージが、とある並列数まででしかビルドできないことが"
+"わかっている場合、このオプションを使って最大限の並列数を指定、あるい"
 "は必要な並列数を指定することができます。"
 
 #. type: =item
@@ -703,7 +703,7 @@ msgid ""
 "manually specified with the B<--buildsystem> option."
 msgstr ""
 "このシステム上で、debhelper がサポートしているビルドシステム一覧を表示します。"
-"この一覧にはデフォルトのビルドシステム、そしてサードパーティー (であると明記されている) "
+"この一覧にはデフォルトのビルドシステム、そしてサードパーティー製 (であると明記されている) "
 "ビルドシステムの双方を含みます。また、どれが自動的に選択されたか、あるいは手動で "
 "B<--buildsystem> オプションにて何が指定されたのかも表示します。"
 
@@ -714,7 +714,6 @@ msgstr "互換性レベル"
 
 #. type: textblock
 #: debhelper.pod:263
-#, fuzzy
 msgid ""
 "From time to time, major non-backwards-compatible changes need to be made to "
 "debhelper, to keep it clean and well-designed as needs change and its author "
@@ -724,12 +723,11 @@ msgid ""
 "behavior in various ways."
 msgstr ""
 "時が経ち、後方互換性を崩すような大きな変更を debhelper にする必要がでてきまし"
-"た。これは、Debian の状況の変化に対応する為に debhelper の構造を綺麗なままに"
-"維持することであったり、よりうまく設計しなおす事であったり、各々の debhelper "
-"コマンドの作者がよりうまく開発をすすめる為となります。すでに存在するパッケー"
-"ジにこれらの変更が影響を与えないようにするため、互換性レベルという考え方が提"
-"案されています。こちらにより、debhelper にどの互換性レベルを使うべきかを指定"
-"でき、こちらに合わせて debhelper コマンドの動作は様々に変化します。"
+"た。これは、変化に対して debhelper の構造を綺麗でうまく設計されたままに保つ必要が"
+"あることと、debhelper の作者がより経験を得てより深く考えるようになったためです。"
+"このような大きな変更によって既存のパッケージを壊さないようにするため、互換性レベル"
+"という考え方が導入されました。debhelper にどの互換性レベルを使うべきかを指定"
+"し、これに合わせ様々に動作が変化します。"
 
 #. type: textblock
 #: debhelper.pod:270
