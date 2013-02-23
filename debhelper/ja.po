@@ -1535,10 +1535,10 @@ msgid ""
 "all commands that support the B<-X> option. Moreover, B<dh_builddeb> will "
 "B<rm -rf> anything that matches the value in your package build tree."
 msgstr ""
-"こちらが設定されていると、B<-X>オプションをサポートするすべてのコマンドに対"
-"し、B<-X>オプションの値として環境変数の値を指定します。さらに、B<dh_builddeb>"
+"こちらが設定されていると、B<-X> オプションをサポートするすべてのコマンドに対"
+"し、B<-X> オプションの値として環境変数の値を指定します。さらに、B<dh_builddeb> "
 "コマンドはビルドツリーの元で環境変数の値に基づくパターンにマッチするもの全部"
-"をB<rm -rf>するようになります。"
+"を B<rm -rf> するようになります。"
 
 #. type: textblock
 #: debhelper.pod:663
