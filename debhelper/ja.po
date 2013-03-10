@@ -2547,9 +2547,9 @@ msgid ""
 "you're encouraged to skip using B<dh_auto_configure> at all, and just run "
 "F<./configure> or its equivalent manually."
 msgstr ""
-"本コマンドは90%のパッケージで動作するように作られています。もし、動作しないよ"
-"うなパッケージがあった場合は、B<dh_auto_configure>を利用するのを完全に省略"
-"し、代わりに、F<./configure>や、同等の動作を行うコマンドを自分で記述願いま"
+"本コマンドは 90% のパッケージで動作するように作られています。もし、動作しないよ"
+"うなパッケージがあった場合は、B<dh_auto_configure> を利用するのを完全に省略"
+"し、代わりに F<./configure> や、同等の動作を行うコマンドを自分で記述願いま"
 "す。"
 
 #. type: textblock
@@ -2558,8 +2558,8 @@ msgid ""
 "Pass I<params> to the program that is run, after the parameters that "
 "B<dh_auto_configure> usually passes. For example:"
 msgstr ""
-"I<params>を起動するプログラムに引き渡すには、B<dh_auto_configure>に通常指定す"
-"るパラメタの後に、B<-->を指定し、I<params>を指定するように願います。以下に例"
+"I<params> を起動するプログラムに引き渡すには、B<dh_auto_configure> に通常指定す"
+"るパラメタの後に、B<--> を指定し、I<params> を指定するように願います。以下に例"
 "を示します："
 
 #. type: verbatim
