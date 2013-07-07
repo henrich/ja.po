@@ -4955,10 +4955,8 @@ msgstr ""
 
 #. type: =item
 #: dh_installinit:46
-#, fuzzy
-#| msgid "debian/I<package>.mime"
 msgid "debian/I<package>.service"
-msgstr "debian/I<package>.mime"
+msgstr "debian/I<package>.service"
 
 #. type: textblock
 #: dh_installinit:48
