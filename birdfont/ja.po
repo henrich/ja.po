@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: birdfont 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-31 20:15+0100\n"
+"POT-Creation-Date: 2013-02-16 16:44+0100\n"
 "PO-Revision-Date: 2013-02-18 00:36+0900\n"
 "Last-Translator: Hideki Yamane <henrich@debian.org>\n"
 "Language-Team: \n"
@@ -61,31 +61,31 @@ msgstr ""
 msgid "Move, resize and rotate background image"
 msgstr ""
 
-#: libbirdfont/Birdfont.vala:22
+#: libbirdfont/BirdFont.vala:23
 msgid "Usage:"
 msgstr ""
 
-#: libbirdfont/Birdfont.vala:25
+#: libbirdfont/BirdFont.vala:26
 msgid "print this message\n"
 msgstr ""
 
-#: libbirdfont/Birdfont.vala:26
+#: libbirdfont/BirdFont.vala:27
 msgid "write files to this directory\n"
 msgstr "このディレクトリへファイルを書き出す\n"
 
-#: libbirdfont/Birdfont.vala:27
+#: libbirdfont/BirdFont.vala:28
 msgid "write svg file\n"
 msgstr ""
 
-#: libbirdfont/Birdfont.vala:28
+#: libbirdfont/BirdFont.vala:29
 msgid "write ttf and eot files\n"
 msgstr ""
 
-#: libbirdfont/Birdfont.vala:116
+#: libbirdfont/BirdFont.vala:118
 msgid "Can't find output directory"
 msgstr "出力先のディレクトリが見つかりません"
 
-#: libbirdfont/Birdfont.vala:121 libbirdfont/Birdfont.vala:126
+#: libbirdfont/BirdFont.vala:123 libbirdfont/BirdFont.vala:128
 msgid "Writing"
 msgstr ""
 
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Export glyph to svg file"
 msgstr "グリフを svg ファイルへ書き出す"
 
-#: libbirdfont/ExportTool.vala:523
+#: libbirdfont/ExportTool.vala:524
 msgid "Wrote font files"
 msgstr ""
 
@@ -157,7 +157,7 @@ msgstr "グリフシーケンス"
 msgid "Export SVG font and view the result"
 msgstr ""
 
-#: libbirdfont/MenuTab.vala:312 libbirdfont/SaveDialog.vala:86
+#: libbirdfont/MenuTab.vala:312 libbirdfont/SaveDialog.vala:85
 msgid "Save"
 msgstr "保存する"
 
@@ -174,14 +174,36 @@ msgstr "パスを結合する"
 msgid "Move paths"
 msgstr "パスを移動する"
 
-#: libbirdfont/OverView.vala:483
+#: libbirdfont/OverView.vala:498
 msgid "No glyphs in this view."
 msgstr "このビューにはグリフがありません。"
 
+#: libbirdfont/OverwriteDialog.vala:57
+msgid ""
+"The loaded font will be overwritten if you choose to continue with preview."
+msgstr ""
+
+#: libbirdfont/OverwriteDialog.vala:72
+msgid "Continue"
+msgstr ""
+
+#: libbirdfont/OverwriteDialog.vala:73 libbirdfont/SaveDialog.vala:88
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: libbirdfont/OverwriteDialog.vala:74
+msgid "Continue and don't ask me again."
+msgstr ""
+
 #: libbirdfont/PenTool.vala:59
+<<<<<<< HEAD
 #, fuzzy
 msgid "Use left command key + click to add new points"
 msgstr "左コマンドキー + クリックで新しいポイントを追加してください"
+=======
+msgid "Use left command key (⌘) + click to add new points"
+msgstr ""
+>>>>>>> c74325b8d20ddaf8c7e17f876d7a8c17e30b1ac7
 
 #: libbirdfont/PenTool.vala:61
 msgid "Right click to add new points, left click to move points"
@@ -191,21 +213,17 @@ msgstr ""
 msgid "and double click to add new point on path."
 msgstr ""
 
-#: libbirdfont/SaveDialog.vala:70
+#: libbirdfont/SaveDialog.vala:69
 msgid "Save?"
 msgstr "保存しますか?"
 
-#: libbirdfont/SaveDialog.vala:87
+#: libbirdfont/SaveDialog.vala:86
 msgid "Save as"
 msgstr "別名で保存"
 
-#: libbirdfont/SaveDialog.vala:88
+#: libbirdfont/SaveDialog.vala:87
 msgid "Discard"
 msgstr "破棄"
-
-#: libbirdfont/SaveDialog.vala:89
-msgid "Cancel"
-msgstr "キャンセル"
 
 #: libbirdfont/TabBar.vala:486
 msgid "Overview"
@@ -331,162 +349,162 @@ msgstr ""
 msgid "New version"
 msgstr "新しいバージョン"
 
-#: libbirdfont/VersionList.vala:136
+#: libbirdfont/VersionList.vala:145
 msgid "Version"
 msgstr "バージョン"
 
-#: birdfont/GtkWindow.vala:330
+#: birdfont/GtkWindow.vala:359
 msgid "_New"
 msgstr "新規(_N)"
 
-#: birdfont/GtkWindow.vala:335
+#: birdfont/GtkWindow.vala:364
 msgid "_Open"
 msgstr "開く(_O)"
 
-#: birdfont/GtkWindow.vala:340
+#: birdfont/GtkWindow.vala:369
 msgid "_Save"
 msgstr "保存(_S)"
 
-#: birdfont/GtkWindow.vala:345
+#: birdfont/GtkWindow.vala:374
 msgid "Save _as"
 msgstr "別名で保存(_A)"
 
-#: birdfont/GtkWindow.vala:349
+#: birdfont/GtkWindow.vala:378
 msgid "_Export"
 msgstr "エクスポート(_E)"
 
-#: birdfont/GtkWindow.vala:354
+#: birdfont/GtkWindow.vala:383
 msgid "_Preview"
 msgstr "プレビュー(_P)"
 
-#: birdfont/GtkWindow.vala:359
+#: birdfont/GtkWindow.vala:388
 msgid "_Kerning"
 msgstr "カーニング(_K)"
 
-#: birdfont/GtkWindow.vala:364
+#: birdfont/GtkWindow.vala:393
 msgid "_Quit"
 msgstr "終了(_Q)"
 
-#: birdfont/GtkWindow.vala:369
+#: birdfont/GtkWindow.vala:398
 msgid "_Undo"
 msgstr "元に戻す(_U)"
 
-#: birdfont/GtkWindow.vala:374
+#: birdfont/GtkWindow.vala:403
 msgid "_Copy"
 msgstr "コピー(_C)"
 
-#: birdfont/GtkWindow.vala:379
+#: birdfont/GtkWindow.vala:408
 msgid "_Paste"
 msgstr "貼り付け(_P)"
 
-#: birdfont/GtkWindow.vala:384
+#: birdfont/GtkWindow.vala:413
 msgid "_Select all paths"
 msgstr "すべてのパスを選択(_S)"
 
-#: birdfont/GtkWindow.vala:392
+#: birdfont/GtkWindow.vala:421
 msgid "_Export glyph as SVG"
 msgstr "SVGとしてグリフをエクスポート(_E)"
 
-#: birdfont/GtkWindow.vala:396
+#: birdfont/GtkWindow.vala:425
 msgid "_Import SVG"
 msgstr "SVGのインポート(_I)"
 
-#: birdfont/GtkWindow.vala:400
+#: birdfont/GtkWindow.vala:429
 msgid "Close _path"
 msgstr "パスを閉じる(_P)"
 
-#: birdfont/GtkWindow.vala:407
+#: birdfont/GtkWindow.vala:436
 msgid "_Select point above"
 msgstr ""
 
-#: birdfont/GtkWindow.vala:411
+#: birdfont/GtkWindow.vala:440
 msgid "Select _next point"
 msgstr ""
 
-#: birdfont/GtkWindow.vala:415
+#: birdfont/GtkWindow.vala:444
 msgid "Select _previous point"
 msgstr ""
 
-#: birdfont/GtkWindow.vala:419
+#: birdfont/GtkWindow.vala:448
 msgid "Select point _below"
 msgstr ""
 
-#: birdfont/GtkWindow.vala:424
+#: birdfont/GtkWindow.vala:453
 msgid "_Next tab"
 msgstr "次のタブ(_N)"
 
-#: birdfont/GtkWindow.vala:437
+#: birdfont/GtkWindow.vala:466
 msgid "_Previous tab"
 msgstr "前のタブ(_P)"
 
-#: birdfont/GtkWindow.vala:450
+#: birdfont/GtkWindow.vala:479
 msgid "_Close tab"
 msgstr "タブを閉じる(_C)"
 
-#: birdfont/GtkWindow.vala:464
+#: birdfont/GtkWindow.vala:493
 msgid "Close _all tabs"
 msgstr "すべてのタブを閉じる(_A)"
 
-#: birdfont/GtkWindow.vala:472
+#: birdfont/GtkWindow.vala:501
 msgid "_Create path"
 msgstr "パスを作成(_C)"
 
-#: birdfont/GtkWindow.vala:479
+#: birdfont/GtkWindow.vala:508
 msgid "_Zoom"
 msgstr "ズーム(_Z)"
 
-#: birdfont/GtkWindow.vala:485
+#: birdfont/GtkWindow.vala:514
 msgid "_Create counter path"
 msgstr ""
 
-#: birdfont/GtkWindow.vala:492
+#: birdfont/GtkWindow.vala:521
 msgid "_Move"
 msgstr "移動(_M)"
 
-#: birdfont/GtkWindow.vala:499
+#: birdfont/GtkWindow.vala:528
 msgid "Show _full unicode characters set"
 msgstr "全ユニコード文字セットを表示(_F)"
 
-#: birdfont/GtkWindow.vala:506
+#: birdfont/GtkWindow.vala:535
 msgid "Show de_fault characters set"
 msgstr "標準の文字セットを表示(_F)"
 
-#: birdfont/GtkWindow.vala:513
+#: birdfont/GtkWindow.vala:542
 msgid "Show characters in font"
 msgstr "文字をこのフォントで表示"
 
-#: birdfont/GtkWindow.vala:520
+#: birdfont/GtkWindow.vala:549
 msgid "Add new _grid item"
 msgstr ""
 
-#: birdfont/GtkWindow.vala:526
+#: birdfont/GtkWindow.vala:555
 msgid "Remove gr_id item"
 msgstr ""
 
-#: birdfont/GtkWindow.vala:532
+#: birdfont/GtkWindow.vala:561
 msgid "_Zoom in"
 msgstr "拡大(_Z)"
 
-#: birdfont/GtkWindow.vala:539
+#: birdfont/GtkWindow.vala:568
 msgid "Zoom _out"
 msgstr "縮小(_O)"
 
-#: birdfont/GtkWindow.vala:546
+#: birdfont/GtkWindow.vala:575
 msgid "Zoom to _scale 1:1"
 msgstr "1:1 スケールへズーム(_S)"
 
-#: birdfont/GtkWindow.vala:554
+#: birdfont/GtkWindow.vala:583
 msgid "_File"
 msgstr "ファイル(_F)"
 
-#: birdfont/GtkWindow.vala:557
+#: birdfont/GtkWindow.vala:586
 msgid "_Edit"
 msgstr "編集(_E)"
 
-#: birdfont/GtkWindow.vala:560
+#: birdfont/GtkWindow.vala:589
 msgid "_Tab"
 msgstr "タブ(_T)"
 
-#: birdfont/GtkWindow.vala:563
+#: birdfont/GtkWindow.vala:592
 msgid "T_ool"
 msgstr "ツール(_O)"
