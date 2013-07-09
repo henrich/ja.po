@@ -1677,7 +1677,6 @@ msgstr ""
 
 #. type: textblock
 #: dh:28
-#, fuzzy
 # Build-Depend -> Build-Depends
 msgid ""
 "To override I<dh_command>, add a target named B<override_>I<dh_command> to "
@@ -1688,11 +1687,11 @@ msgid ""
 "7.0.50 or above.)"
 msgstr ""
 "ターゲット I<dh_command> を変更するためには、B<override_>I<dh_command> という"
-"ターゲットをruleファイルに記載します。こちらが指定されていると、I<dh_command> "
-"が動作する代わりに、B<override_>I<dh_command> ターゲットを呼び出します。上書き"
-"ターゲットでは、コマンドにオプションを追加したり、あるいは、コマンド全部を置"
-"き換えたりできます。後に例を上げます (この機能を使うには、Build-Depends に "
-"debhelper のバージョン 7.0.50 以上というのを指定しておかなければなりません) 。"
+"ターゲットを rule ファイルに記載します。こちらが指定されていると、I<dh_command> "
+"が動作する代わりに B<override_>I<dh_command> ターゲットを呼び出します。上書き"
+"ターゲットでは、コマンドにオプションを追加したり、コマンド全てを置"
+"き換えたりできます。後に例を挙げます (この機能を使うには、Build-Depends に "
+"debhelper のバージョン 7.0.50 以上を指定する必要があるのに注意ください) 。"
 
 #. type: textblock
 #: dh:36
@@ -1705,12 +1704,12 @@ msgid ""
 "(Note that to use this feature, you should Build-Depend on debhelper 8.9.7 "
 "or above.)"
 msgstr ""
-"アーキテクチャ依存パッケージを作るときのみに作用、あるいは、アーキテクチャ非"
-"依存パッケージを作るときのみ作用するように上書きターゲットを定義することもで"
+"アーキテクチャ依存パッケージを作るときのみ、あるいはアーキテクチャ非"
+"依存パッケージを作るときのみ動作するように上書きターゲットを定義することもで"
 "きます。その場合、B<override_>I<dh_command>B<-arch> や、"
 "B<override_>I<dh_command>B<-indep> を使ってください (なお、この機能を使うに"
 "は、Build-Depends 行で debhelper バージョン 8.9.7 以上を指定する必要がありま"
-"す。)  "
+"す)。"
 
 #. type: =head1
 #: dh:43 dh_auto_build:28 dh_auto_clean:30 dh_auto_configure:31
@@ -1735,6 +1734,7 @@ msgstr "B<--with> I<addon>[B<,>I<addon> ...]"
 
 #. type: textblock
 #: dh:49
+#, fuzzy
 msgid ""
 "Add the debhelper commands specified by the given addon to appropriate "
 "places in the sequence of commands that is run. This option can be repeated "
@@ -1756,6 +1756,7 @@ msgstr "B<--without> I<addon>"
 
 #. type: textblock
 #: dh:58
+#, fuzzy
 msgid ""
 "The inverse of B<--with>, disables using the given addon. This option can be "
 "repeated more than once, or multiple addons to disable can be listed, "
@@ -1775,11 +1776,11 @@ msgstr "利用可能なアドオン一覧。"
 msgid ""
 "Prints commands that would run for a given sequence, but does not run them."
 msgstr ""
-"指定された一連の処理の内容を表示するだけコマンドとなります。表示だけして実際"
-"にはコマンドを実行しません。"
+"指定された一連の処理でのコマンドを表示しますが、表示だけして実際にはコマンドは実行しません。"
 
 #. type: textblock
 #: dh:72
+#, fuzzy
 msgid ""
 "Other options passed to B<dh> are passed on to each command it runs. This "
 "can be used to set an option like B<-v> or B<-X> or B<-N>, as well as for "
@@ -1843,9 +1844,8 @@ msgid ""
 "Often you'll want to pass an option to a specific debhelper command. The "
 "easy way to do with is by adding an override target for that command."
 msgstr ""
-"特定の debhelper コマンドへオプションを渡したい事がよくあります。こちらを行う簡"
-"単な方法は、オプション渡したいコマンドに関する上書きターゲットに記載する事に"
-"より行います。"
+"特定の debhelper コマンドへオプションを渡したい事がよくあります。これを行う簡"
+"単な方法は、オプションを渡したいコマンドに対して上書きターゲットを追加します。"
 
 #. type: verbatim
 #: dh:93 dh:178 dh:189
@@ -1927,9 +1927,8 @@ msgid ""
 "Another common case is wanting to do something manually before or after a "
 "particular debhelper command is run."
 msgstr ""
-"別のよくある例として、特定の debhelper コマンドが実行される直前、あるいは、直後"
-"に手動にて何かしたいような事があります。その場合は以下のようにすると良いで"
-"す。"
+"別のよくある例として、特定の debhelper コマンドが実行される直前あるいは直後"
+"に、手動で何かをしたいような事があります。"
 
 #. type: verbatim
 #: dh:124
@@ -1956,7 +1955,7 @@ msgstr ""
 "もしパッケージが autotools を利用しており、パッケージ構築時に F<config.sub> や"
 "F<config.guess> ファイルをより新しいバージョンの B<autotools-dev> で一旦生成しな"
 "おしたい場合があります。この場合、B<autotools-dev> で提供されているコマンドを"
-"使って処理する事ができます。その場合以下のようにします："
+"使い、以下のようにして自動化する事ができます。"
 
 #. type: verbatim
 #: dh:133
@@ -1979,9 +1978,9 @@ msgid ""
 "that area. (Before compatibility level v9, dh does run B<dh_pysupport>.)  "
 "Here is how to use B<dh_python2>."
 msgstr ""
-"状況は常に変わってはいますが、特に指定無き場合 python tool は dh によって起動され"
-"ません (互換性レベルの v9 以前であれば、dh は B<dh_pysupport> を起動します。)ここ"
-"では、B<dh_python2> どう使うかを示します:"
+"状況は常に変わってはいますが、デフォルトでは python 関連ツール は dh によって起動され"
+"ません (互換性レベルの v9 以前であれば、dh は B<dh_pysupport> を起動します)。ここ"
+"では、B<dh_python2> をどのようにして使うかを示します。"
 
 #. type: verbatim
 #: dh:141
@@ -1996,15 +1995,14 @@ msgstr ""
 "\t%:\n"
 "\t\tdh $@ --with python2\n"
 "\n"
-
 #. type: textblock
 #: dh:145
 msgid ""
 "Here is how to force use of Perl's B<Module::Build> build system, which can "
 "be necessary if debhelper wrongly detects that the package uses MakeMaker."
 msgstr ""
-"Perl による B<Module::Build> ビルドシステムを無理やり使わせる方法を載せます。こ"
-"れは、debhelper が間違ってパッケージが MakeMaker を使っていると誤認識する場合に"
+"こちらは Perl による B<Module::Build> ビルドシステムを強制的に使う方法です。こ"
+"れは、debhelper がパッケージが MakeMaker を使っていると誤認識する場合に"
 "必要となります。"
 
 #. type: verbatim
@@ -2029,7 +2027,7 @@ msgid ""
 "subdirectory."
 msgstr ""
 "以下に B<dh_auto_>I<*> コマンドがどこにパッケージソースがあるかを変更する例を載"
-"せます。これはサブディレクトリにソースが存在するようなパッケージで使います:"
+"せます。これはサブディレクトリにソースが存在するようなパッケージで使います。"
 
 #. type: verbatim
 #: dh:157
