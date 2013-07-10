@@ -1664,7 +1664,7 @@ msgstr ""
 #. type: =head1
 #: dh:23
 msgid "OVERRIDE TARGETS"
-msgstr "上書きターゲット (overrides)"
+msgstr "override ターゲット"
 
 #. type: textblock
 #: dh:25
@@ -1672,7 +1672,7 @@ msgid ""
 "A F<debian/rules> file using B<dh> can override the command that is run at "
 "any step in a sequence, by defining an override target."
 msgstr ""
-"B<dh> が利用する F<debian/rules> にて、上書きターゲットを指定することで、呼"
+"B<dh> が利用する F<debian/rules> にて、override ターゲットを指定することで、呼"
 "び出される一連の処理途中で動作を変更できます。"
 
 #. type: textblock
@@ -1689,7 +1689,7 @@ msgid ""
 msgstr ""
 "ターゲット I<dh_command> を変更するためには、B<override_>I<dh_command> という"
 "ターゲットをruleファイルに記載します。こちらが指定されていると、I<dh_command> "
-"が動作する代わりに、B<override_>I<dh_command> ターゲットを呼び出します。上書き"
+"が動作する代わりに、B<override_>I<dh_command> ターゲットを呼び出します。override "
 "ターゲットでは、コマンドにオプションを追加したり、あるいは、コマンド全部を置"
 "き換えたりできます。後に例を上げます (この機能を使うには、Build-Depends に "
 "debhelper のバージョン 7.0.50 以上というのを指定しておかなければなりません) 。"
@@ -1706,7 +1706,7 @@ msgid ""
 "or above.)"
 msgstr ""
 "アーキテクチャ依存パッケージを作るときのみに作用、あるいは、アーキテクチャ非"
-"依存パッケージを作るときのみ作用するように上書きターゲットを定義することもで"
+"依存パッケージを作るときのみ作用するように override ターゲットを定義することもで"
 "きます。その場合、B<override_>I<dh_command>B<-arch> や、"
 "B<override_>I<dh_command>B<-indep> を使ってください (なお、この機能を使うに"
 "は、Build-Depends 行で debhelper バージョン 8.9.7 以上を指定する必要がありま"
@@ -1800,8 +1800,7 @@ msgid ""
 "To see what commands are included in a sequence, without actually doing "
 "anything:"
 msgstr ""
-"一連の動作で何のコマンドが実行されるかを、これらのコマンドが実際に実行されな"
-"いようにして見るには："
+"コマンドを実際には動作させず、一連の動作でどのコマンドが実行されるかを見るには:"
 
 #. type: verbatim
 #: dh:81
@@ -1819,9 +1818,8 @@ msgid ""
 "This is a very simple rules file, for packages where the default sequences "
 "of commands work with no additional options."
 msgstr ""
-"以下は非常にシンプルな rules ファイルです。ここでは追加オプション無しで、かつ特"
-"に指定が無い場合に呼び出される一連のコマンドが呼び出され、パッケージに対して"
-"処理が行われます。"
+"以下は非常にシンプルな rules ファイルです。ここではパッケージに対して"
+"追加オプション無しでデフォルトのコマンド群が呼び出されます。"
 
 #. type: verbatim
 #: dh:86 dh:107 dh:120
@@ -1843,9 +1841,8 @@ msgid ""
 "Often you'll want to pass an option to a specific debhelper command. The "
 "easy way to do with is by adding an override target for that command."
 msgstr ""
-"特定の debhelper コマンドへオプションを渡したい事がよくあります。こちらを行う簡"
-"単な方法は、オプション渡したいコマンドに関する上書きターゲットに記載する事に"
-"より行います。"
+"特定の debhelper コマンドへオプションを渡したい事がよくあります。これを簡単"
+"に行う方法は、そのコマンドへ override を追加することです。"
 
 #. type: verbatim
 #: dh:93 dh:178 dh:189
@@ -2100,7 +2097,7 @@ msgid ""
 "want it to run, by defining empty override targets for each command."
 msgstr ""
 "ここでは、B<dh> に、実行してほしくないコマンドを実行させないようにする方法を示"
-"します。その場合、それらコマンドに対する上書きターゲットを空にすることにより"
+"します。その場合、それらコマンドに対する override ターゲットを空にすることにより"
 "行います。"
 
 #. type: verbatim
