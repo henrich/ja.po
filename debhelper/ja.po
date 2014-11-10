@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR 
+# Copyright (C) 2013-2014 Debian JP Project <debian-doc@debian.or.jp>
 # This file is distributed under the same license as the debhelper package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Takahide Nojima <nozzy123nozzy@gmail.com>, 2012.
+# Hideki Yamane <henrich@debian.or.jp>, 2012-2014.
 #
 msgid ""
 msgstr ""
@@ -612,7 +612,7 @@ msgid ""
 "build directory. If I<directory> parameter is omitted, a default build "
 "directory will be chosen."
 msgstr ""
-"ソースのビルドディレクトリ外の、指定した I<directory> をビルドディレクトリ"
+"ソースのビルドディレクトリ外にある、指定した I<directory> をビルドディレクトリ"
 "としてソースのビルドを有効にします。I<directory> パラメータ"
 "が省略された場合はデフォルトのビルドディレクトリが利用されます。"
 
@@ -2033,7 +2033,7 @@ msgid ""
 "Here is how to use B<dh_python2>."
 msgstr ""
 "回りの状況が常に変わっているため、デフォルトでは python 関連ツール は dh によって"
-"起動されません (互換性レベルの v9 以前であれば、dh は B<dh_pysupport> を起動"
+"実行されません (互換性レベルの v9 以前であれば、dh は B<dh_pysupport> を実行"
 "します)。ここでは、B<dh_python2> をどのようにして使うかを示します。"
 
 #. type: verbatim
@@ -2129,8 +2129,8 @@ msgid ""
 "If your package can be built in parallel, you can support parallel building "
 "as follows. Then B<dpkg-buildpackage -j> will work."
 msgstr ""
-"もしパッケージが並列処理が可能であれば、以下のようにして並列ビルドをサポート"
-"できます。こうすれば、B<dpkg-buildpackage -j> が使えるようになります:"
+"パッケージが並列処理が可能であれば、以下のようにして並列ビルドをサポート"
+"できます。そして B<dpkg-buildpackage -j> が有効になります。"
 
 #. type: verbatim
 #: dh:172
@@ -2153,7 +2153,7 @@ msgid ""
 "want it to run, by defining empty override targets for each command."
 msgstr ""
 "ここでは、B<dh> に、実行してほしくないコマンドを実行させないようにする方法を"
-"示します。その場合、それらコマンドに対する override ターゲットを空にすること"
+"示します。その場合、それらのコマンドに対する override ターゲットを空にすること"
 "により行います。"
 
 #. type: verbatim
@@ -2179,6 +2179,7 @@ msgstr ""
 "アーキテクチャ非依存用の override ターゲットを使ってビルドを分離することができ"
 "ます。こうすると、build-arch や binary-arch を実行するとき、ドキュメントパッ"
 "ケージのビルドが省略されます。"
+
 
 #. type: verbatim
 #: dh:194
@@ -2264,9 +2265,9 @@ msgid ""
 "commands again."
 msgstr ""
 "debhelper コマンドは F<debian/package.debhelper.log> に実行がうまく行ったもの"
-"を記録します (これは B<dh_clean> が消去します)。これにより、B<dh> は、すでに"
-"どんなコマンドが実行されたか、あるいは、どんなパッケージに対して実行された"
-"か、何のコマンドを再びスキップすればよいのかを知る事ができます。"
+"を記録します (これは B<dh_clean> が消去します)。これにより、B<dh> は既に"
+"どのコマンドが実行されたか、あるいはどのパッケージに対して実行された"
+"か、何のコマンドを再びスキップすればよいのかがわかります。"
 
 #. type: textblock
 #: dh:220
@@ -2488,8 +2489,8 @@ msgid ""
 "Pass I<params> to the program that is run, after the parameters that "
 "B<dh_auto_build> usually passes."
 msgstr ""
-"I<params> を B<dh_autobuild> にて実行しようとしているプログラムへ引き渡しま"
-"す。この B<--> の後に指定したパラメータが引き渡されます。"
+"I<params> を B<dh_autobuild> にて実行しようとしているプログラムへ渡しま"
+"す。この B<--> の後に指定したパラメータが渡されます。"
 
 #. type: textblock
 #: dh_auto_clean:5
@@ -2516,7 +2517,7 @@ msgid ""
 "variable is set). If there is a F<setup.py> or F<Build.PL>, it is run to "
 "clean the package."
 msgstr ""
-"B<dh_auto_clean> はパッケージがビルド完了後に自動的にディレクトリを消去しようと"
+"B<dh_auto_clean> はパッケージビルド完了後に自動的にディレクトリを消去しようと"
 "する debhelpr プログラムです。このプログラムはパッケージのビルドに必要なビルド"
 "システムを割り出し、それに適したコマンドを実行する事で消去を行います。例え"
 "ば、F<Makefile> が存在し、かつ、そのファイルの中に B<distclean>, "
@@ -2751,7 +2752,7 @@ msgid ""
 "doesn't work, you're encouraged to skip using B<dh_auto_test> at all, and "
 "just run the test suite manually."
 msgstr ""
-"このコマンドはテストスイートを含んでいる 90 %のパッケージに対して、動作するように作"
+"このコマンドは、テストスイートを含む 90 %のパッケージに対して動作するように作"
 "られています。もしうまく動作しないようであれば、B<dh_auto_test> を完全に省略"
 "し、テストスイートを手動で実行するようにしてください。"
 
@@ -3075,7 +3076,7 @@ msgid ""
 "multiple times to build up a list of things to exclude."
 msgstr ""
 "通常は消されるはずのファイルであっても、I<item> をファイル名の一部として含むも"
-"の全部を消去候補から除外します。本オプションを何度も指定することにより、除外"
+"の全部を消去候補から除外します。本オプションを何度も指定することで、除外"
 "候補を複数指定することが可能です。"
 
 #. type: =item
@@ -3147,6 +3148,7 @@ msgstr "これらのファイルは廃止されました。"
 
 #. type: textblock
 #: dh_compress:39
+#, fuzzy
 msgid ""
 "If this file exists, the default files are not compressed. Instead, the file "
 "is ran as a shell script, and all filenames that the shell script outputs "
@@ -3181,7 +3183,7 @@ msgid ""
 "acted on."
 msgstr ""
 "処理対象となる全パッケージを対象に、コマンドラインパラメータで指定したファイ"
-"ル全部を圧縮します。"
+"ル全てを圧縮します。"
 
 #. type: textblock
 #: dh_compress:66
@@ -3201,7 +3203,7 @@ msgstr "Debian ポリシー バージョン 3.0"
 #. type: textblock
 #: dh_desktop:5
 msgid "dh_desktop - deprecated no-op"
-msgstr "dh_desktop - 廃止されており、なにもしません"
+msgstr "dh_desktop - 廃止されており、何も実行しない"
 
 #. type: textblock
 #: dh_desktop:14
@@ -3215,7 +3217,7 @@ msgid ""
 "However, it no longer does anything, and is now deprecated."
 msgstr ""
 "B<dh_desktop> は F<.desktop> ファイルを登録する debhelper プログラムでした。しか"
-"しながら、もはや今では何もしないプログラムであり、廃止されています。"
+"し、もはや今では何もしないプログラムとなり、廃止されています。"
 
 #. type: textblock
 #: dh_desktop:21
@@ -3241,8 +3243,7 @@ msgstr "Ross Burton <ross@burtonini.com>"
 #. type: textblock
 #: dh_fixperms:5
 msgid "dh_fixperms - fix permissions of files in package build directories"
-msgstr ""
-"dh_fixperms - パッケージビルドディレクトリ以下でファイルの権限を修正する"
+msgstr "dh_fixperms - パッケージビルドディレクトリ内のファイル権限を修正する"
 
 #. type: textblock
 #: dh_fixperms:15
@@ -3274,8 +3275,8 @@ msgid ""
 "all files in the package."
 msgstr ""
 "B<dh_fixperms> はパッケージビルドディレクトリ以下の F<usr/share/doc> にあるすべ"
-"てのファイル (F<examples/> 以下のファイルは除きます) を権限 644 に設定し"
-"ます。また、すべての man ページの権限も 644 に変更します。さらにこれらファイルの"
+"てのファイル (F<examples/> 以下のファイルは除きます) のパーミッションを 644 に設定し"
+"ます。また、すべての man ページのパーミッションも 644 に変更します。さらにこれらファイルの"
 "所有者を root に設定し、全てのファイルから group,others に対する書き込み権限の除"
 "去を行います。また、ライブラリ、ヘッダファイル、Perl のモジュール、desktop ファ"
 "イルにて、実行権限が付与されていればこの権限を取り除きます。F<bin>、F<sbin>、"
@@ -3303,8 +3304,7 @@ msgstr ""
 #. type: textblock
 #: dh_gconf:5
 msgid "dh_gconf - install GConf defaults files and register schemas"
-msgstr ""
-"dh_gconf - GConf デフォルトファイルをインストールし、スキーマに登録する"
+msgstr "dh_gconf - GConf デフォルトファイルをインストールし、スキーマに登録する"
 
 #. type: textblock
 #: dh_gconf:14
@@ -3318,14 +3318,13 @@ msgid ""
 "defaults files and registering GConf schemas."
 msgstr ""
 "B<dh_gconf> は GConf 用デフォルトファイルをインストールし、GConf スキーマに登録す"
-"る役割を担う debhelper プログラムとなります。"
+"る役割を担う debhelper プログラムです。"
 
 #. type: textblock
 #: dh_gconf:21
 msgid ""
 "An appropriate dependency on gconf2 will be generated in B<${misc:Depends}>."
-msgstr ""
-"gconf2 に関する適切な依存関係については B<${misc:Depends}> で生成されます。"
+msgstr "gconf2 に関する適切な依存関係が B<${misc:Depends}> に生成されます。"
 
 #. type: =item
 #: dh_gconf:27
@@ -3370,8 +3369,8 @@ msgid ""
 msgstr ""
 "I<priority> (これは2桁の数字である必要があります) をデフォルトの優先順位"
 "である B<10> の代わりに利用します。用途によっては 10 より大きな値を利用することが"
-"できます。例えば、debian から派生したディストリビューションの場合 (B<20>)、CDD "
-"ディストリビューション (B<50>)、あるいは、サイト独自のパッケージ (B<90>) となり"
+"できます。例えば、派生ディストリビューションの場合 (B<20>)、CDD "
+"ディストリビューション (B<50>)、あるいはサイト独自のパッケージ (B<90>) となり"
 "ます。"
 
 #. type: textblock
@@ -3382,7 +3381,7 @@ msgstr "Ross Burton <ross@burtonini.com> Josselin Mouette <joss@debian.org>"
 #. type: textblock
 #: dh_gencontrol:5
 msgid "dh_gencontrol - generate and install control file"
-msgstr "dh_gencontrol - controlファイルを生成し、インストールします"
+msgstr "dh_gencontrol - control ファイルを生成し、インストールする"
 
 #. type: textblock
 #: dh_gencontrol:14
@@ -3397,7 +3396,7 @@ msgid ""
 "proper permissions."
 msgstr ""
 "B<dh_gencontrol> は I<DEBIAN> ディレクトリ以下に control ファイルを生成し、適切な"
-"権限を持つようにインストールする役目を持つ debhelper プログラムとなります。"
+"権限を持つようにインストールする役目を持つ debhelper プログラムです。"
 
 #. type: textblock
 #: dh_gencontrol:22
@@ -3406,9 +3405,9 @@ msgid ""
 "it once for each package being acted on, and passes in some additional "
 "useful flags."
 msgstr ""
-"このプログラムは単に L<dpkg-gencontrol(1)> のラッパーとなります。処理を行うべき"
+"このプログラムは単に L<dpkg-gencontrol(1)> のラッパーです。処理を行うべき"
 "パッケージ各々に対し L<dpkg-gencontrol(1)> を都度呼び出し、同時にいくつかの便利"
-"なフラグも渡すプログラムとなります。"
+"なフラグも渡すプログラムです。"
 
 #. type: textblock
 #: dh_gencontrol:32
@@ -3515,14 +3514,14 @@ msgid ""
 "useful for installing everything else, for which no particular intelligence "
 "is needed. It is a replacement for the old B<dh_movefiles> command."
 msgstr ""
-"B<dh_install> はパッケージビルドディレクトリにファイルをインストールする事を行"
-"う debhelper プログラムとなります。なお、沢山の B<dh_install>I<*> コマンドは、文"
+"B<dh_install> はパッケージビルドディレクトリにファイルをインストールする"
+" debhelper プログラムです。なお、沢山の B<dh_install>I<*> コマンドは、文"
 "章や例、あるいは man ページ等のファイルの種類に応じたインストールを担います。こちら"
 "のコマンドは、特定の処理を行う為に各々専用の処理を持っていますので、可能な限"
 "り、これらのファイルをインストールするときには、B<dh_install>I<*> コマンドを"
 "使ってください。なお、B<dh_install> は、ファイルにあわせた特別な処理が不要な"
 "ファイルをインストールする時に使うと良いでしょう。B<dh_install> は、以前存在した "
-"B<dh_movefiles> コマンドを置き換えるコマンドとなります。"
+"B<dh_movefiles> コマンドを置き換えるコマンドです。"
 
 #. type: textblock
 #: dh_install:27
@@ -4178,6 +4177,19 @@ msgstr ""
 "クリプトを挿入することを意味します。"
 
 #. type: textblock
+#: dh_installdeb:61
+msgid ""
+"A versioned Pre-Dependency on dpkg is needed to use L<dpkg-maintscript-helper"
+"(1)>. An appropriate Pre-Dependency is set in ${misc:Pre-Depends} ; you "
+"should make sure to put that token into an appropriate place in your debian/"
+"control file."
+msgstr ""
+"L<dpkg-maintscript-helper(1)>を使うには、前もって特定のバージョンのdpkgが必要"
+"となります。こちらに関する依存関係をあらかじめ正しくしておくには、${misc:Pre-"
+"Depends}を設定してください。つまり、debian/controlファイルの適切な場所に${misc:"
+"Pre-Depends}が入っているか確かめてください。"
+
+#. type: textblock
 #: dh_installdebconf:5
 msgid ""
 "dh_installdebconf - install files used by debconf in package build "
@@ -4324,7 +4336,7 @@ msgid ""
 "subdirectories in package build directories."
 msgstr ""
 "B<dh_installdirs> はパッケージビルドディレクトリ以下にサブディレクトリを作成す"
-"る役目を持つ debhelper プログラムとなります。"
+"る役目を持つ debhelper プログラムです。"
 
 #. type: =item
 #: dh_installdirs:25
@@ -4342,7 +4354,7 @@ msgid ""
 "Create any directories specified by command line parameters in ALL packages "
 "acted on, not just the first."
 msgstr ""
-"コマンドラインパラメータに指定されたディレクトリを作成します。また、この場"
+"コマンドラインパラメータに指定されたディレクトリを作成します。この場"
 "合、最初のパッケージのみならず全パッケージに作用します。"
 
 #. type: =item
@@ -4529,7 +4541,7 @@ msgstr ""
 "処理対象の全パッケージのドキュメンテーションディレクトリを、I<package> のド"
 "キュメンテーションディレクトリへのシンボリックリンクを張ることにより作成しま"
 "す。この動作は I<package> そのものには行われず、また、B<dh_installdocs> が動作す"
-"る時にすでに存在しているディレクトリに対しては行われません。ポリシーに準拠す"
+"る時に既に存在しているディレクトリに対しては行われません。ポリシーに準拠す"
 "る為、I<package> は同じソースパッケージからビルドされるバイナリパッケージである"
 "必要があります。"
 
@@ -4931,9 +4943,9 @@ msgid ""
 "init scripts with associated defaults files, as well as upstart job files, "
 "and systemd service files into package build directories."
 msgstr ""
-"B<dh_installlint> は、特に指定なき場合に利用される init スクリプトと、アップス"
-"タート用のジョブファイルをパッケージビルドディレクロイへインストールする役目の "
-"debhelper プログラムとなります。"
+"B<dh_installlint> は、デフォルトで利用される init スクリプトと、アップス"
+"タート用のジョブファイルをパッケージビルドディレクトリへインストールする役目の "
+"debhelper プログラムです。"
 
 #. type: textblock
 #: dh_installinit:23
@@ -5033,7 +5045,7 @@ msgid ""
 "useful if the file is shipped and/or installed by upstream in a way that "
 "doesn't make it easy to let B<dh_installinit> find it."
 msgstr ""
-"本オプションが指定されていると、実際に init スクリプト、特に指定無き場合に使う"
+"本オプションが指定されていると、実際に init スクリプト、デフォルトに使う"
 "ファイル、upstart 用 job ファイルをインストールせず、F<postinst>/F<postrm>/"
 "F<prerm> スクリプトを変更するだけの動作となります。もし、initスクリプトや、"
 "upstart 用 job ファイルが、B<dh_installinit> にて容易に見つけられないようなやり方"
@@ -5053,7 +5065,7 @@ msgid ""
 "script in the F<prerm>, and starts it again in the F<postinst>."
 msgstr ""
 "パッケージのアップグレードが完了するまで init スクリプトの stop 手続きを呼び出さ"
-"ないようにします。これは本コマンドについて、特に指定無き場合の振る舞いとは異"
+"ないようにします。これは本コマンドについて、デフォルトの振る舞いとは異"
 "なります。通常は、F<prerm> にて stop 手続きが呼ばれ、F<postinst> が start 手続きを"
 "再び呼び出します。"
 
@@ -5116,7 +5128,7 @@ msgstr ""
 "トールするinitスクリプトの名前として利用します。さらに、F<etc/default/> 以下に"
 "インストールするファイルとしても利用します。これは、名前の最後が B<d> で終わる"
 "ような daemon プログラムに便利な場合があります (後に述べる B<--init-script> パラ"
-"メタが作用するより前に実行されます)。"
+"メータが作用するより前に実行されます)。"
 
 #. type: =item
 #: dh_installinit:103
@@ -5129,8 +5141,8 @@ msgid ""
 "Pass I<params> to L<update-rc.d(8)>. If not specified, B<defaults> will be "
 "passed to L<update-rc.d(8)>."
 msgstr ""
-"I<params> を L<update-rc.d(8)> へ引き渡します。もし指定されていなければ、"
-"B<defaults> パラメータが L<update-rc.d(8)> へ引き渡されます。"
+"I<params> を L<update-rc.d(8)> へ渡します。もし指定されていなければ、"
+"B<defaults> パラメータが L<update-rc.d(8)> へ渡されます。"
 
 #. type: textblock
 #: dh_installinit:112
@@ -5143,7 +5155,7 @@ msgid ""
 "F<debian/package.default> and F<debian/package.upstart>."
 msgstr ""
 "パッケージ名の代わりに、I<name> をファイル名とするファイルを、upstart 用 job ファ"
-"イルや、init スクリプト (あるいは特に指定無き場合のファイル) として利用しま"
+"イルや、init スクリプト (あるいはデフォルトのファイル) として利用しま"
 "す。このパラメータが利用されると、B<dh_installinit> は F<debian/package.name."
 "upstart>、F<debian/package.name.init>、F<debian/package.name.default> を探し、"
 "インストールを行います。この場合、通常使われる F<debian/package.upstart>、"
@@ -5165,7 +5177,7 @@ msgid ""
 "the files it normally installs."
 msgstr ""
 "I<scriptname> を F<etc/init.d/> 以下にインストールする init スクリプトのファイル名"
-"として利用します (特に指定無き場合のファイルがインストールされるなら、その時"
+"として利用します (デフォルトのファイルがインストールされるなら、その時"
 "の名前として利用する場合もあります) 。もしこのパラメータを利用すると、"
 "B<dh_installinit> は F<debian/> ディレクトリ以下に F<package.scriptname> のような"
 "名前のファイルがあるかどうかを探し、通常インストールするファイルよりも、優先"
@@ -5230,7 +5242,7 @@ msgid ""
 "installing logcheck rule files."
 msgstr ""
 "B<dh_installlogcheck> は logcheck 用のルール定義ファイルをインストールする役目の "
-"debhelper プログラムとなります。"
+"debhelper プログラムです。"
 
 #. type: =item
 #: dh_installlogcheck:25
@@ -5534,7 +5546,7 @@ msgid ""
 "pages that you do not want to be installed."
 msgstr ""
 "パラメータとして指定されているファイルは、全て B<dh_installmanpages> により無視"
-"されます。もし、特に指定無き場合に意図しない場所に man ページがインストールされ"
+"されます。もし、デフォルトでは意図しない場所に man ページがインストールされ"
 "てしまう場合に便利です。"
 
 #. type: textblock
@@ -5680,7 +5692,7 @@ msgid ""
 "mime files into package build directories."
 msgstr ""
 "B<dh_installmime> はパッケージビルドディレクトリ以下に mime ファイル群をインス"
-"トールする役目の debhelper プログラムとなります。"
+"トールする役目の debhelper プログラムです。"
 
 #. type: =item
 #: dh_installmime:25
@@ -5728,8 +5740,7 @@ msgid ""
 "B<dh_installmodules> is a debhelper program that is responsible for "
 "registering kernel modules."
 msgstr ""
-"B<dh_installmodules> は、カーネルモジュールを登録する役目の debhelper プログラム"
-"です。"
+"B<dh_installmodules> は、カーネルモジュールを登録する役目の debhelper プログラムです。"
 
 #. type: textblock
 #: dh_installmodules:22
@@ -5792,7 +5803,7 @@ msgid ""
 "files used by PAM into package build directories."
 msgstr ""
 "B<dh_installpam> はパッケージビルドディレクトリ以下に PAM で利用するファイルをイ"
-"ンストールする役目の debhelper プログラムとなります。"
+"ンストールする役目の debhelper プログラムです。"
 
 #. type: =item
 #: dh_installpam:25
@@ -5835,7 +5846,7 @@ msgid ""
 "ppp ip-up and ip-down scripts into package build directories."
 msgstr ""
 "B<dh_installppp> は ppp 用の ip-up, ip-down スクリプトをパッケージビルドディレクト"
-"リ以下にインストールする役目を持つ debhelper プログラムとなります。"
+"リ以下にインストールする役目を持つ debhelper プログラムです。"
 
 #. type: =item
 #: dh_installppp:25
@@ -5896,7 +5907,7 @@ msgid ""
 "B<udev> rules files."
 msgstr ""
 "B<dh_installudev> は B<udev> 用ルールファイルをインストールする役目を持つ "
-"debhelper プログラムとなります。"
+"debhelper プログラムです。"
 
 #. type: textblock
 #: dh_installudev:22
@@ -5974,7 +5985,7 @@ msgstr ""
 "なります。もし、インストールしようとしているウインドウマネージャの man ページ"
 "が、パッケージビルドディレクトリ以下の F<usr/share/man/man1/> に存在する場合、"
 "この man ページはパッケージビルドディレクトリ以下にシンボリックリンクで登録され"
-"ます(互換性レベルv6以上の場合)。"
+"ます(互換性レベル v6 以上の場合)。"
 
 #. type: =item
 #: dh_installwm:28
@@ -6061,7 +6072,7 @@ msgid ""
 "Depends}>.)"
 msgstr ""
 "B<update-fonts->I<*> コマンドが利用可能なように B<xfonts-utils> に対しての依存関"
-"係を記載しておく必要があります (本プログラムは B<${misc:Depends}> へ本依存関係"
+"係を記載しておく必要があります (本プログラムは B<${misc:Depends}> へこの依存関係"
 "を付け加えます)。"
 
 #. type: textblock
@@ -6118,7 +6129,7 @@ msgid ""
 "directories."
 msgstr ""
 "B<dh_link> はパッケージビルドディレクトリ内でシンボリックリンクを作成する "
-"debhelper プログラムとなります。"
+"debhelper プログラムです。"
 
 #. type: textblock
 #: dh_link:22
@@ -6222,7 +6233,7 @@ msgid ""
 msgstr ""
 "I<source> という名前へのリンクファイルとして I<destination> という名前のファイル"
 "を作成します。最初にビルドされるパッケージビルドディレクトリ以下にてこの操作を"
-"行います (あるいは、B<-A> が指定されている場合は全パッケージに対して本作業を行"
+"行います (あるいは、B<-A> が指定されている場合は全パッケージに対して作業を行"
 "います)。"
 
 #. type: verbatim
@@ -6369,8 +6380,8 @@ msgid ""
 "B<dh_makeshlibs> is a debhelper program that automatically scans for shared "
 "libraries, and generates a shlibs file for the libraries it finds."
 msgstr ""
-"B<dh_makeshlibs> は自動的に共有ライブラリを走査し、shlibs ファイルを生成する "
-"debhelper プログラムとなります。"
+"B<dh_makeshlibs> は自動的に共有ライブラリをスキャンし、shlibs ファイルを生成する "
+"debhelper プログラムです。"
 
 #. type: textblock
 #: dh_makeshlibs:21
@@ -6379,8 +6390,8 @@ msgid ""
 "v3 mode and above only) to any packages in which it finds shared libraries."
 msgstr ""
 "走査した結果共有ライブラリを含む全部パッケージの F<postinst>、F<postrm> スクリ"
-"プトに ldconfig の呼び出しを行う処理を付け加えることも出来ます (互換性レベルv3"
-"以上のみ本動作に対応)。"
+"プトに ldconfig の呼び出しを行う処理を付け加えることも出来ます (互換性レベル v3 "
+"以上のみ本動作に対応します)。"
 
 #. type: textblock
 #: dh_makeshlibs:24
@@ -6458,7 +6469,7 @@ msgid ""
 "parameters, the parameters can be used to specify the exact dependency "
 "information needed (be sure to include the package name)."
 msgstr ""
-"特に指定無き場合、本プログラムにより生成される shlibs ファイルは、共有ライブラ"
+"デフォルトでは、本プログラムにより生成される shlibs ファイルは、共有ライブラ"
 "リを含むパッケージの特定のバージョンに依存することが無いようにします。これは"
 "shlibsファイルにバージョンに関する依存情報をパッケージ作成者により追加する必"
 "要があるという事です。B<-V>が依存関係の情報無しで用いられると、アップストリー"
@@ -6702,7 +6713,7 @@ msgid ""
 "very unsafe, so to prevent mistakes, the sourcedir must be a relative "
 "filename; it cannot begin with a `B</>'."
 msgstr ""
-"F<debian/tmp> (特に指定無き場合の移動元) からファイルを移動する代わりに、別の"
+"F<debian/tmp> (デフォルトの移動元) からファイルを移動する代わりに、別の"
 "ディレクトリからファイルを移動するように指定します。なお、移動元ディレクトリ"
 "にある全ファイルを移動する為、B<--sourcedir=/> のような指定は、非常に危険で"
 "す。こういった間違いを防ぐ為、移動元ディレクトリは相対パスしか受け付けないよ"
@@ -6746,9 +6757,9 @@ msgid ""
 "directory. Any files or directories that remain are ignored, and get deleted "
 "by B<dh_clean> later."
 msgstr ""
-"特に指定無き場合 F<debian/tmp> からファイルを移動するという事になっています (も"
-"し debhelper が互換性レベルv1以上で利用したとしても、debian/tmp 以外は利用されま"
-"せん)。本件の背景として、ビルドされたパッケージは F<debian/tmp> に一旦インストー"
+"デフォルト F<debian/tmp> からファイルを移動するという事になっています (も"
+"し debhelper が互換性レベル v1 以上で利用したとしても、debian/tmp 以外は利用されま"
+"せん)。この背景として、ビルドされたパッケージは F<debian/tmp> に一旦インストー"
 "ルし、後で B<dh_movefiles> コマンドにより F<debian/tmp> から移動するという考え方"
 "があります。なお移動されなかったファイルやディレクトリは無視され、後に "
 "B<dh_clean> によって消去されることとなります。"
@@ -6771,7 +6782,7 @@ msgid ""
 "${perl:Depends}> substitutions and adding them to substvars files."
 msgstr ""
 "B<dh_perl> は B<${perl:Depends} の内容を生成し、この依存情報に substvars ファイル"
-"の情報を付け加える役目の debhelper プログラムとなります。"
+"の情報を付け加える役目の debhelper プログラムです。"
 
 #. type: textblock
 #: dh_perl:23
@@ -6837,7 +6848,7 @@ msgid ""
 "specific version of B<perl>. The B<-V> option causes the current version of "
 "the B<perl> (or B<perl-base> with B<-d>) package to be specified."
 msgstr ""
-"特に指定無き場合、スクリプト本体とアーキテクチャから独立しているモジュールに"
+"デフォルト、スクリプト本体とアーキテクチャから独立しているモジュールに"
 "ついては、特定のバージョンの B<perl> に依存するような依存情報は生成されません。"
 "B<-V>オプションを指定すると、パッケージビルド中に使っているバージョンの B<perl> "
 "パッケージ (あるいは、B<-d> を指定していれば、現在の B<perl-base> のバージョン) "
@@ -6922,6 +6933,152 @@ msgstr ""
 "す。"
 
 #. type: textblock
+#: dh_python:5
+msgid ""
+"dh_python - calculates Python dependencies and adds postinst and prerm "
+"Python scripts (deprecated)"
+msgstr ""
+"dh_python - Pythonスクリプトの依存関係を検討し、postinstとprermを付け加える"
+"Pythonスクリプトです (廃止) "
+
+#. type: textblock
+#: dh_python:15
+msgid ""
+"B<dh_python> [S<I<debhelper options>>] [B<-n>] [B<-V> I<version>] "
+"[S<I<module dirs> ...>]"
+msgstr ""
+"B<dh_python> [S<I<debhelper options>>] [B<-n>] [B<-V> I<version>] "
+"[S<I<module dirs> ...>]"
+
+#. type: textblock
+#: dh_python:19
+msgid ""
+"Note: This program is deprecated. You should use B<dh_python2> instead.  "
+"This program will do nothing if F<debian/pycompat> or a B<Python-Version> "
+"F<control> file field exists."
+msgstr ""
+"注意：本プログラムは廃止されました。B<dh_python2>を代わりに利用してください。"
+"このプログラムは、F<debian/pycompat>が存在していたり、B<Python-Version>フィー"
+"ルドがF<control>ファイルに存在すると、何もしません。 "
+
+#. type: textblock
+#: dh_python:23
+msgid ""
+"B<dh_python> is a debhelper program that is responsible for generating the B<"
+"${python:Depends}> substitutions and adding them to substvars files. It will "
+"also add a F<postinst> and a F<prerm> script if required."
+msgstr ""
+"B<dh_python>はB<${python:Depends}>を置き換える為の情報を生成し、substvarsファ"
+"イルへこの情報を付け加える役目のdebhelper プログラムです。必要に応じて、"
+"F<postinst>やF<prerm>スクリプトも追加します。 "
+
+#. type: textblock
+#: dh_python:27
+msgid ""
+"The program will look at Python scripts and modules in your package, and "
+"will use this information to generate a dependency on B<python>, with the "
+"current major version, or on B<python>I<X>B<.>I<Y> if your scripts or "
+"modules need a specific B<python> version. The dependency will be "
+"substituted into your package's F<control> file wherever you place the token "
+"B<${python:Depends}>."
+msgstr ""
+"このプログラムは構築対象のパッケージにPythonスクリプトやPythonモジュールが無"
+"いかどうか確認し、B<python>に関する依存関係を示す情報を生成する為にこれらのス"
+"クリプトやモジュールの情報を利用します。依存関係の情報を生成するにあたり利用"
+"される情報として、B<python>についての現在の主バージョンや、スクリプトやモ"
+"ジュールが特定のB<python>のバージョンを指定している場合はB<python>I<X>B<."
+">I<Y>が利用されます。構築予定のパッケージのF<control>ファイルのどこかにB<"
+"${python:Depends}>があれば、依存情報で置き換えられます。"
+
+#. type: textblock
+#: dh_python:33
+msgid ""
+"If some modules need to be byte-compiled at install time, appropriate "
+"F<postinst> and F<prerm> scripts will be generated. If already byte-compiled "
+"modules are found, they are removed."
+msgstr ""
+"インストール時にバイトコンパイルされる事が必要なパッケージなら、適切な"
+"F<postinst>とF<prerm>スクリプトが生成されます。この場合、バイトコンパイルされ"
+"たモジュールが構築中のパッケージ内部に見つかると、こちらは削除されます。"
+
+#. type: textblock
+#: dh_python:37
+msgid "If you use this program, your package should build-depend on B<python>."
+msgstr ""
+"このプログラムを使う場合、B<python>に対するbuild-dependを宣言しておかなければ"
+"なりません。"
+
+#. type: =item
+#: dh_python:43
+msgid "I<module dirs>"
+msgstr "I<module dirs>"
+
+#. type: textblock
+#: dh_python:45
+msgid ""
+"If your package installs Python modules in non-standard directories, you can "
+"make F<dh_python> check those directories by passing their names on the "
+"command line. By default, it will check F</usr/lib/site-python>, F</usr/lib/"
+"$PACKAGE>, F</usr/share/$PACKAGE>, F</usr/lib/games/$PACKAGE>, F</usr/share/"
+"games/$PACKAGE> and F</usr/lib/python?.?/site-packages>."
+msgstr ""
+"非標準のディレクトリにPythonモジュールをインストールする場合、 コマンドライン"
+"からインストール先のディレクトリを指定する事により、F<dh_python>に検査させる"
+"ことができます。デフォルト、F</usr/lib/site-python>、F</usr/lib/"
+"$PACKAGE>、F</usr/share/$PACKAGE>、F</usr/lib/games/$PACKAGE>、F</usr/share/"
+"games/$PACKAGE>、F</usr/lib/python?.?/site-packages>が検査対象となります。"
+
+#. type: textblock
+#: dh_python:51
+msgid ""
+"Note: only F</usr/lib/site-python>, F</usr/lib/python?.?/site-packages> and "
+"the extra names on the command line are searched for binary (F<.so>) modules."
+msgstr ""
+"注意：バイナリ形式の(F<.so>)モジュールの検査対象となるのは、F</usr/lib/site-"
+"python>、F</usr/lib/python?.?/site-packages>及び、コマンドラインから指定され"
+"たディレクトリ名のみとなります。"
+
+#. type: =item
+#: dh_python:54
+msgid "B<-V> I<version>"
+msgstr "B<-V> I<version>"
+
+#. type: textblock
+#: dh_python:56
+msgid ""
+"If the F<.py> files your package ships are meant to be used by a specific "
+"B<python>I<X>B<.>I<Y> version, you can use this option to specify the "
+"desired version, such as B<2.3>. Do not use if you ship modules in F</usr/"
+"lib/site-python>."
+msgstr ""
+"構築中のパッケージが提供する予定のF<.py>ファイルが特定のB<python>I<X>B<.>I<Y>"
+"バージョンの元で使われる事を意図したければ、このオプションを用いて、例えば"
+"B<2.3>のように、期待されるバージョンを指定することができます。なお、F</usr/"
+"lib/site-python>以下にインストール予定のモジュールに対してはこのオプションを"
+"使ってバージョン指定はしないでください。"
+
+#. type: textblock
+#: dh_python:68
+msgid "Debian policy, version 3.5.7"
+msgstr "Debian policy, version 3.5.7"
+
+#. type: textblock
+#: dh_python:70
+msgid "Python policy, version 0.3.7"
+msgstr "Python policy, version 0.3.7"
+
+#. type: textblock
+#: dh_python:288
+msgid "Josselin Mouette <joss@debian.org>"
+msgstr "Josselin Mouette <joss@debian.org>"
+
+#. type: textblock
+#: dh_python:290
+msgid "most ideas stolen from Brendan O'Dea <bod@debian.org>"
+msgstr ""
+"着想の多くは Brendan O'Dea <bod@debian.org> から拝借しました"
+
+#. type: textblock
 #: dh_scrollkeeper:5
 msgid "dh_scrollkeeper - deprecated no-op"
 msgstr "dh_scrollkeeper - 廃止されており、何もしないコマンド"
@@ -6963,7 +7120,7 @@ msgid ""
 "shared library dependencies for packages."
 msgstr ""
 "B<dh_shlibdeps> は、ビルド中のパッケージに含まれる共有ライブラリの依存関係を計算"
-"する役目の debhelper プログラムです"
+"する役目の debhelper プログラムです。"
 
 #. type: textblock
 #: dh_shlibdeps:22
