@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debhelper 9.20120909\n"
+"Project-Id-Version: debhelper 9.20141107\n"
 "POT-Creation-Date: 2014-10-03 15:16-0400\n"
 "PO-Revision-Date: 2014-11-09 19:45+0900\n"
 "Last-Translator: Takahide Nojima <nozzy123nozzy@gmail.com>\n"
@@ -205,7 +205,7 @@ msgstr ""
 "control> はすべてのパッケージに存在していますが、これに加えて特定の "
 "debhelper コマンドの動作を制御できる追加ファイルがあります。これらのファイル"
 "は、大抵 debian/I<package>.foo というファイル名です (もちろん、I<package> "
-"は、処理しようとしているパッケージ名に変えてください)。"
+"は処理しようとしているパッケージ名に変えてください)。"
 
 #. type: textblock
 #: debhelper.pod:65
@@ -406,8 +406,8 @@ msgstr ""
 "この debhelper コマンドにより、すでに処理済のパッケージについては処理をしない"
 "ようにします (つまり、debhelper のログにコマンドの記録があるものは処理しな"
 "い)。例えば、いくつかのバイナリパッケージだけに対して特別なオプション付きでコ"
-"マンドを呼び出し、残りのパッケージに対しては、本オプションをつけてコマンドを"
-"呼び出して、デフォルト設定による処理を行うという事ができます。"
+"マンドを呼び出し、残りのパッケージに対しては本オプションをつけてコマンドを"
+"呼び出し、デフォルト設定による処理を行うという事ができます。"
 
 #. type: =item
 #: debhelper.pod:143
@@ -435,7 +435,7 @@ msgid ""
 "B<dh_installinit> to install, use B<--ignore=debian/init>"
 msgstr ""
 "例えば、アップストリームが F<debian/init> を提供しているが B<dh_installinit> "
-"でインストールして欲しくは無い時、B<--ignore=debian/init> を使うことになりま"
+"でインストールして欲しくは無い場合、B<--ignore=debian/init> を使うことになりま"
 "す。"
 
 #. type: =item
@@ -448,8 +448,8 @@ msgstr "B<-P>I<tmpdir>, B<--tmpdir=>I<tmpdir>"
 msgid ""
 "Use I<tmpdir> for package build directory. The default is debian/I<package>"
 msgstr ""
-"I<tmpdir> をパッケージビルドディレクトリとして利用します。特に指定が無い場合"
-"には debian/I<package> ディレクトリが使われます。"
+"I<tmpdir> をパッケージビルドディレクトリとして利用します。デフォルトでは "
+"debian/I<package> ディレクトリが使われます。"
 
 #. type: =item
 #: debhelper.pod:157
@@ -800,11 +800,11 @@ msgid ""
 "directory for the first binary package listed in the control file, while "
 "using debian/I<package> for all other packages listed in the F<control> file."
 msgstr ""
-"これは debhelper が元来持つ互換性レベルとなります。特に指定が無い場合の互換性"
-"レベルはこのレベルとなります。このモードでは、debhelper はF<debian/tmp> を、"
+"これは debhelper が元来持つ互換性レベルで、これがデフォルトです。"
+"このモードでは、debhelper はF<debian/tmp> を、"
 "control ファイルの最初に記載されているバイナリパッケージのビルドディレクトリ"
 "として利用しようとします。また、debian/I<package> を F<control> 内に指定され"
-"ている全パッケージ対して適用します。"
+"ている全パッケージに対して適用します。"
 
 #. type: textblock
 #: debhelper.pod:299 debhelper.pod:306 debhelper.pod:329 debhelper.pod:358
@@ -1172,7 +1172,7 @@ msgstr ""
 #: debhelper.pod:504
 msgid "B<dh> does not default to enabling --with=python-support"
 msgstr ""
-"B<dh> は --with=python-support オプションを、特に指定が無い場合は無効にするよ"
+"B<dh> は --with=python-support オプションを、デフォルトでは無効にするよ"
 "うになりました。"
 
 #. type: textblock
@@ -1275,8 +1275,8 @@ msgid ""
 "binary-arch F<debian/rules> target, and the architecture independent "
 "packages in the binary-indep F<debian/rules> target."
 msgstr ""
-"ソースパッケージが複数のバイナリパッケージを生成する場合、特に指定が無け"
-"れば debhelper は実行時にすべてのバイナリパッケージを生成します。この場合ソー"
+"ソースパッケージが複数のバイナリパッケージを生成する場合、デフォルトでは "
+"debhelper は実行時にすべてのバイナリパッケージを生成します。この場合ソー"
 "スパッケージが、アーキテクチャ依存パッケージとアーキテクチャ非依存パッケージ"
 "を同時に生成するとしたら、この振る舞いは正しくありません。というのも、"
 "F<debian/rules> では、アーキテクチャ依存パッケージを生成するなら binary-arch "
@@ -1527,7 +1527,7 @@ msgid ""
 "Temporarily specifies what compatibility level debhelper should run at, "
 "overriding any value in F<debian/compat>."
 msgstr ""
-"この環境変数は、どんな互換性レベルで debhelper を実行するかを一時的に指定する"
+"この環境変数は、debhelper をどの互換性レベルで実行するかを一時的に指定する"
 "ものです。こちらを指定すると F<debian/compat> の値を上書きします。"
 
 #. type: =item
@@ -1687,7 +1687,7 @@ msgstr "Joey Hess <joeyh@debian.org>"
 #. type: textblock
 #: dh:5
 msgid "dh - debhelper command sequencer"
-msgstr "dh - debhelper コマンドシーケンサ"
+msgstr "dh - debhelper コマンドシーケンサー"
 
 #. type: textblock
 #: dh:14
@@ -1706,7 +1706,7 @@ msgid ""
 "indep>, B<build>, B<clean>, B<install-indep>, B<install-arch>, B<install>, "
 "B<binary-arch>, B<binary-indep>, and B<binary>."
 msgstr ""
-"B<dh> は一連の debhelper コマンドを起動します。F<debian/rules> ファイルに記載"
+"B<dh> は一連の debhelper コマンドを実行します。F<debian/rules> ファイルに記載"
 "されたターゲットに対応する I<sequence>をサポートします。サポートするターゲッ"
 "ト: B<build-arch>, B<build-indep>, B<build>, B<clean>, B<install-indep>, "
 "B<install-arch>, B<install>, B<binary-arch>, B<binary-indep>, B<binary> です。"
@@ -1789,9 +1789,9 @@ msgid ""
 "commands. See the F<PROGRAMMING> file for documentation about the sequence "
 "addon interface."
 msgstr ""
-"debhelper コマンドへ、一連のコマンド中の適切な位置で実行するアドオンを指定し"
-"ます。このオプションはオプションを繰り返し指定することもできますし、複数のア"
-"ドオンをカンマで区切って列挙して指定できます。このオプションは debhelper コマ"
+"一連のコマンド中の適切な位置で実行するアドオンを、debhelper コマンドへ指定し"
+"ます。このオプションは繰り返し指定することもできますし、複数のア"
+"ドオンをカンマ区切りで列挙して指定できます。このオプションは debhelper コマ"
 "ンドを提供するサードパーティ製パッケージと共に利用する時に使います。"
 "F<PROGRAMMING> ファイルに、一連のアドオン用インターフェースについての"
 "ドキュメントがあります。"
@@ -1808,9 +1808,8 @@ msgid ""
 "repeated more than once, or multiple addons to disable can be listed, "
 "separated by commas."
 msgstr ""
-"B<--with> とは逆に、指定されたアドオンを無効にします。このオプションは、繰り"
-"返し指定する、あるいは、アドオン名をカンマで区切って指定することで、指定され"
-"た複数のアドオンを使わないように指定できます。"
+"B<--with> とは逆に、指定されたアドオンを無効にします。このオプションは繰り"
+"返し指定することもできますし、アドオン名をカンマ区切りで指定もできます。"
 
 #. type: textblock
 #: dh:62
@@ -2032,7 +2031,7 @@ msgid ""
 "that area. (Before compatibility level v9, dh does run B<dh_pysupport>.)  "
 "Here is how to use B<dh_python2>."
 msgstr ""
-"回りの状況が常に変わっているため、デフォルトでは python 関連ツール は dh によって"
+"この分野の状況が常に変わっているため、デフォルトでは python 関連ツール は dh によって"
 "実行されません (互換性レベルの v9 以前であれば、dh は B<dh_pysupport> を実行"
 "します)。ここでは、B<dh_python2> をどのようにして使うかを示します。"
 
@@ -2082,8 +2081,7 @@ msgid ""
 "subdirectory."
 msgstr ""
 "以下に B<dh_auto_>I<*> コマンドがどこにパッケージソースがあるかを変更する例を"
-"載せます。これはサブディレクトリにソースが存在するようなパッケージで使いま"
-"す。"
+"載せます。これはサブディレクトリにソースが存在するようなパッケージで使います。"
 
 #. type: verbatim
 #: dh:158
@@ -2179,7 +2177,6 @@ msgstr ""
 "アーキテクチャ非依存用の override ターゲットを使ってビルドを分離することができ"
 "ます。こうすると、build-arch や binary-arch を実行するとき、ドキュメントパッ"
 "ケージのビルドが省略されます。"
-
 
 #. type: verbatim
 #: dh:194
@@ -2521,9 +2518,9 @@ msgstr ""
 "する debhelpr プログラムです。このプログラムはパッケージのビルドに必要なビルド"
 "システムを割り出し、それに適したコマンドを実行する事で消去を行います。例え"
 "ば、F<Makefile> が存在し、かつ、そのファイルの中に B<distclean>, "
-"B<realclean>, B<clean> ターゲットが存在する場合、B<make> を起動することにより"
+"B<realclean>, B<clean> ターゲットが存在する場合、B<make> を実行することにより"
 "消去を行います (あるいは、B<MAKE> 環境変数が設定されている時も同様です)。も"
-"し F<setup.py> や F<Build.PL> が存在するのであれば、これらを起動してパッケー"
+"し F<setup.py> や F<Build.PL> が存在するのであれば、これらを実行してパッケー"
 "ジビルドディレクトリを消去します。"
 
 #. type: textblock
@@ -2544,7 +2541,7 @@ msgid ""
 "Pass I<params> to the program that is run, after the parameters that "
 "B<dh_auto_clean> usually passes."
 msgstr ""
-"I<params> を起動するプログラムに渡すには、B<dh_auto_clean> に通常指定するパラ"
+"I<params> を実行するプログラムに渡すには、B<dh_auto_clean> に通常指定するパラ"
 "メータの後に、I<params> を指定してください。"
 
 #. type: textblock
@@ -2577,7 +2574,7 @@ msgstr ""
 "debhelper プログラムです。このプログラムはパッケージのビルドに必要なビルドシス"
 "テムを割り出し、それに適したコマンドを実行して設定を行います。例えば、F<./"
 "configure> スクリプト、F<Makefile.PL>、F<Build.PL>、F<cmake> を探して実行しま"
-"す。一連の標準パラメータが指定され、起動するプログラムに引き渡されます。な"
+"す。一連の標準パラメータが指定され、実行するプログラムに引き渡されます。な"
 "お、make のようなビルドシステムの場合、事前に configure の実行が不要な場合が"
 "あります。この場合 B<dh_auto_configure> は何もせずに終了します。"
 
@@ -2599,7 +2596,7 @@ msgid ""
 "Pass I<params> to the program that is run, after the parameters that "
 "B<dh_auto_configure> usually passes. For example:"
 msgstr ""
-"I<params> を起動するプログラムに渡すには、B<dh_auto_configure> に通常指定"
+"I<params> を実行するプログラムに渡すには、B<dh_auto_configure> に通常指定"
 "するパラメータの後に、B<--> を、次に I<params> を指定してください。例:"
 
 #. type: verbatim
@@ -2709,7 +2706,7 @@ msgid ""
 "Pass I<params> to the program that is run, after the parameters that "
 "B<dh_auto_install> usually passes."
 msgstr ""
-"I<params> を起動するプログラムに渡すには、B<dh_auto_install> に通常指定す"
+"I<params> を実行するプログラムに渡すには、B<dh_auto_install> に通常指定す"
 "るパラメータの後に I<param> を指定してください。"
 
 #. type: textblock
@@ -3158,7 +3155,7 @@ msgid ""
 "need to."
 msgstr ""
 "このファイルが存在すると、デフォルトで圧縮対象となるファイルは、圧縮さ"
-"れなくなります。代わりにこのファイルはシェルスクリプトとして起動され、シェル"
+"れなくなります。代わりにこのファイルはシェルスクリプトとして実行され、シェル"
 "スクリプトの実行結果として得られるファイル名が圧縮対象となります。このシェル"
 "スクリプトはパッケージビルドディレクトリ以下で実行されます。とはいえ、注意し"
 "て欲しいのは、通常の用途では B<-X> の方が適していることです。その為、F<debian/"
@@ -4562,6 +4559,7 @@ msgstr ""
 
 #. type: textblock
 #: dh_installdocs:99
+#, fuzzy
 msgid ""
 "(An older method to accomplish the same thing, which is still supported, is "
 "to make the documentation directory of a package be a dangling symlink, "
@@ -5753,7 +5751,7 @@ msgid ""
 msgstr ""
 "パッケージビルドディレクトリ以下にて、カーネルモジュールを探し、見つけると、"
 "F<preinst>、F<postinst>、F<postrm> コマンドが自動的に生成されます。これらコマ"
-"ンドは、パッケージをインストールする際に、B<depmod> を起動し、カーネルモジュー"
+"ンドは、パッケージをインストールする際に、B<depmod> を実行し、カーネルモジュー"
 "ルを登録するような内容となっております。これらのコマンドは L<dh_installdeb(1)> "
 "によりメンテナスクリプトへ挿入されます。 "
 
@@ -6869,8 +6867,8 @@ msgid ""
 msgstr ""
 "Perlモジュールを非標準のディレクトリにインストールするようなパッケージをビルド"
 "しているのであれば、コマンドラインからパッケージの名前を渡すことにより、"
-"B<dh_perl> に、これらのディレクトリを確認させる事が出来ます。特に指定無き場"
-"合、本コマンドは F<vendorlib> と F<vendorarch> ディレクトリのみ確認します。"
+"B<dh_perl> に、これらのディレクトリを確認させる事が出来ます。デフォルトでは"
+"本コマンドは F<vendorlib> と F<vendorarch> ディレクトリのみを確認します。"
 
 #. type: textblock
 #: dh_perl:63
@@ -6917,7 +6915,7 @@ msgid ""
 "targets, or at the top of a target such as install that they depend on."
 msgstr ""
 "本プログラムは通常、B<binary-arch> や、B<binary-indep> ターゲット、あるいは、こ"
-"れらが依存するインストール関連のターゲットの一番最初の作業にて起動されるよう"
+"れらが依存するインストール関連のターゲットの一番最初の作業にて実行されるよう"
 "にします。"
 
 #. type: textblock
