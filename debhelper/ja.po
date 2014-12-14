@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debhelper 9.20141107\n"
 "POT-Creation-Date: 2014-10-03 15:16-0400\n"
-"PO-Revision-Date: 2014-11-09 19:45+0900\n"
+"PO-Revision-Date: 2014-11-29 18:45+0900\n"
 "Last-Translator: Takahide Nojima <nozzy123nozzy@gmail.com>\n"
 "Language-Team: Debian JP Project <debian-doc@debian.or.jp>\n"
 "Language: Japanease\n"
@@ -1980,8 +1980,7 @@ msgid ""
 "Another common case is wanting to do something manually before or after a "
 "particular debhelper command is run."
 msgstr ""
-"別のよくある例として、特定の debhelper コマンドが実行される直前あるいは直後"
-"に、手動で何かをしたいような事があります。"
+"別のよくある例として、特定の debhelper コマンドが実行される前後で手動で何かをしたい場合があります。"
 
 #. type: verbatim
 #: dh:125
@@ -2006,9 +2005,8 @@ msgid ""
 "automate it, like this."
 msgstr ""
 "もしパッケージが autotools を利用しており、パッケージビルド時に F<config.sub> "
-"や F<config.guess> ファイルをより新しいバージョンの B<autotools-dev> で一旦生"
-"成しなおしたい場合があります。この場合、B<autotools-dev> で提供されているコマ"
-"ンドを使い、以下のようにして自動化する事ができます。"
+"や F<config.guess> ファイルをより新しいバージョンの B<autotools-dev> で更新したい場合があります。"
+"この場合、B<autotools-dev> で提供されているコマンドを使って以下のように自動化する事ができます。"
 
 #. type: verbatim
 #: dh:134
@@ -2032,7 +2030,7 @@ msgid ""
 "Here is how to use B<dh_python2>."
 msgstr ""
 "この分野の状況が常に変わっているため、デフォルトでは python 関連ツール は dh によって"
-"実行されません (互換性レベルの v9 以前であれば、dh は B<dh_pysupport> を実行"
+"実行されません (互換性レベル v9 未満であれば、dh は B<dh_pysupport> を実行"
 "します)。ここでは、B<dh_python2> をどのようにして使うかを示します。"
 
 #. type: verbatim
@@ -2104,8 +2102,7 @@ msgid ""
 "in a subdirectory, which will be removed on B<clean>."
 msgstr ""
 "B<dh_auto_>I<*> にサブディレクトリでビルドするように指定する方法を以下に示しま"
-"す。こちらを指定すると、B<clean> 処理でこれらディレクトリが取り除かれるよう"
-"になります:"
+"す。こちらを指定すると、B<clean> 処理でこれらディレクトリが取り除かれるようになります:"
 
 #. type: verbatim
 #: dh:165
@@ -2221,8 +2218,8 @@ msgid ""
 "building the architecture dependent package, as it's not present when "
 "building only documentation."
 msgstr ""
-"上の例に加え、ファイルに chmod を実行しなければならないがアーキテクチャ依存"
-"パッケージをビルドする際のみに必要で、ドキュメントのみをビルドする時には実行しない"
+"上の例に加え、ファイルに chmod を実行しなければならないがそれはアーキテクチャ依存"
+"パッケージをビルドする際のみ必要で、ドキュメントのみをビルドする時には実行しない"
 "としたらどうなるでしょうか。"
 
 #. type: verbatim
@@ -2950,8 +2947,7 @@ msgid ""
 "file name. Does not work well if more than one .deb is generated!"
 msgstr ""
 "生成する .deb ファイルに特定のファイル名を強制的に指定したい場合にこのオプ"
-"ションを利用してください。しかしながら、複数の .deb ファイルが生成される場合に"
-"はうまく動作しません!"
+"ションを利用してください。複数の .deb ファイルが生成される場合にはうまく動作しません!"
 
 #. type: textblock
 #: dh_builddeb:40
@@ -2970,7 +2966,7 @@ msgid ""
 "use B<--> instead."
 msgstr ""
 "これは I<params> を L<dpkg-deb(1)> へ渡す為の別の手段となります。"
-"本オプションは廃止されているので、代わりに B<--> を使ってください。"
+"本オプションは廃止されています、代わりに B<--> を使ってください。"
 
 #. type: textblock
 #: dh_clean:5
@@ -3085,14 +3081,14 @@ msgstr "I<file> ..."
 #. type: textblock
 #: dh_clean:62
 msgid "Delete these I<file>s too."
-msgstr "これら I<file> も消去します。"
+msgstr "これらの I<file> も消去します。"
 
 #. type: textblock
 #: dh_compress:5
 msgid ""
 "dh_compress - compress files and fix symlinks in package build directories"
 msgstr ""
-"dh_compress - ビルドディレクトリでファイル圧縮、シンボリックリンクの修正を行う"
+"dh_compress - ビルドディレクトリでファイル圧縮とシンボリックリンクの修正を行う"
 
 #. type: textblock
 #: dh_compress:15
@@ -3276,11 +3272,10 @@ msgstr ""
 "ます。また、すべての man ページのパーミッションも 644 に変更します。さらにこれらファイルの"
 "所有者を root に設定し、全てのファイルから group,others に対する書き込み権限の除"
 "去を行います。また、ライブラリ、ヘッダファイル、Perl のモジュール、desktop ファ"
-"イルにて、実行権限が付与されていればこの権限を取り除きます。F<bin>、F<sbin>、"
+"イルに実行権限が付与されている場合、この権限を取り除きます。F<bin>、F<sbin>、"
 "F<usr/games/>、F<etc/init.d> ディレクトリ以下にあるファイルについては実行権限"
 "を付与します (互換性レベル v4 から利用できます)。最後に、パッケージ内の全ての"
-"ファイルから setuid と setgid ビットが付与されている場合はこれらビットを取り除き"
-"ます。"
+"ファイルから setuid と setgid ビットが付与されている場合はこれらを無効にします。"
 
 #. type: =item
 #: dh_fixperms:36
@@ -3289,12 +3284,13 @@ msgstr "B<-X>I<item>, B<--exclude> I<item>"
 
 #. type: textblock
 #: dh_fixperms:38
+#, fuzzy
 msgid ""
 "Exclude files that contain I<item> anywhere in their filename from having "
 "their permissions changed. You may use this option multiple times to build "
 "up a list of things to exclude."
 msgstr ""
-"パーミッションの変更対象のファイルから I<item> をファイル名の一部に持つ物全部を"
+"パーミッションの変更対象のファイルから I<item> をファイル名の一部に持つもの全てを"
 "除外します。複数の除外を列挙したければ、本オプションを複数回指定することによ"
 "り行います。"
 
@@ -3422,9 +3418,8 @@ msgid ""
 "This is another way to pass I<params> to L<dpkg-gencontrol(1)>.  It is "
 "deprecated; use B<--> instead."
 msgstr ""
-"これは、I<params> を L<dpkg-gencontrol(1)> へ渡す別のやり方となります。しか"
-"しながら、このオプションは廃止されました。今では、B<--> を代わりに使ってくださ"
-"い。"
+"これは、I<params> を L<dpkg-gencontrol(1)> へ渡す別のやり方です。しか"
+"し、このオプションは廃止されています。代わりに　B<--> を使ってください。"
 
 #. type: textblock
 #: dh_icons:5
@@ -4181,10 +4176,10 @@ msgid ""
 "should make sure to put that token into an appropriate place in your debian/"
 "control file."
 msgstr ""
-"L<dpkg-maintscript-helper(1)>を使うには、前もって特定のバージョンのdpkgが必要"
+"L<dpkg-maintscript-helper(1)>　を使うには、前もって特定のバージョンの dpkg が必要"
 "となります。こちらに関する依存関係をあらかじめ正しくしておくには、${misc:Pre-"
-"Depends}を設定してください。つまり、debian/controlファイルの適切な場所に${misc:"
-"Pre-Depends}が入っているか確かめてください。"
+"Depends}　を設定してください。つまり、debian/control ファイルの適切な場所に ${misc:"
+"Pre-Depends}　が入っているか確かめてください。"
 
 #. type: textblock
 #: dh_installdebconf:5
@@ -5400,7 +5395,7 @@ msgid ""
 msgstr ""
 "B<dh_installman> が間違った章番号や、間違った拡張子をつけて man ページをインス"
 "トールするように見えるときがあります。これは、man ページが間違った章番号を B<."
-"TH> や B<.Dt> 行に列挙しているのが原因となります。この場合、man ページを編集し"
+"TH> や B<.Dt> 行に列挙しているのが原因です。この場合、man ページを編集し"
 "て、章番号を正しくすれば、B<dh_installman> は意図どおりに動作するようになりま"
 "す。B<.TH> 章についての詳細は L<man(7)> を参照ください。さらに、B<.Dt> 章について"
 "は、L<mdoc(7)> を参照ください。また、B<dh_installman> が F</usr/share/man/pl/"
@@ -5442,7 +5437,7 @@ msgstr "debian/I<package>.manpages"
 #. type: textblock
 #: dh_installman:57
 msgid "Lists man pages to be installed."
-msgstr "インストールされるべき man ページを列挙したものとなります。"
+msgstr "インストールされるべき man ページを列挙したものです。"
 
 #. type: =item
 #: dh_installman:70
@@ -5531,7 +5526,7 @@ msgid ""
 msgstr ""
 "B<dh_installmanpages> は man ページらしき名前を持つファイルを、カレントディレクト"
 "リや、カレントディレクトリ以下の全てのサブディレクトリで探し回ります (ファイル"
-"の実体のみ対象となります。つまり、シンボリックリンクは無視されます)。本プロ"
+"の実体のみが対象となります。つまり、シンボリックリンクは無視されます)。本プロ"
 "グラムは、L<file(1)> コマンドを使ってファイルが正しいフォーマットであるかを検"
 "証します。その為、拡張子にしたがい、処理対象の man ページを正しい man ページ用"
 "ディレクトリへインストールします。"
@@ -5544,7 +5539,7 @@ msgid ""
 "pages that you do not want to be installed."
 msgstr ""
 "パラメータとして指定されているファイルは、全て B<dh_installmanpages> により無視"
-"されます。もし、デフォルトでは意図しない場所に man ページがインストールされ"
+"されます。これは、デフォルトでは意図しない場所に man ページがインストールされ"
 "てしまう場合に便利です。"
 
 #. type: textblock
@@ -5644,7 +5639,7 @@ msgid ""
 "Debian menu files, installed into usr/share/menu/I<package> in the package "
 "build directory. See L<menufile(5)> for its format."
 msgstr ""
-"Debianメニューファイルとなります。こちらはパッケージビルドディレクトリ以下の "
+"Debianメニューファイルです。パッケージビルドディレクトリ以下の "
 "usr/share/menu/I<package> へインストールされます。フォーマットについては "
 "L<menufile(5)> を参照ください。"
 
@@ -5750,7 +5745,7 @@ msgid ""
 "L<dh_installdeb(1)>."
 msgstr ""
 "パッケージビルドディレクトリ以下にて、カーネルモジュールを探し、見つけると、"
-"F<preinst>、F<postinst>、F<postrm> コマンドが自動的に生成されます。これらコマ"
+"F<preinst>, F<postinst>, F<postrm> コマンドが自動的に生成されます。これらコマ"
 "ンドは、パッケージをインストールする際に、B<depmod> を実行し、カーネルモジュー"
 "ルを登録するような内容となっております。これらのコマンドは L<dh_installdeb(1)> "
 "によりメンテナスクリプトへ挿入されます。 "
@@ -5983,7 +5978,7 @@ msgstr ""
 "なります。もし、インストールしようとしているウインドウマネージャの man ページ"
 "が、パッケージビルドディレクトリ以下の F<usr/share/man/man1/> に存在する場合、"
 "この man ページはパッケージビルドディレクトリ以下にシンボリックリンクで登録され"
-"ます(互換性レベル v6 以上の場合)。"
+"ます (互換性レベル v6 以上)。"
 
 #. type: =item
 #: dh_installwm:28
@@ -6044,7 +6039,7 @@ msgid ""
 "and F<fonts.scale> be rebuilt properly at install time."
 msgstr ""
 "B<dh_installxfonts> は、X 用のフォントを登録し、フォントに関係する F<fonts."
-"dir>、F<fonts.alias>、F<fonts.scale> を再ビルドして正しい内容になるようにしま"
+"dir>, F<fonts.alias>, F<fonts.scale> を再ビルドして正しい内容になるようにしま"
 "す。"
 
 #. type: textblock
@@ -6140,7 +6135,7 @@ msgstr ""
 "B<dh_link> コマンドはリンクを張りたい元と先のファイル名をペアにしたものの一覧"
 "を受けとります。リンクを張る元のファイルはすでに実体のあるファイルを指定しま"
 "す。また、リンクを張りたい先のファイル名でシンボリックリンクが作成されます。"
-"リンクを張る元と先のファイル名は同じ数だけ指定することがB<必要>です。"
+"リンクを張る元と先のファイル名は同じ数だけ指定することがB<必須>です。"
 
 #. type: textblock
 #: dh_link:27
@@ -6181,7 +6176,7 @@ msgid ""
 msgstr ""
 "B<dh_link> は、また、パッケージビルドツリー以下で、Debian ポリシーマニュアル違"
 "反であるようなすでに存在するシンボリックリンクを探し回り、そしてこれらを正し"
-"くなるように修正します (互換性レベルv4以上で本動作となります)。"
+"くなるように修正します (互換性レベル v4 以上)。"
 
 #. type: =item
 #: dh_link:45
@@ -6400,8 +6395,8 @@ msgid ""
 msgstr ""
 "multiarch をサポートするパッケージを見つけると、multiarch サポートに関する Pre-"
 "Depends について ${misc:Pre-Depends} へ設定します。パッケージが multiarch を"
-"サポートする場合は、debian/control ファイルの適切な場所へ、${misc:Pre-Depends} "
-"句を挿入してあることを確認してください。"
+"サポートする場合は、debian/control ファイルの適切な場所へ ${misc:Pre-Depends} "
+"を挿入してあることを確認してください。"
 
 #. type: =item
 #: dh_makeshlibs:33
@@ -6489,7 +6484,7 @@ msgid ""
 msgstr ""
 "B<-V> をパラメータ無しで指定する場合の注意事項は次の通りです。この場合、依存関"
 "係にあるパッケージに含まれる共有ライブラリはお互いに必要な依存関係を保ってい"
-"られるという仮定に基づく保守的な設定となります (なおビルド対象のパッケージに"
+"られるという仮定に基づく保守的な設定です (なおビルド対象のパッケージに"
 "含まれるライブラリについて、アップストリームのバージョン番号が新しくならない"
 "にも関わらず、あえて ABI を変更しなければならない場合は除きます)。メンテナが、"
 "依存関係解決が難しい為対応ができないような場合は、依存関係を破らざるを得ない"
@@ -6919,15 +6914,15 @@ msgstr ""
 
 #. type: textblock
 #: dh_prep:32
+#, fuzzy
 msgid ""
 "Exclude files that contain F<item> anywhere in their filename from being "
 "deleted, even if they would normally be deleted. You may use this option "
 "multiple times to build up a list of things to exclude."
 msgstr ""
 "削除対象の候補のファイルから、F<item> をファイル名に含むようなファイルを除外し"
-"ます。通常では消去されるようなファイルであっても、この場合除外されます。複数"
-"の除外ファイルを列挙して指定するには、本オプションを複数回指定して指定願いま"
-"す。"
+"ます。通常は消去されるようなファイルであっても、この場合では除外されます。複数"
+"の除外ファイルを列挙して指定するには、本オプションを複数回指定します。"
 
 #. type: textblock
 #: dh_python:5
@@ -6935,8 +6930,8 @@ msgid ""
 "dh_python - calculates Python dependencies and adds postinst and prerm "
 "Python scripts (deprecated)"
 msgstr ""
-"dh_python - Pythonスクリプトの依存関係を検討し、postinstとprermを付け加える"
-"Pythonスクリプトです (廃止) "
+"dh_python - Pythonスクリプトの依存関係を計算し、postinst と prerm を付け加える"
+"Pythonスクリプト (廃止) "
 
 #. type: textblock
 #: dh_python:15
@@ -6954,9 +6949,9 @@ msgid ""
 "This program will do nothing if F<debian/pycompat> or a B<Python-Version> "
 "F<control> file field exists."
 msgstr ""
-"注意：本プログラムは廃止されました。B<dh_python2>を代わりに利用してください。"
-"このプログラムは、F<debian/pycompat>が存在していたり、B<Python-Version>フィー"
-"ルドがF<control>ファイルに存在すると、何もしません。 "
+"注意：本プログラムは廃止されました。B<dh_python2>　を代わりに利用してください。"
+"このプログラムは、F<debian/pycompat>　が存在していたり、B<Python-Version>　フィー"
+"ルドが　F<control>　ファイルに存在すると何も実行しません。 "
 
 #. type: textblock
 #: dh_python:23
@@ -6965,9 +6960,9 @@ msgid ""
 "${python:Depends}> substitutions and adding them to substvars files. It will "
 "also add a F<postinst> and a F<prerm> script if required."
 msgstr ""
-"B<dh_python>はB<${python:Depends}>を置き換える為の情報を生成し、substvarsファ"
-"イルへこの情報を付け加える役目のdebhelper プログラムです。必要に応じて、"
-"F<postinst>やF<prerm>スクリプトも追加します。 "
+"B<dh_python> は B<${python:Depends}> を置き換える為の情報を生成し、substvars ファ"
+"イルへこの情報を付け加える役目の debhelper プログラムです。必要に応じて、"
+"F<postinst> や F<prerm> スクリプトも追加します。 "
 
 #. type: textblock
 #: dh_python:27
@@ -6979,13 +6974,13 @@ msgid ""
 "substituted into your package's F<control> file wherever you place the token "
 "B<${python:Depends}>."
 msgstr ""
-"このプログラムは構築対象のパッケージにPythonスクリプトやPythonモジュールが無"
-"いかどうか確認し、B<python>に関する依存関係を示す情報を生成する為にこれらのス"
+"このプログラムは構築対象のパッケージに Python スクリプトや Python モジュールが無"
+"いかどうか確認し、B<python> に関する依存関係を示す情報を生成する為にこれらのス"
 "クリプトやモジュールの情報を利用します。依存関係の情報を生成するにあたり利用"
-"される情報として、B<python>についての現在の主バージョンや、スクリプトやモ"
-"ジュールが特定のB<python>のバージョンを指定している場合はB<python>I<X>B<."
-">I<Y>が利用されます。構築予定のパッケージのF<control>ファイルのどこかにB<"
-"${python:Depends}>があれば、依存情報で置き換えられます。"
+"される情報として、B<python> についての現在の主バージョンや、スクリプトやモ"
+"ジュールが特定の B<python> のバージョンを指定している場合は B<python>I<X>B<."
+">I<Y> が利用されます。構築予定のパッケージのF<control>ファイルのどこかに B<"
+"${python:Depends}> があれば、依存情報で置き換えられます。"
 
 #. type: textblock
 #: dh_python:33
@@ -6994,16 +6989,15 @@ msgid ""
 "F<postinst> and F<prerm> scripts will be generated. If already byte-compiled "
 "modules are found, they are removed."
 msgstr ""
-"インストール時にバイトコンパイルされる事が必要なパッケージなら、適切な"
-"F<postinst>とF<prerm>スクリプトが生成されます。この場合、バイトコンパイルされ"
+"インストール時にバイトコンパイルされる事が必要なパッケージなら、適切な "
+"F<postinst> と F<prerm> スクリプトが生成されます。この場合、バイトコンパイルされ"
 "たモジュールが構築中のパッケージ内部に見つかると、こちらは削除されます。"
 
 #. type: textblock
 #: dh_python:37
 msgid "If you use this program, your package should build-depend on B<python>."
 msgstr ""
-"このプログラムを使う場合、B<python>に対するbuild-dependを宣言しておかなければ"
-"なりません。"
+"このプログラムを使う場合、B<python> に対する build-depend を設定する必要があります。"
 
 #. type: =item
 #: dh_python:43
@@ -7019,20 +7013,21 @@ msgid ""
 "$PACKAGE>, F</usr/share/$PACKAGE>, F</usr/lib/games/$PACKAGE>, F</usr/share/"
 "games/$PACKAGE> and F</usr/lib/python?.?/site-packages>."
 msgstr ""
-"非標準のディレクトリにPythonモジュールをインストールする場合、 コマンドライン"
-"からインストール先のディレクトリを指定する事により、F<dh_python>に検査させる"
-"ことができます。デフォルト、F</usr/lib/site-python>、F</usr/lib/"
-"$PACKAGE>、F</usr/share/$PACKAGE>、F</usr/lib/games/$PACKAGE>、F</usr/share/"
-"games/$PACKAGE>、F</usr/lib/python?.?/site-packages>が検査対象となります。"
+"非標準のディレクトリに Python モジュールをインストールする場合、 コマンドライン"
+"からインストール先のディレクトリを指定する事により、F<dh_python> に検査させる"
+"ことができます。デフォルト, F</usr/lib/site-python>, F</usr/lib/"
+"$PACKAGE>, F</usr/share/$PACKAGE>, F</usr/lib/games/$PACKAGE>, F</usr/share/"
+"games/$PACKAGE>, F</usr/lib/python?.?/site-packages> が検査対象となります。"
 
 #. type: textblock
 #: dh_python:51
+#, fuzzy
 msgid ""
 "Note: only F</usr/lib/site-python>, F</usr/lib/python?.?/site-packages> and "
 "the extra names on the command line are searched for binary (F<.so>) modules."
 msgstr ""
-"注意：バイナリ形式の(F<.so>)モジュールの検査対象となるのは、F</usr/lib/site-"
-"python>、F</usr/lib/python?.?/site-packages>及び、コマンドラインから指定され"
+"注意：バイナリ形式 (F<.so>) モジュールの検査対象となるのは、F</usr/lib/site-"
+"python>, F</usr/lib/python?.?/site-packages> 及び、コマンドラインから指定され"
 "たディレクトリ名のみとなります。"
 
 #. type: =item
@@ -7048,7 +7043,7 @@ msgid ""
 "desired version, such as B<2.3>. Do not use if you ship modules in F</usr/"
 "lib/site-python>."
 msgstr ""
-"構築中のパッケージが提供する予定のF<.py>ファイルが特定のB<python>I<X>B<.>I<Y>"
+"構築中のパッケージが提供する予定の F<.py> ファイルが特定の B<python>I<X>B<.>I<Y> "
 "バージョンの元で使われる事を意図したければ、このオプションを用いて、例えば"
 "B<2.3>のように、期待されるバージョンを指定することができます。なお、F</usr/"
 "lib/site-python>以下にインストール予定のモジュールに対してはこのオプションを"
@@ -7093,8 +7088,7 @@ msgid ""
 "deprecated."
 msgstr ""
 "B<dh_scrollkeeper> は ScrollKeeper に必要な OMF ファイルを登録する役目の debhelper "
-"プログラムです。しかしながら、今ではもはや何もしません。本プログラムは廃止さ"
-"れました。"
+"プログラムです。しかし今では何もしません。本プログラムは廃止されました。"
 
 #. type: textblock
 #: dh_shlibdeps:5
@@ -7139,16 +7133,15 @@ msgid ""
 "This may be useful in some situations, but use it with caution. This option "
 "may be used more than once to exclude more than one thing."
 msgstr ""
-"F<item> を名前に含むファイルを、B<dpkg-shlibdeps> へ引き渡さないようにします。"
+"F<item> を名前に含むファイルを、B<dpkg-shlibdeps> へ渡さないようにします。"
 "このオプションにより、指定されたファイルの依存関係検査は無視されるようになり"
 "ます。これは特定の状況下で便利な場合がありますが、気をつけて使って下さい。こ"
-"のオプションを使って除外を複数指定する場合は、繰り返し指定する事により行いま"
-"す。"
+"のオプションを使って除外を複数指定する場合は、繰り返し指定する事により行います。"
 
 #. type: textblock
 #: dh_shlibdeps:39
 msgid "Pass I<params> to L<dpkg-shlibdeps(1)>."
-msgstr "I<params> を L<dpkg-shlibdeps(1)> へ引き渡します。"
+msgstr "I<params> を L<dpkg-shlibdeps(1)> へ渡します。"
 
 #. type: =item
 #: dh_shlibdeps:41
@@ -7325,7 +7318,7 @@ msgstr ""
 "バッグ情報を取り除くべきかを見つけ出します。本プログラムは、L<file(1)> コマン"
 "ドを利用し、ファイルパーミッション、ファイル名を利用して、どのファイルが共有"
 "ライブラリ (F<*.so>)、実行可能バイナリ、静的ライブラリ (F<lib*.a>)、デバッグ用"
-"ライブラリ (F<lib*_g.a>,F<debug/*.so>) であるかを判断し、該当する場合は、デバッ"
+"ライブラリ (F<lib*_g.a>, F<debug/*.so>) であるかを判断し、該当する場合は、デバッ"
 "グシンボルをできる限り取り除きます (デバッグ用ライブラリについては全く何もし"
 "ません)。多くの場合で、本プログラムは非常に良い推定を行い、正しくデバッグシ"
 "ンボルの除去を行います。"
